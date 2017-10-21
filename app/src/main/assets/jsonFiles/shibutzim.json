@@ -1,0 +1,32 @@
+{
+  "Mechanic":[
+    {"name":"מכונאי נמר","videoUrl":"http://2","textPath":"hov.html"},
+    {"name":"מכונאי צמ\"ה","videoUrl":"http://2","textPath":"rakia.html"},
+    {"name":"מכונאי פומ\"ה","videoUrl":"http://2","textPath":"yaad.html"},
+    {"name":"מרום","videoUrl":"http://2","textPath":"marom.html"},
+    {"name":"פרויקטנטים","videoUrl":"http://2","textPath":"proyektantim.html"},
+    {"name":"קק\"ץ ישיר","videoUrl":"http://2","textPath":"kakatzyashir.html"},
+    {"name":"יהל\"ם","videoUrl":"http://2","textPath":"yahalom.html"},
+    {"name":"שוה\"ם","videoUrl":"http://2","textPath":"shoham.html"},
+    {"name":"ברקת","videoUrl":"http://2","textPath":"bareket.html"},
+    {"name":"שוחרות","videoUrl":"http://1","textPath":"shoharut.html"},
+    {"name":"תעשייתי","videoUrl":"http://2","textPath":"tasyati.html"},
+    {"name":"טו\"ב (טכנאי ובגרות)","videoUrl":"http://2","textPath":"tov.html"},
+    {"name":"קק\"ץ לה\"ט","videoUrl":"http://2","textPath":"kakatzlahat.html"}
+  ],
+  "Electronic":[
+    {"name":"הו\"ב (הנדסאי ובגרות)","videoUrl":"http://2","textPath":"hov.html"},
+    {"name":"רקיע","videoUrl":"http://2","textPath":"rakia.html"},
+    {"name":"יעד","videoUrl":"http://2","textPath":"yaad.html"},
+    {"name":"מרום","videoUrl":"http://2","textPath":"marom.html"},
+    {"name":"פרויקטנטים","videoUrl":"http://2","textPath":"proyektantim.html"},
+    {"name":"קק\"ץ ישיר","videoUrl":"http://2","textPath":"kakatzyashir.html"},
+    {"name":"יהל\"ם","videoUrl":"http://2","textPath":"yahalom.html"},
+    {"name":"שוה\"ם","videoUrl":"http://2","textPath":"shoham.html"},
+    {"name":"ברקת","videoUrl":"http://2","textPath":"bareket.html"},
+    {"name":"שוחרות","videoUrl":"http://1","textPath":"shoharut.html"},
+    {"name":"תעשייתי","videoUrl":"http://2","textPath":"tasyati.html"},
+    {"name":"טו\"ב (טכנאי ובגרות)","videoUrl":"http://2","textPath":"tov.html"},
+    {"name":"קק\"ץ לה\"ט","videoUrl":"http://2","textPath":"kakatzlahat.html"}
+  ]
+}

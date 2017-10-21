@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/main_screen"
+            android:title="@string/main_screen"
+            android:icon="@drawable/ic_menu_home"
+            ></item>
+        <item
+            android:id="@+id/about_us"
+            android:icon="@drawable/ic_menu_flag"
+            android:title="@string/about_us" />
+        <item
+            android:id="@+id/malshabim"
+            android:icon="@drawable/ic_menu_people"
+            android:title="@string/malshabim" />
+        <item
+            android:id="@+id/miktzoa_lahaim"
+            android:icon="@drawable/ic_menu_hat"
+            android:title="מקצוע לחיים" />
+        <item
+            android:id="@+id/comunication"
+            android:title="@string/comunication"
+            android:icon="@drawable/ic__menu_phone"
+            />
+        <item
+            android:id="@+id/facebookpage"
+            android:icon="@drawable/ic_menu_facebook"
+            android:title="@string/facebookpage" />
+
+
+
+
+
+    </group>
+
+    <item android:title="">
+        <menu>
+            <item
+                android:id="@+id/nav_share"
+                android:icon="@drawable/ic_menu_share"
+                android:title="@string/share" />
+
+        </menu>
+    </item>
+
+
+
+
+</menu>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
+
+
+    >
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/white_rect"
+        android:padding="7dp"
+        android:elevation="2dp"
+        android:layout_margin="4dp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="שוחרות"
+        android:padding="3dp"
+        android:textColor="#cabb1b"
+        android:id="@+id/list_view_item_text_view"
+        style="@style/title_text_style" />
+    </FrameLayout>
+
+</LinearLayout>

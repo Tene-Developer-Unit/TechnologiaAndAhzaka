@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "215621007831",
+    "firebase_url": "https://teneapp-fe33d.firebaseio.com",
+    "project_id": "teneapp-fe33d",
+    "storage_bucket": "teneapp-fe33d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:215621007831:android:d235a85bbb49dd11",
+        "android_client_info": {
+          "package_name": "com.ezra.elon.technologiaandahzaka"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "215621007831-vm7bihelk3sh9skgorqhr1sj5ta9mllt.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.ezra.elon.technologiaandahzaka",
+            "certificate_hash": "1fcf4907de965706a3264dd999c78afb7dcdea4f"
+          }
+        },
+        {
+          "client_id": "215621007831-e52gm2ln7bp0qdr6saat2eguhs4n2nv3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDlgA3B1zg0bjjlQq31RoaQ_2mjDxInmLs"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "215621007831-e52gm2ln7bp0qdr6saat2eguhs4n2nv3.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,95 @@
+<resources>
+    <string name="app_name">המכללה הטכנו-לוגיסטית</string>
+
+    <string name="navigation_drawer_open" translatable="false">Open navigation drawer</string>
+    <string name="navigation_drawer_close" translatable="false">Close navigation drawer</string>
+
+    <string name="action_settings">הגדרות</string>
+    <string name="tna">המכללה הטכנו-לוגיסטית</string>
+    <string name="slogen">זורעים היום את הפתרון של מחר</string>
+    <string name="courses_info">מידע קורסים</string>
+    <string name="share">שתף</string>
+    <string name="about_us">חזון המכללה הטכנו-לוגיסטית</string>
+    <string name="comunication">צור קשר</string>
+    <string name="facebookpage">דף הפייסבוק</string>
+
+    <string-array name="megamot">
+        <item>מגמת מכונות</item>
+        <item>מגמת רכב</item>
+        <item>מגמת אלקטרוניקה</item>
+        <item>מגמת חשמל</item>
+        <item>מגמת תו\"ן</item>
+    </string-array>
+
+    <string-array name="mainmenu">
+        <item>סגל</item>
+        <item>מלש\"בים</item>
+        <item>מל\"ה</item>
+        <item>מקצוע לחיים</item>
+    </string-array>
+    <string name="segel" translatable="false">סגל</string>
+    <string name="malshabim" translatable="false">סביבת מלש\"בים</string>
+    <string name="mktzoalhaim" translatable="false">מקצוע לחיים</string>
+    <string name="mala" translatable="false">מל\"ה</string>
+
+
+    <string name="telephon_number">מספר טלפון:</string>
+    <string name="main_screen">מסך ראשי</string>
+    <string name="fax">פקס:</string>
+    <string name="email">דוא\"ל:</string>
+    <string name="thevisiontitle">theVisionTitle</string>
+
+    <string name="about_us_discription_text" translatable="false">
+        <![CDATA[
+       <u> <h2>חזון המכללה הטכנו-לוגיסטית</h2>
+       </u>
+
+                <hr>
+          <br/>המרכז הטכנולוגיסטי למנהיגות והכשרה בעידן היבשה החדשה
+          <br/>
+          <br/>יהווה מודל ראשוני ופורץ דרך
+          <br/>
+          <br/>לחדשנות
+          <br/>
+          <br/>בתחומי &quot הלמידה המשמעותית&quot
+          <br/>
+          <br/>הנדרשת למקצועות המחר
+          <br/>
+          <br/>במציאות טכנולוגית משתנה.
+          <br/>
+          <br/>המרכז יכשיר יסמיך ויעצים מלש"בים, חיילים ומפקדים,
+          <br/>
+          <br/>וישמש אבן שואבת לכוח אדם ייחודי ואיכותי,
+          <br/>
+          <br/>אשר יהוו את שדרת הפיקוד העתיד בצבא הגנה לישראל.
+          <br/>
+          <br/>
+          <br/>
+
+
+        <u> <h2>דרכי מימוש החזון</h2></u>
+          ]]>
+</string>
+    <string name="weakly_photo" translatable="false"><u>תמונת השבוע</u></string>
+    <string-array name="about_us_discription_text_vision_path">
+
+        <item>שימוש בפדגוגיה ומתודולוגיה חדשנית לחיבור רב תחומי וממדי לצמצום הפערים בין דרכים והיבטים אנושיים לטכנולוגיה</item>
+        <item>פיתוח חשיבה מערכתית יצירתית מסתעפת ואינטגרטיבית</item>
+        <item>שילוב ערכים כישורים ומיומנויות ויכולות כחלק בלתי נפרד מתחומי הדעת ומקצועות הלימוד</item>
+        <item>הטמעת וביסוס התנסות חינוכית משמעותית אינטראקטיבית וחוויתית באמצעות למידה מבוססת פרויקטים P.B.L</item>
+        <item>חיזוק והעצמת תחומי מנהיגות הפיקוד וזהות חילית</item>
+
+    </string-array>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="whatsnew">מה חדש?</string>
+    <string name="mail_address" translatable="false">technology.idf@gmail.com</string>
+    <string name="phone_number" translatable="false">*9626</string>
+    <string name="appinfo">appinfo</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+<string name="hello_blank_fragment" translatable="false">Hello blank fragment</string>
+<string name="whatsneTitle" translatable="false"><u>מה חדש?</u></string>
+<string name="weekly_photo"></string>
+
+    </resources>
