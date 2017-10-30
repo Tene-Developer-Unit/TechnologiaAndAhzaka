@@ -91,5 +91,16 @@
 <string name="hello_blank_fragment" translatable="false">Hello blank fragment</string>
 <string name="whatsneTitle" translatable="false"><u>מה חדש?</u></string>
 <string name="weekly_photo"></string>
+    <string name="hachshara_info">מסלול המיועד לחילים המשרתים בתפקידים בחילות אטל.
+במסלול זה זכאים החיילים להשתלב בהכשרה ע"פ בחירתם עד 3 חודשים טרום שיחרורם מצהל.
+בתום ההכשרה החיילים המשוחררים יקבלו תעודה ואף יוכל לקבל המלצה על ידי מפקדיהם לתכנית
+בזכות הובלה, מקוריות, עשייה ונתינה מעבר לנדרש בתפקיד ובקורס.
+המסלול הינו בשיתוף עם הקרן להכוונת חילים משוחררים ומשרד הכלכלה.</string>
 
-    </resources>
+    <string name="haasaka_info">המסלול מיועד לבוגרי יג ו- יד ולנהגים המתגייסים לשירות בחיל הטנ"א וחיל הלוגיסטיקה.
+במסלול זה זכאי החייל לצאת לחודש עבודה בחברה אזרחית על כל שנת שירות, כך צובר החיל ניסיון מקצועי
+וקשרי עבודה לקראת היציאה לאזרחות.</string>
+    <string name="hacsharot_title_info">מסלול הכשרות</string>
+    <string name="haasaka_title_info">מסלול העסקה</string>
+
+</resources>

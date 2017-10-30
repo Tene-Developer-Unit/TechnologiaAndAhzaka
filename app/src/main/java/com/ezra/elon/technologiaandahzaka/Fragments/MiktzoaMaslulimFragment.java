@@ -40,81 +40,22 @@ FragmentTransaction ft;
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View rootview;
-        rootview = inflater.inflate(R.layout.listview_fragment, container, false);
-
-        JsontoArrayList();
-        ListView listView = (ListView) rootview.findViewById(R.id.list_view_id);
+        rootview = inflater.inflate(R.layout.miktoa_maslulim, container, false);
 
 
-        String  maslulimName [] = MaslulimNameToStringArray();
 
 
-        listView.setAdapter(new CostumeAddapter(getActivity().getBaseContext(),maslulimName));
 
-
-        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                //ft = getActivity().getSupportFragmentManager().beginTransaction();
-                Fragment fragment = new DisplayInfoFragment();//.setArrayList_holder(holderTITArrayList.get(i));
-                Bundle bundle = new Bundle();
-                bundle.putParcelable("holderer",holderTITArrayList.get(i));
-                fragment.setArguments(bundle);
-
-                ft = getActivity().getSupportFragmentManager().beginTransaction();
-
-                ft.replace(R.id.frame_layout,fragment);
-
-                ft.addToBackStack(null);
-
-                ft.commit();
-
-            }
-
-        });
         return  rootview;
 
 
     }
 
-    public void JsontoArrayList()
-    {
-
-
-        try {
-            JSONObject root = new JSONObject(Asistent.loadJSONFromAsset((getActivity().getBaseContext()), "jsonFiles/miktzoa.json"));
-
-                JSONArray maslulim = root.getJSONArray("maslulim");
-                String name;
-                String url;
-                for(int i = 0; i< maslulim.length(); i++)
-                {
-                    JSONObject maslul = maslulim.getJSONObject(i);//get single object
-                    holderTITArrayList.add(new HolderTIT(maslul.getString("name"),maslul.getString("videoUrl"),maslul.getString("textPath")));
-
-                    Log.i("JsonToArryList",maslul.getString("name"));
-                }
-
-        }catch(JSONException e){
-            e.printStackTrace();
-        }
-    }
 
 
 
-    private String[] MaslulimNameToStringArray()
-    {
-        int sizearray = holderTITArrayList.size();
 
-        String [] arr = new String[sizearray];
 
-        for (int i = 0; i< sizearray;i++)
-        {
-            arr[i] = holderTITArrayList.get(i).getMaslulName();
-        }
-
-        return arr;
-    }
 
 
 }
