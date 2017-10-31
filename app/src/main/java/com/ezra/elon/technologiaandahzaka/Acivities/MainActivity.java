@@ -63,6 +63,7 @@ private boolean viewIsAtHome;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+
         setSupportActionBar(toolbar);
         ///you can put in the defult in the display view
 

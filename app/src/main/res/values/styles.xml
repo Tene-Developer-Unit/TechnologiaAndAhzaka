@@ -9,10 +9,13 @@
         <item name="android:layoutDirection" tools:targetApi="jelly_bean_mr1">rtl</item>
     </style>
 
+
     <style name="AppTheme.NoActionBar">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
     </style>
+
+
 
     <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
@@ -48,6 +51,12 @@
         <item name="android:layout_margin">10dp</item>
         <item name="android:textColor">#007bbc</item>
 
+    </style>
+
+    <style name="myapp" parent="AppTheme" >
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorPrimary">@color/colorPrimary</item>
     </style>
 
 
