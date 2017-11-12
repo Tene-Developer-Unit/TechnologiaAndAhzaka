@@ -81,26 +81,27 @@
 
     </string-array>
 
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="whatsnew">מה חדש?</string>
     <string name="mail_address" translatable="false">technology.idf@gmail.com</string>
     <string name="phone_number" translatable="false">*9626</string>
     <string name="appinfo">appinfo</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
-<string name="hello_blank_fragment" translatable="false">Hello blank fragment</string>
-<string name="whatsneTitle" translatable="false"><u>מה חדש?</u></string>
-<string name="weekly_photo"></string>
+    <string name="hello_blank_fragment" translatable="false">Hello blank fragment</string>
+    <string name="whatsneTitle" translatable="false"><u>מה חדש?</u></string>
+    <string name="weekly_photo"></string>
     <string name="hachshara_info">מסלול המיועד לחילים המשרתים בתפקידים בחילות אטל.
 במסלול זה זכאים החיילים להשתלב בהכשרה ע"פ בחירתם עד 3 חודשים טרום שיחרורם מצהל.
 בתום ההכשרה החיילים המשוחררים יקבלו תעודה ואף יוכל לקבל המלצה על ידי מפקדיהם לתכנית
 בזכות הובלה, מקוריות, עשייה ונתינה מעבר לנדרש בתפקיד ובקורס.
 המסלול הינו בשיתוף עם הקרן להכוונת חילים משוחררים ומשרד הכלכלה.</string>
 
-    <string name="haasaka_info">המסלול מיועד לבוגרי יג ו- יד ולנהגים המתגייסים לשירות בחיל הטנ"א וחיל הלוגיסטיקה.
-במסלול זה זכאי החייל לצאת לחודש עבודה בחברה אזרחית על כל שנת שירות, כך צובר החיל ניסיון מקצועי
+    <string name="haasaka_info">המסלול מיועד לבוגרי יג ו- יד ולנהגים המתגייסים לשירות בחיל הטכנולוגיה והאחזקה וחיל הלוגיסטיקה. במסלול זה זכאי החייל לצאת לחודש עבודה בחברה אזרחית על כל שנת שירות, כך צובר החיל ניסיון מקצועי
 וקשרי עבודה לקראת היציאה לאזרחות.</string>
     <string name="hacsharot_title_info">מסלול הכשרות</string>
     <string name="haasaka_title_info">מסלול העסקה</string>
+    <string name="maavarim_info">התכנית מאפשרת לאנשי קבע המשתחררים מחיל הטכנולוגיה והאחזקה להשתלב במשק הישראלי.
+
+  מרכז מעברים מחבר בין אנשי קבע משתחררים או פורשים למשרות רלוונטיות באזרחות.
+    מרכז מעברים מופק בשיתוף וסיוע עמותת חיל הטכנולוגיה והאחזקה.</string>
 
 </resources>

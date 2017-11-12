@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.ezra.elon.technologiaandahzaka.R;
@@ -18,9 +19,11 @@ public class GridViewAdapter  extends BaseAdapter {
     Context context;
     String menu[];
 
+
     public GridViewAdapter(Context applicationContext, String[] main_menu_list) {
         context = applicationContext;
         menu = main_menu_list;
+
     }
 
 
@@ -42,10 +45,12 @@ public class GridViewAdapter  extends BaseAdapter {
     class ViewHolder
     {
         TextView textView;
+        ImageView imageView;
 
         ViewHolder(View v)
         {
             textView = (TextView) v.findViewById(R.id.menu_name);
+            imageView = (ImageView) v.findViewById(R.id.imageView_item_background);
         }
     }
 
@@ -61,17 +66,41 @@ public class GridViewAdapter  extends BaseAdapter {
             LayoutInflater inf = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             row = inf.inflate(R.layout.logo_item, viewGroup, false);
 
+
+
             viewHolder = new ViewHolder(row);
             row.setTag(viewHolder);
         } else {
             viewHolder = (ViewHolder) row.getTag();
         }
 
+        switch (i)
+        {
+            case 0:
+                viewHolder.imageView.setImageResource(R.drawable.background_item_mechenic);
+                break;
+            case 1 :
+                viewHolder.imageView.setImageResource(R.drawable.background_item_car);
+                break;
+            case 2:
+                viewHolder.imageView.setImageResource(R.drawable.background_item_electronic);
+                break;
+            case 3:
+                viewHolder.imageView.setImageResource(R.drawable.background_item_electricity);
+                break;
+            case 4:
+                viewHolder.imageView.setImageResource(R.drawable.background_item_toon);
+                break;
 
-        viewHolder.textView.setText(menu[i]);
+
+        }
+
+        //viewHolder.textView.setText(menu[i]);
 
     return row;
     }
+
+
 
 }
 

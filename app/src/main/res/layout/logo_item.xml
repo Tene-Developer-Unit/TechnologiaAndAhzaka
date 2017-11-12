@@ -1,21 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
-<FrameLayout
-    android:layout_width="match_parent"
-    android:layout_height="200dp"
-    android:background="@drawable/back">
+    android:layout_height="wrap_content"
+    android:layout_margin="5dp"
+    >
+<ImageView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:src="@drawable/background_item"
+    android:adjustViewBounds="true"
+    android:id="@+id/imageView_item_background" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:gravity="center"
-        android:shadowRadius="12"
-        android:background="#2fb3b3b3"
-        android:textSize="25sp"
-        android:text="hello"
-        android:id="@+id/menu_name"/>
-    </FrameLayout>
-</LinearLayout>
+
+</RelativeLayout>

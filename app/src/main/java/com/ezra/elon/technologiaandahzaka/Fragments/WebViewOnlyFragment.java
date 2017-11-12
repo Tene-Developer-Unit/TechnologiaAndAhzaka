@@ -6,7 +6,9 @@ import android.graphics.Color;
 import android.graphics.drawable.AnimationDrawable;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.Environment;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -60,9 +62,14 @@ public class WebViewOnlyFragment extends Fragment {
           rootview =inflater.inflate(R.layout.webview_news, container, false);
         webView = (WebView) rootview.findViewById(R.id.webview_fragment);
 
+        Log.i("path", Environment.getExternalStorageDirectory().getAbsolutePath().toString());
+
         webView.setBackgroundResource(R.drawable.animation_loading);
 
-
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
+            webView.getSettings().setAllowFileAccessFromFileURLs(true);
+            webView.getSettings().setAllowUniversalAccessFromFileURLs(true);
+        }
 
         loading_anim = (AnimationDrawable) webView.getBackground();
         loading_anim.start();

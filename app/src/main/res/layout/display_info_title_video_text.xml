@@ -10,34 +10,53 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     >
-    <TextView
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="48dp"
-        android:text="title"
+        android:layout_height="150dp"
+        android:elevation="9dp"
+        android:paddingBottom="2dp"
+        android:scaleType="center"
+        android:background="@drawable/info_maslulim_title_bg"
+        >
+
+
+    <TextView
+
+        android:layout_marginTop="12dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="טכנאי מערכות זמני"
+android:textColor="#fff"
+
+        android:layout_marginBottom="2dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
         style="@style/title_text_style"
         android:id="@+id/display_info_text_title"
         />
+    </RelativeLayout>
+
 
    <include
+
        layout="@layout/video_view"
 
        >
 
    </include>
-
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
         android:text="hello world"
+        android:layout_marginTop="12dp"
         android:padding="16dp"
         style="@style/title_text_style"
         android:textSize="20sp"
         android:id="@+id/display_info_text_info"
         />
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="65dp"></LinearLayout>
+
 
 </LinearLayout>
 

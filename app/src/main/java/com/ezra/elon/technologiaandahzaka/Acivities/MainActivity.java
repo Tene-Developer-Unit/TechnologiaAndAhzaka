@@ -10,6 +10,7 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.app.LoaderManager;
 import android.support.v4.content.Loader;
+import android.support.v7.app.ActionBar;
 import android.transition.Transition;
 import android.transition.TransitionManager;
 import android.util.Log;
@@ -47,6 +48,7 @@ import com.google.firebase.database.ValueEventListener;
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener , LoaderManager.LoaderCallbacks {
     FragmentTransaction ft;
+    String title;
     FragmentManager fragmentManager = getSupportFragmentManager();
 private boolean viewIsAtHome;
     String LOG_TAG = "Elon Test";
@@ -120,7 +122,14 @@ private boolean viewIsAtHome;
             drawer.closeDrawer(GravityCompat.START);
         }
 
+
+        if(getSupportFragmentManager().getBackStackEntryCount() < 2 )
+        {
+            finish();
+
+        }
         getSupportFragmentManager().popBackStack();
+        getSupportActionBar().setTitle(title);
     }
 
     @SuppressWarnings("StatementWithEmptyBody")
@@ -146,7 +155,7 @@ private boolean viewIsAtHome;
     {
         ViewGroup frame =(FrameLayout) findViewById(R.id.frame_layout);
         Fragment fragment = null;
-        String title = "";
+         title = "";
 
         switch (viewId)
         {
@@ -184,15 +193,18 @@ private boolean viewIsAtHome;
         }
         if(fragment != null)
         {
-
+            ActionBar bard = getSupportActionBar();
             ft = fragmentManager.beginTransaction();
             ft.replace(R.id.frame_layout,fragment);
+
             ft.addToBackStack(null);
             ft.commit();
         }
         if(getSupportActionBar() != null)
         {
             getSupportActionBar().setTitle(title);
+
+
         }
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {

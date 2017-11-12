@@ -21,6 +21,8 @@
         android:id="@+id/nav_view"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
+        app:itemTextColor="#fff"
+
         android:layout_gravity="start"
         android:background="@drawable/side_nav_bar"
         android:fitsSystemWindows="true"

@@ -1,32 +1,33 @@
 {
   "Mechanic":[
-    {"name":"מכונאי נמר","videoUrl":"http://2","textPath":"hov.html"},
-    {"name":"מכונאי צמ\"ה","videoUrl":"http://2","textPath":"rakia.html"},
-    {"name":"מכונאי פומ\"ה","videoUrl":"http://2","textPath":"yaad.html"},
-    {"name":"מרום","videoUrl":"http://2","textPath":"marom.html"},
-    {"name":"פרויקטנטים","videoUrl":"http://2","textPath":"proyektantim.html"},
-    {"name":"קק\"ץ ישיר","videoUrl":"http://2","textPath":"kakatzyashir.html"},
-    {"name":"יהל\"ם","videoUrl":"http://2","textPath":"yahalom.html"},
-    {"name":"שוה\"ם","videoUrl":"http://2","textPath":"shoham.html"},
-    {"name":"ברקת","videoUrl":"http://2","textPath":"bareket.html"},
-    {"name":"שוחרות","videoUrl":"http://1","textPath":"shoharut.html"},
-    {"name":"תעשייתי","videoUrl":"http://2","textPath":"tasyati.html"},
-    {"name":"טו\"ב (טכנאי ובגרות)","videoUrl":"http://2","textPath":"tov.html"},
-    {"name":"קק\"ץ לה\"ט","videoUrl":"http://2","textPath":"kakatzlahat.html"}
+    {"name":"טכנאי נשק וצריח מרכבה 4","videoUrl":null,"textPath":"rakia.html"},
+    {"name":"טכנאי נשק וצריח מרכבה 2,3","videoUrl":null,"textPath":"rakia.html"},
+    {"name":"טכנאי נשק וצריח תומ\"ת","videoUrl":null,"textPath":"yaad.html"},
+    {"name":"טכנאי מערכות הנעה מרכבה 4","videoUrl":null,"textPath":"marom.html"},
+    {"name":"טכנאי מערכות הנעה מרכבה 2,3","videoUrl":null,"textPath":"proyektantim.html"},
+    {"name":"טכנאי מערכות הנעה נמר","videoUrl":null,"textPath":"kakatzyashir.html"},
+    {"name":"טכנאי מערכות הנעה פומ\"ה","videoUrl":null,"textPath":"yahalom.html"},
+    {"name":"טכנאי מערכות הנעה וחשמל נגמ\"ש","videoUrl":null,"textPath":"shoham.html"},
+    {"name":"טכנאי מערכות הנעה צמ\"ה","videoUrl":null,"textPath":"bareket.html"},
+    {"name":"טכנאי מערכות הנעה תומ\"ת","videoUrl":null,"textPath":"shoharut.html"},
+    {"name":"טכנאי מערכות הנעה אכזרית","videoUrl":null,"textPath":"shoharut.html"},
+    {"name":"טכנאי תובה מנת\"ץ","videoUrl":null,"textPath":"shoharut.html"}
   ],
   "Electronic":[
-    {"name":"הו\"ב (הנדסאי ובגרות)","videoUrl":"http://2","textPath":"hov.html"},
-    {"name":"רקיע","videoUrl":"http://2","textPath":"rakia.html"},
-    {"name":"יעד","videoUrl":"http://2","textPath":"yaad.html"},
-    {"name":"מרום","videoUrl":"http://2","textPath":"marom.html"},
-    {"name":"פרויקטנטים","videoUrl":"http://2","textPath":"proyektantim.html"},
-    {"name":"קק\"ץ ישיר","videoUrl":"http://2","textPath":"kakatzyashir.html"},
-    {"name":"יהל\"ם","videoUrl":"http://2","textPath":"yahalom.html"},
-    {"name":"שוה\"ם","videoUrl":"http://2","textPath":"shoham.html"},
-    {"name":"ברקת","videoUrl":"http://2","textPath":"bareket.html"},
-    {"name":"שוחרות","videoUrl":"http://1","textPath":"shoharut.html"},
-    {"name":"תעשייתי","videoUrl":"http://2","textPath":"tasyati.html"},
-    {"name":"טו\"ב (טכנאי ובגרות)","videoUrl":"http://2","textPath":"tov.html"},
-    {"name":"קק\"ץ לה\"ט","videoUrl":"http://2","textPath":"kakatzlahat.html"}
+    {"name":"טכנאי בקרה ותצפית מרכבה 4","videoUrl":null,"textPath":"hov.html"},
+    {"name":"טכנאי בקרת אש מרכבה 2,3","videoUrl":null,"textPath":"rakia.html"},
+    {"name":"טכנאי מערכות (ב\"ז)","videoUrl":null,"textPath":"yaad.html"},
+    {"name":"טכנאי מערכות אלקטרוניות נמר","videoUrl":null,"textPath":"marom.html"},
+    {"name":"מערכות יעודית מנת\"ץ","videoUrl":null,"textPath":"proyektantim.html"},
+    {"name":"טכאי מערכות טכנולוגיות מתקדמות","videoUrl":null,"textPath":"kakatzyashir.html"},
+    {"name":"טכנאי בקרת אש תומ\"ת","videoUrl":null,"textPath":"yahalom.html"},
+    {"name":"טכנאי מוד\"ש","videoUrl":null,"textPath":"shoham.html"},
+    {"name":"אלקטרונאי טכנולוגיה ואחזקה","videoUrl":null,"textPath":"bareket.html"}
+  ],
+  "Cars":[
+    {"name":"טכנאי רכב","videoUrl":null,"textPath":"hov.html"},
+    {"name":"מאבחן מערכות רכב (מאמ\"ר)","videoUrl":null,"textPath":"rakia.html"}
+
   ]
+
 }

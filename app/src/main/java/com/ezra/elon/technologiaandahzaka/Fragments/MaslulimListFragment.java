@@ -104,6 +104,7 @@ public class MaslulimListFragment extends Fragment {
 
                 ft = getActivity().getSupportFragmentManager().beginTransaction();
 
+
                 ft.replace(R.id.frame_layout,fragment);
 
                 ft.addToBackStack(null);

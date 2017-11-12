@@ -10,12 +10,18 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.GridView;
+import android.widget.ListView;
 import android.widget.TextView;
 
 import com.ezra.elon.technologiaandahzaka.Adapter.Asistent;
 import com.ezra.elon.technologiaandahzaka.Adapter.GridViewAdapter;
 import com.ezra.elon.technologiaandahzaka.Adapter.HolderTIT;
 import com.ezra.elon.technologiaandahzaka.R;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -31,6 +37,7 @@ public class JobsFragments extends Fragment {
     ArrayList<HolderTIT> holderTITArrayList = new ArrayList<>();
     int position;
     FragmentTransaction ft;
+    DatabaseReference mDatabase;
     public JobsFragments() {
         // Required empty public constructor
     }
@@ -43,7 +50,11 @@ public class JobsFragments extends Fragment {
 
         rootview = inflater.inflate(R.layout.grid_view_list, container, false);
 
-        GridView gridView = (GridView) rootview.findViewById(R.id.maingridview);
+        ListView gridView = (ListView) rootview.findViewById(R.id.maingridview);
+
+        mDatabase = FirebaseDatabase.getInstance().getReference();//get the refference of the databse
+
+
 
         //todo: display the maslulim ArrayList on the listView
         String  ShibutzimName [] = getActivity().getApplicationContext().getResources().getStringArray(R.array.megamot);
@@ -78,6 +89,18 @@ public class JobsFragments extends Fragment {
         try {
             JSONObject root = new JSONObject(Asistent.loadJSONFromAsset((getActivity().getBaseContext()), "jsonFiles/shibutzim.json"));
             String megama = null;
+
+            mDatabase.child("Jobs").addListenerForSingleValueEvent(new ValueEventListener() {
+                @Override
+                public void onDataChange(DataSnapshot dataSnapshot) {
+                    Log.i("jobs",dataSnapshot.getValue(String.class));
+                }
+
+                @Override
+                public void onCancelled(DatabaseError databaseError) {
+
+                }
+            });
             switch (position) {
                 case 0:
                     megama = "Mechanic";

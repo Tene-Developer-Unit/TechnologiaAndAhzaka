@@ -9,7 +9,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.GridView;
+import android.widget.ListView;
 
+import com.ezra.elon.technologiaandahzaka.Acivities.MainActivity;
 import com.ezra.elon.technologiaandahzaka.Adapter.GridViewAdapter;
 import com.ezra.elon.technologiaandahzaka.Adapter.HolderTIT;
 import com.ezra.elon.technologiaandahzaka.R;
@@ -34,12 +36,13 @@ FragmentTransaction ft;
 
         rootview = inflater.inflate(R.layout.grid_view_list, container, false);
 
-        GridView gridView = (GridView) rootview.findViewById(R.id.maingridview);
+        ListView gridView = (ListView) rootview.findViewById(R.id.maingridview);
 
         //todo: display the maslulim ArrayList on the listView
-        String  ShibutzimName [] = getActivity().getApplicationContext().getResources().getStringArray(R.array.megamot);
+        final String  ShibutzimName [] = getActivity().getApplicationContext().getResources().getStringArray(R.array.megamot);
 
          gridView.setAdapter(new GridViewAdapter(getContext(),ShibutzimName));
+
 
 
         gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -51,6 +54,7 @@ FragmentTransaction ft;
                 ft = getActivity().getSupportFragmentManager().beginTransaction();
                 Bundle bundle = new Bundle();
                 bundle.putInt("position", i);
+                bundle.putString("title", ShibutzimName[i]);
                 fragment.setArguments(bundle);
                 ft.replace(R.id.frame_layout, fragment);
                 ft.addToBackStack(null);

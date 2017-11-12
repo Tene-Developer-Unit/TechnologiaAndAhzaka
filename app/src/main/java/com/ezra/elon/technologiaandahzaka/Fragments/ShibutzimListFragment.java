@@ -1,5 +1,6 @@
 package com.ezra.elon.technologiaandahzaka.Fragments;
 
+import android.app.Activity;
 import android.app.FragmentManager;
 import android.content.Intent;
 import android.support.annotation.Nullable;
@@ -7,6 +8,7 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,6 +16,7 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ListView;
 
+import com.ezra.elon.technologiaandahzaka.Acivities.MainActivity;
 import com.ezra.elon.technologiaandahzaka.Adapter.Asistent;
 import com.ezra.elon.technologiaandahzaka.Adapter.CostumeAddapter;
 import com.ezra.elon.technologiaandahzaka.Adapter.HolderTIT;
@@ -37,8 +40,15 @@ public class ShibutzimListFragment extends Fragment {
 
 ArrayList<HolderTIT> holderTITArrayList = new ArrayList<>();
     int position;
+    String title;
     FragmentTransaction ft;
+    String  maslulimName [];
 
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+
+    }
 
     @Nullable
     @Override
@@ -48,17 +58,19 @@ ArrayList<HolderTIT> holderTITArrayList = new ArrayList<>();
 
 
         Bundle bundle = new Bundle();
-         position  =   getArguments().getInt("position");
+        position  =   getArguments().getInt("position");
+        title = getArguments().getString("title");
 
-
+        holderTITArrayList.clear();
         JsontoArrayList();
         ListView listView = (ListView) rootview.findViewById(R.id.list_view_id);
 
 
-        String  maslulimName [] = MaslulimNameToStringArray();
-
+        maslulimName = MaslulimNameToStringArray();
 
         listView.setAdapter(new CostumeAddapter(getActivity().getBaseContext(),maslulimName));
+
+        ((MainActivity) getActivity()).getSupportActionBar().setTitle("קורסים ב" + title);//display new title
 
 
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -83,6 +95,8 @@ ArrayList<HolderTIT> holderTITArrayList = new ArrayList<>();
 
     }
 
+
+
     public void JsontoArrayList()
     {
 
@@ -93,6 +107,12 @@ ArrayList<HolderTIT> holderTITArrayList = new ArrayList<>();
             switch (position) {
                 case 0:
                     megama = "Mechanic";
+                    break;
+                case 1:
+                    megama = "Cars";
+                    break;
+                case 2:
+                    megama = "Electronic";
                     break;
                 default:
                     break;

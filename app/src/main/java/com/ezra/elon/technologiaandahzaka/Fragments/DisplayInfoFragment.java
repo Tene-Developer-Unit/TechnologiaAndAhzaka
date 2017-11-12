@@ -1,7 +1,11 @@
 package com.ezra.elon.technologiaandahzaka.Fragments;
 
 
+import android.content.res.Resources;
+import android.graphics.drawable.Drawable;
+import android.media.MediaPlayer;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -31,6 +35,7 @@ import java.util.ArrayList;
 public class DisplayInfoFragment extends Fragment {
 
     HolderTIT arrayList ;
+    ViewGroup.LayoutParams size;
 
 //    public static DisplayInfoFragment setArrayList_holder(HolderTIT arrayList_holder)
 //    {
@@ -55,6 +60,7 @@ public class DisplayInfoFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View rootview;
+        String videoUrl;
         rootview = inflater.inflate(R.layout.display_info_title_video_text, container, false);
         MediaController mediacontroller = new MediaController(getActivity());
         arrayList = getArguments().getParcelable("holderer");
@@ -70,7 +76,21 @@ public class DisplayInfoFragment extends Fragment {
         //JsontoArrayList();
         mediacontroller.show();
         videoView.setMediaController(mediacontroller);
-        videoView.setVideoURI(Uri.parse("android.resource://" + getActivity().getPackageName() + "/" + R.raw.lior));
+
+       videoUrl =  arrayList.getUrlVideo();
+
+
+
+
+
+        if(videoUrl !=  "null")
+        {
+            videoView.setVisibility(View.VISIBLE);
+            videoView.setVideoURI(Uri.parse("android.resource://"+ getActivity().getPackageName() + "/raw/" + videoUrl));
+
+        }
+
+
         videoView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
