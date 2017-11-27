@@ -32,6 +32,7 @@ import android.widget.ImageView;
 import com.ezra.elon.technologiaandahzaka.Adapter.GridViewAdapter;
 import com.ezra.elon.technologiaandahzaka.Fragments.AboutUs;
 import com.ezra.elon.technologiaandahzaka.Fragments.ComunicateFragment;
+import com.ezra.elon.technologiaandahzaka.Fragments.JobInfoFragment;
 import com.ezra.elon.technologiaandahzaka.Fragments.MainMenuFragment;
 import com.ezra.elon.technologiaandahzaka.Fragments.MalshabimFragment;
 import com.ezra.elon.technologiaandahzaka.Fragments.MaslulimListFragment;
@@ -128,6 +129,7 @@ private boolean viewIsAtHome;
             finish();
 
         }
+
         getSupportFragmentManager().popBackStack();
         getSupportActionBar().setTitle(title);
     }

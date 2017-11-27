@@ -117,7 +117,6 @@ public class MainMenuFragment extends Fragment {
                     public void onSuccess() {
 
                         weeklyImage.setBackgroundResource(android.R.color.transparent);
-
                         ViewGroup.LayoutParams size = weeklyImage.getLayoutParams();
                         size.height = ViewGroup.LayoutParams.MATCH_PARENT;
                         size.width = ViewGroup.LayoutParams.MATCH_PARENT;

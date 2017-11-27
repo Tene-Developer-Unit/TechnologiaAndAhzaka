@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/mikbg">
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/imageView3">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        android:layout_margin="10dp"
+        android:elevation="5dp"
+        android:background="#fff"
+        android:padding="0.01dp"
+        android:src="@drawable/jobtitle"
+        android:id="@+id/imageView4" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_margin="20dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/jobname_textView"
+        android:textSize="28sp"
+        android:fadingEdgeLength="10dp"
+        android:background="#50ffffff"
+        android:textStyle="bold"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"
+        android:layout_alignBottom="@+id/imageView4"
+        android:layout_alignLeft="@+id/imageView4"
+        android:layout_alignStart="@+id/imageView4"
+        android:text="helpp"
+        android:textColor="#0074da"
+        android:translationZ="50dp" />
+</RelativeLayout>
+
+    <TextView
+        style="@style/about_us_text_style"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignRight="@+id/imageView3"
+        android:layout_below="@+id/imageView3"
+        android:text="תיאור משרה"
+        android:layout_marginRight="10dp"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        android:id="@+id/textView5" />
+
+    <WebView
+        android:id="@+id/jobDicrip_textview"
+        style="@style/about_us_text_style"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginLeft="30dp"
+        android:layout_alignRight="@+id/imageView3"
+        android:layout_below="@+id/textView5"
+        android:text="aajkl;f;fldkjfj"
+        android:textStyle="" />
+
+    <android.support.design.widget.FloatingActionButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/imageView3"
+        android:layout_alignParentBottom="true"
+        android:layout_alignStart="@+id/imageView3"
+        android:src="@android:drawable/ic_dialog_email"
+        android:layout_marginRight="5dp"
+        android:layout_marginBottom="16dp"
+        android:id="@+id/sendRequest"
+        />
+
+</RelativeLayout>

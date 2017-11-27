@@ -83,7 +83,7 @@ public class WebViewOnlyFragment extends Fragment {
                 webView.getSettings().setPluginState(WebSettings.PluginState.ON);
                 webView.getSettings().setLoadWithOverviewMode(false);
                 webView.getSettings().setAllowFileAccess(true);
-                 webView.getSettings().setAllowFileAccess(true);
+
 
 
 
@@ -101,7 +101,7 @@ public class WebViewOnlyFragment extends Fragment {
                     size.width = ViewGroup.LayoutParams.MATCH_PARENT;
                     webView.setLayoutParams(size);
                     webView.setBackgroundColor(Color.TRANSPARENT);
-                    webView.setBackgroundResource(R.drawable.mikbg);
+                   // webView.setBackgroundResource(R.drawable.mikbg);
 
                 }
             }});

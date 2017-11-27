@@ -27,7 +27,19 @@
   "Cars":[
     {"name":"טכנאי רכב","videoUrl":null,"textPath":"hov.html"},
     {"name":"מאבחן מערכות רכב (מאמ\"ר)","videoUrl":null,"textPath":"rakia.html"}
-
+  ],
+  "Electricity":[
+    {"name":"טכנאי מערכות חשמל סימן 4","videoUrl":null,"textPath":"hov.html"},
+    {"name":"טכנאי מערכות הנעה וחשמל גנרטורים","videoUrl":null,"textPath":"rakia.html"},
+    {"name":"מאחזק חט\"כ (חטיבות כוח)","videoUrl":null,"textPath":"rakia.html"},
+    {"name":"טכנאי מערכות חשמל מרכבה 2,3","videoUrl":null,"textPath":"rakia.html"},
+    {"name":"טכנאי מערכות חשמל נמר","videoUrl":null,"textPath":"rakia.html"},
+    {"name":"טכנאי מערכות חשמל פומ\"ה (פורץ מכשולים הנדסי)","videoUrl":null,"textPath":"rakia.html"},
+    {"name":"טכנאי מערכות חשמל צמ\"ה (ציוד מכני הנדסי)","videoUrl":null,"textPath":"rakia.html"},
+    {"name":"טכנאי מערכות חשמל תומ\"ת (תותח מתנייע)","videoUrl":null,"textPath":"rakia.html"},
+    {"name":"טכנאי מערכות חשמל אכזרית","videoUrl":null,"textPath":"rakia.html"}
+  ],
+  "toon":[
+    {"name":"טכנאי תכנון, פיתוח וייצור (תפ\"י)","videoUrl":null,"textPath":"ToonTextFiles/toon.html"}
   ]
-
 }

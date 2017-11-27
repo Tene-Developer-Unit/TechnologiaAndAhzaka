@@ -51,7 +51,6 @@ public class MalshabimFragmentPageAddapter extends FragmentStatePagerAdapter {
           case 2:
               return new ShibutzimFragment();
       }
-
   return null;
 
     }

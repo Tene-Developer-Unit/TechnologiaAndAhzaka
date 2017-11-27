@@ -42,7 +42,7 @@ ArrayList<HolderTIT> holderTITArrayList = new ArrayList<>();
     int position;
     String title;
     FragmentTransaction ft;
-    String  maslulimName [];
+    String maslulimName [];
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -61,7 +61,7 @@ ArrayList<HolderTIT> holderTITArrayList = new ArrayList<>();
         position  =   getArguments().getInt("position");
         title = getArguments().getString("title");
 
-        holderTITArrayList.clear();
+        holderTITArrayList.clear();//clear the list of the json objects
         JsontoArrayList();
         ListView listView = (ListView) rootview.findViewById(R.id.list_view_id);
 
@@ -113,6 +113,12 @@ ArrayList<HolderTIT> holderTITArrayList = new ArrayList<>();
                     break;
                 case 2:
                     megama = "Electronic";
+                    break;
+                case 3:
+                    megama = "Electricity";
+                    break;
+                case 4:
+                    megama = "toon";
                     break;
                 default:
                     break;
