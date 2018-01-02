@@ -1,6 +1,7 @@
 package com.ezra.elon.technologiaandahzaka.Fragments;
 
 
+import android.content.Intent;
 import android.content.res.Resources;
 import android.graphics.BitmapFactory;
 import android.graphics.Color;
@@ -10,6 +11,7 @@ import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.Message;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.text.Html;
@@ -17,6 +19,8 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.webkit.WebChromeClient;
+import android.webkit.WebResourceRequest;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
@@ -37,6 +41,7 @@ import org.json.JSONObject;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.zip.Inflater;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -67,8 +72,7 @@ public class DisplayInfoFragment extends Fragment {
         MediaController mediacontroller = new MediaController(getActivity());
         ImageView titleFrame = (ImageView) rootview.findViewById(R.id.titleimageRelativelayout);
         arrayList = getArguments().getParcelable("holderer");
-
-         final VideoView videoView = (VideoView) rootview.findViewById(R.id.display_info_video_view);
+        final VideoView videoView = (VideoView) rootview.findViewById(R.id.display_info_video_view);
 
         TextView title = (TextView) rootview.findViewById(R.id.display_info_text_title);
         WebView infoText  = (WebView) rootview.findViewById(R.id.display_info_text_info);
@@ -77,11 +81,13 @@ public class DisplayInfoFragment extends Fragment {
             infoText.getSettings().setAllowFileAccessFromFileURLs(true);
             infoText.getSettings().setAllowUniversalAccessFromFileURLs(true);
         }
-        infoText.setWebViewClient(new WebViewClient());
+       // infoText.setWebChromeClient(new WebChromeClient());
         infoText.getSettings().setJavaScriptEnabled(true);
         infoText.getSettings().setPluginState(WebSettings.PluginState.ON);
-        infoText.getSettings().setLoadWithOverviewMode(false);
+        infoText.getSettings().setAppCacheEnabled(true);
+        infoText.getSettings().setLoadWithOverviewMode(true);
         infoText.getSettings().setAllowFileAccess(true);
+        infoText.getSettings().setSupportMultipleWindows(true);
         infoText.setBackgroundColor(Color.TRANSPARENT);
 
 
@@ -92,7 +98,6 @@ public class DisplayInfoFragment extends Fragment {
 
        videoUrl =  arrayList.getUrlVideo();
 
-         titleFrame.setImageDrawable(getResources().getDrawable(R.drawable.rect_red_background));
 
         if(videoUrl !=  "null")
         {
@@ -120,8 +125,11 @@ public class DisplayInfoFragment extends Fragment {
             //infoText.setText(Html.fromHtml(Asistent.loadJSONFromAsset(getActivity(), "textFiles/" + arrayList.getTextPath())));
             infoText.loadUrl("file:///android_asset/textFiles/" + arrayList.getTextPath());
 
-
         return rootview;
+
     }
+
+
+
 
 }

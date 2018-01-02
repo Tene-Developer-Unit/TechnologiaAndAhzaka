@@ -1,6 +1,7 @@
 package com.ezra.elon.technologiaandahzaka.Adapter;
 
 import android.content.Context;
+import android.net.ConnectivityManager;
 import android.util.Log;
 import android.widget.Toast;
 
@@ -44,8 +45,16 @@ public class Asistent {
        return json;
    }
 
+   /*
+   *
+   * function that will check the internet connection
+   *
+   * */
+    public static boolean isNetworkConnected(Context context) {
+        ConnectivityManager cm = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
 
-
+        return cm.getActiveNetworkInfo() != null;
+    }
 
 
 }

@@ -77,12 +77,14 @@ ArrayList<HolderTIT> holderTITArrayList = new ArrayList<>();
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 //ft = getActivity().getSupportFragmentManager().beginTransaction();
+
+                Log.i("Elon pay attantion","item cliked from shibutzimfragment");
                 Fragment fragment = new DisplayInfoFragment();//.setArrayList_holder(holderTITArrayList.get(i));
                 Bundle bundle = new Bundle();
-                bundle.putParcelable("holderer",holderTITArrayList.get(i));
+                bundle.putParcelable("holderer", holderTITArrayList.get(i));
                 fragment.setArguments(bundle);
                 ft = getActivity().getSupportFragmentManager().beginTransaction();
-                ft.replace(R.id.frame_layout,fragment);
+                ft.replace(R.id.frame_layout, fragment);
 
                 ft.addToBackStack(null);
 

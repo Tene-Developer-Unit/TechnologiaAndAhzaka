@@ -50,12 +50,11 @@ public class JobsFragments extends Fragment {
         // Required empty public constructor
     }
 
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View rootview;
-if(isNetworkConnected())//ther is an internet connection
+if(Asistent.isNetworkConnected(getContext()))//ther is an internet connection
 {
     rootview = inflater.inflate(R.layout.grid_view_list, container, false);
 
@@ -101,11 +100,7 @@ if(isNetworkConnected())//ther is an internet connection
 
     }
 
-    private boolean isNetworkConnected() {
-        ConnectivityManager cm = (ConnectivityManager) getContext().getSystemService(Context.CONNECTIVITY_SERVICE);
 
-        return cm.getActiveNetworkInfo() != null;
-    }
 
 
 }

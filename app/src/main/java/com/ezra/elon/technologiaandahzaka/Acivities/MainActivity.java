@@ -1,6 +1,8 @@
 package com.ezra.elon.technologiaandahzaka.Acivities;
 
+import android.content.Context;
 import android.content.Intent;
+import android.net.ConnectivityManager;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
@@ -28,7 +30,9 @@ import android.widget.BaseAdapter;
 import android.widget.FrameLayout;
 import android.widget.GridView;
 import android.widget.ImageView;
+import android.widget.Toast;
 
+import com.ezra.elon.technologiaandahzaka.Adapter.Asistent;
 import com.ezra.elon.technologiaandahzaka.Adapter.GridViewAdapter;
 import com.ezra.elon.technologiaandahzaka.Fragments.AboutUs;
 import com.ezra.elon.technologiaandahzaka.Fragments.ComunicateFragment;
@@ -73,6 +77,10 @@ private boolean viewIsAtHome;
 
        //MainMenuFragment mainMenuFragment = (MainMenuFragment) getSupportFragmentManager().findFragmentById(R.id.mainfragment);
 
+        if(!Asistent.isNetworkConnected(getBaseContext()))//ther is an internet connection
+        {        Toast.makeText(getApplicationContext(),"האינטרנט כבוי חלק מהפונקציות לא יפעלו כהלכה",Toast.LENGTH_LONG).show();
+
+        }
 
 
 
@@ -97,6 +105,7 @@ private boolean viewIsAtHome;
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.main, menu);
+
         return true;
     }
 
@@ -110,6 +119,12 @@ private boolean viewIsAtHome;
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
             return true;
+        }
+        if (id == R.id.action_contect) {
+
+                Toast.makeText(this,"צור קשר",Toast.LENGTH_SHORT).show();
+
+                return true;
         }
 
         return super.onOptionsItemSelected(item);
@@ -162,7 +177,7 @@ private boolean viewIsAtHome;
         switch (viewId)
         {
             case R.id.comunication:
-            fragment = new ComunicateFragment();
+                fragment = new ComunicateFragment();
                 title = getResources().getString(R.string.comunication);
                 break;
 
@@ -244,5 +259,10 @@ private boolean viewIsAtHome;
     public void onLoaderReset(Loader loader) {
         Log.i(LOG_TAG,"onLoaderReset() called...");
     }
+
+
 }
+
+
+
 

@@ -62,10 +62,10 @@ android:textSize="35sp"
     <WebView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_margin="10dp"
+        android:layout_margin="3dp"
         android:text="hello world"
         android:layout_marginTop="12dp"
-        android:padding="16dp"
+
 
         android:id="@+id/display_info_text_info"
         />

@@ -4,6 +4,7 @@ package com.ezra.elon.technologiaandahzaka.Fragments;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -49,16 +50,16 @@ FragmentTransaction ft;
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
 
-                //// TODO: 13/09/2017 transfer the call in to a Fragment
-                Fragment fragment = new ShibutzimListFragment();
-                ft = getActivity().getSupportFragmentManager().beginTransaction();
-                Bundle bundle = new Bundle();
-                bundle.putInt("position", i);
-                bundle.putString("title", ShibutzimName[i]);
-                fragment.setArguments(bundle);
-                ft.replace(R.id.frame_layout, fragment);
-                ft.addToBackStack(null);
-                ft.commit();
+
+                    Fragment fragment = new ShibutzimListFragment();
+                    ft = getActivity().getSupportFragmentManager().beginTransaction();
+                    Bundle bundle = new Bundle();
+                    bundle.putInt("position", i);
+                    bundle.putString("title", ShibutzimName[i]);
+                    fragment.setArguments(bundle);
+                    ft.replace(R.id.frame_layout, fragment);
+                    ft.addToBackStack(null);
+                    ft.commit();
 
                 //  intent.putExtra("shibutId",i);
             }

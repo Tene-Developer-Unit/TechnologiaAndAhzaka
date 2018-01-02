@@ -40,6 +40,9 @@
     {"name":"טכנאי מערכות חשמל אכזרית","videoUrl":null,"textPath":"rakia.html"}
   ],
   "toon":[
-    {"name":"טכנאי תכנון, פיתוח וייצור (תפ\"י)","videoUrl":null,"textPath":"ToonTextFiles/toon.html"}
+    {"name":"טכנאי תכנון, פיתוח וייצור (תפ\"י)","videoUrl":null,"textPath":"ToonTextFiles/toon.html"},
+    {"name":" ","videoUrl":null,"textPath":null},
+    {"name":" ","videoUrl":null,"textPath":null}
+
   ]
 }
