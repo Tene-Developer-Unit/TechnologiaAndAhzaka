@@ -178,7 +178,7 @@ public class JobByMegamaFragment extends Fragment {
 
                     ArrayList<AJob> value = dataSnapshot.getValue(t);
 
-                    if(value != null) {
+                    if(value != null ) {
                         for (int i = 0; i < value.size(); i++) {//value.get(i).getJobDesc()
                             /////TODO: add the objects to the lists
                             holderTITArrayList.add(new HolderTIT(value.get(i).getJob_name(),"null", value.get(i).getJobDesc().toString()));

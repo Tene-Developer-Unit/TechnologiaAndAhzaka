@@ -122,7 +122,18 @@ private boolean viewIsAtHome;
         }
         if (id == R.id.action_contect) {
 
-                Toast.makeText(this,"צור קשר",Toast.LENGTH_SHORT).show();
+            Intent intent = new Intent(Intent.ACTION_SEND);
+            intent.setType("*/*");
+            intent.putExtra(Intent.EXTRA_EMAIL, new String[]{"logitech"});
+
+            intent.putExtra(Intent.EXTRA_SUBJECT, "דואר משתמש מהאפליקציה");
+            intent.putExtra(Intent.EXTRA_TEXT,"תיאור התקלה:\n\n");
+
+            if (intent.resolveActivity(getPackageManager()) != null) {
+                startActivity(intent);
+            }
+
+            Toast.makeText(this,"צור קשר",Toast.LENGTH_SHORT).show();
 
                 return true;
         }

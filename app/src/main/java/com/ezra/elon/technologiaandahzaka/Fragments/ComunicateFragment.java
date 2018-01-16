@@ -9,6 +9,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 import com.ezra.elon.technologiaandahzaka.R;
@@ -22,14 +23,6 @@ import com.ezra.elon.technologiaandahzaka.R;
  * create an instance of this fragment.
  */
 public class ComunicateFragment extends Fragment {
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
-
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
 
     private OnFragmentInteractionListener mListener;
 
@@ -48,10 +41,7 @@ public class ComunicateFragment extends Fragment {
     // TODO: Rename and change types and number of parameters
     public static ComunicateFragment newInstance(String param1, String param2) {
         ComunicateFragment fragment = new ComunicateFragment();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
+
         return fragment;
     }
 
@@ -65,8 +55,8 @@ public class ComunicateFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View  rootview =inflater.inflate(R.layout.communication, container, false);
-        Button phonenumber = (Button) rootview.findViewById(R.id.phone_number_button);
-        Button email = (Button) rootview.findViewById(R.id.email_button);
+        ImageButton phonenumber = (ImageButton) rootview.findViewById(R.id.phone_number_button);
+        ImageButton email = (ImageButton) rootview.findViewById(R.id.email_button);
 
         phonenumber.setOnClickListener(new View.OnClickListener() {
             @Override

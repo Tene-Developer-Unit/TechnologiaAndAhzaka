@@ -2,7 +2,7 @@
   {"name":"הו\"ב (הנדסאי ובגרות)","videoUrl":"clas","textPath":"hov.html"},
   {"name":"רקיע","videoUrl":null,"textPath":"rakia.html"},
   {"name":"יעד","videoUrl":null,"textPath":"yaad.html"},
-  {"name":"מרום","videoUrl":null,"textPath":"marom.html"},
+  {"name":"מרום","videoUrl":"marom","textPath":"marom.html"},
   {"name":"פרויקטנטים","videoUrl":"proyekt","textPath":"proyektantim.html"},
   {"name":"קק\"ץ ישיר","videoUrl":"kkatzyashir","textPath":"kakatzyashir.html"},
   {"name":"יהל\"ם","videoUrl":null,"textPath":"yahalom.html"},

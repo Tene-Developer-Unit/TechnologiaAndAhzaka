@@ -33,7 +33,11 @@ import static android.R.attr.defaultHeight;
 import static android.R.attr.fragment;
 import static java.security.AccessController.getContext;
 
+/*
 
+this class display the list of the courses of specific profession
+
+ */
 public class ShibutzimListFragment extends Fragment {
 
 
@@ -77,18 +81,21 @@ ArrayList<HolderTIT> holderTITArrayList = new ArrayList<>();
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 //ft = getActivity().getSupportFragmentManager().beginTransaction();
+                if(!holderTITArrayList.get(i).getMaslulName().isEmpty())
+                {
+                    Log.i("Elon pay attantion","item cliked from shibutzimfragment");
+                    Fragment fragment = new DisplayInfoFragment();//.setArrayList_holder(holderTITArrayList.get(i));
+                    Bundle bundle = new Bundle();
+                    bundle.putParcelable("holderer", holderTITArrayList.get(i));
+                    fragment.setArguments(bundle);
+                    ft = getActivity().getSupportFragmentManager().beginTransaction();
+                    ft.replace(R.id.frame_layout, fragment);
 
-                Log.i("Elon pay attantion","item cliked from shibutzimfragment");
-                Fragment fragment = new DisplayInfoFragment();//.setArrayList_holder(holderTITArrayList.get(i));
-                Bundle bundle = new Bundle();
-                bundle.putParcelable("holderer", holderTITArrayList.get(i));
-                fragment.setArguments(bundle);
-                ft = getActivity().getSupportFragmentManager().beginTransaction();
-                ft.replace(R.id.frame_layout, fragment);
+                    ft.addToBackStack(null);
 
-                ft.addToBackStack(null);
+                    ft.commit();
+                }
 
-                ft.commit();
 
             }
 

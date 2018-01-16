@@ -16,7 +16,35 @@
         android:orientation="vertical"
         >
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#fff"
+            android:orientation="vertical"
 
+            android:elevation="2dp"
+            android:layout_margin="10dp"
+            >
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:text="האפליקציה בתהליכי בנייה עמכם הסליחה"
+                android:textColor="@color/mainTextColor"
+                android:textSize="25sp"
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:text="אם מצאתם באג אשמח אם תדווחו בכפתור שלוש הנקודות למעלה"
+                android:textColor="@color/mainTextColor"
+                android:textSize="20sp"
+                />
+
+        </LinearLayout>
 
 <LinearLayout
     android:layout_width="match_parent"
@@ -57,6 +85,32 @@ android:background="@drawable/rect_red_background"
         />
 
 </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#fff"
+            android:elevation="2dp"
+            android:orientation="vertical"
+            android:layout_margin="10dp"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="קורסים טכנולוגים"
+                android:layout_margin="10dp"
+                android:textColor="@color/mainTextColor"
+
+                android:textSize="25sp"/>
+            <android.support.v4.view.ViewPager
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                />
+
+
+
+        </LinearLayout>
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

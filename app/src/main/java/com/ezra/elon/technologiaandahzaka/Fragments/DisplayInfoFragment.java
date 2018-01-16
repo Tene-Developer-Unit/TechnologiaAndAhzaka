@@ -1,8 +1,10 @@
 package com.ezra.elon.technologiaandahzaka.Fragments;
 
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.content.res.Resources;
+import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.graphics.drawable.BitmapDrawable;
@@ -26,10 +28,13 @@ import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.ImageView;
 import android.widget.MediaController;
+import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 import android.widget.VideoView;
 
+import com.ezra.elon.technologiaandahzaka.Acivities.MainActivity;
 import com.ezra.elon.technologiaandahzaka.Adapter.Asistent;
 import com.ezra.elon.technologiaandahzaka.Adapter.HolderTIT;
 import com.ezra.elon.technologiaandahzaka.R;
@@ -51,7 +56,7 @@ public class DisplayInfoFragment extends Fragment {
     HolderTIT arrayList ;
     ViewGroup.LayoutParams size;
 
-
+    ProgressDialog dialog;
 
     public DisplayInfoFragment() {
         // Required empty public constructor
@@ -68,6 +73,7 @@ public class DisplayInfoFragment extends Fragment {
                              Bundle savedInstanceState) {
         View rootview;
         String videoUrl;
+        final ProgressBar progressBar = null;
         rootview = inflater.inflate(R.layout.display_info_title_video_text, container, false);
         MediaController mediacontroller = new MediaController(getActivity());
         ImageView titleFrame = (ImageView) rootview.findViewById(R.id.titleimageRelativelayout);
@@ -89,6 +95,27 @@ public class DisplayInfoFragment extends Fragment {
         infoText.getSettings().setAllowFileAccess(true);
         infoText.getSettings().setSupportMultipleWindows(true);
         infoText.setBackgroundColor(Color.TRANSPARENT);
+
+        infoText.setWebChromeClient(new WebChromeClient(){
+
+
+            public void onPageStarted(WebView view, String url, Bitmap favicon) {
+                dialog = ProgressDialog.show(getContext(), null,
+                        "Please Wait...Page is Loading...");
+                dialog.setCancelable(true);
+
+            }
+
+            public void onPageFinished(WebView view, String url) {
+                dialog.dismiss();
+
+            }
+
+
+        });
+
+
+
 
 
         //// TODO: 04/09/2017 get the name and display it on the screen, ofcourse use the position
