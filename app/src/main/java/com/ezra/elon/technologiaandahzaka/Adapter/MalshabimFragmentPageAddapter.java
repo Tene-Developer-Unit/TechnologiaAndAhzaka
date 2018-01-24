@@ -19,7 +19,9 @@ import com.ezra.elon.technologiaandahzaka.R;
 import static android.R.attr.fragment;
 
 /**
- * Created by elon on 11/09/2017.
+ *
+ *
+ *
  */
 
 public class MalshabimFragmentPageAddapter extends FragmentStatePagerAdapter {

@@ -41,8 +41,9 @@ FragmentTransaction ft;
 
         //todo: display the maslulim ArrayList on the listView
         final String  ShibutzimName [] = getActivity().getApplicationContext().getResources().getStringArray(R.array.megamot);
+        GridViewAdapter gridViewAdapter = new GridViewAdapter(getContext(),ShibutzimName);
 
-         gridView.setAdapter(new GridViewAdapter(getContext(),ShibutzimName));
+         gridView.setAdapter(gridViewAdapter);
 
 
 

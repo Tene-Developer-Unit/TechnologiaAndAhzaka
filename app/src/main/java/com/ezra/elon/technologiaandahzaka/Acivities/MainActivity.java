@@ -1,7 +1,9 @@
 package com.ezra.elon.technologiaandahzaka.Acivities;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
 import android.net.ConnectivityManager;
 import android.net.Uri;
 import android.os.Build;
@@ -26,6 +28,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
 import android.widget.BaseAdapter;
 import android.widget.FrameLayout;
 import android.widget.GridView;
@@ -34,6 +37,7 @@ import android.widget.Toast;
 
 import com.ezra.elon.technologiaandahzaka.Adapter.Asistent;
 import com.ezra.elon.technologiaandahzaka.Adapter.GridViewAdapter;
+import com.ezra.elon.technologiaandahzaka.Adapter.MainSrcnCourseGridViewAdapter;
 import com.ezra.elon.technologiaandahzaka.Fragments.AboutUs;
 import com.ezra.elon.technologiaandahzaka.Fragments.ComunicateFragment;
 import com.ezra.elon.technologiaandahzaka.Fragments.JobInfoFragment;
@@ -50,10 +54,13 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.util.ArrayList;
+
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener , LoaderManager.LoaderCallbacks {
     FragmentTransaction ft;
     String title;
+
     FragmentManager fragmentManager = getSupportFragmentManager();
 private boolean viewIsAtHome;
     String LOG_TAG = "Elon Test";
@@ -82,6 +89,11 @@ private boolean viewIsAtHome;
 
         }
 
+        /////start the course menu//////
+
+
+
+        //TODO: get courses random, and display
 
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -123,9 +135,8 @@ private boolean viewIsAtHome;
         if (id == R.id.action_contect) {
 
             Intent intent = new Intent(Intent.ACTION_SEND);
-            intent.setType("*/*");
-            intent.putExtra(Intent.EXTRA_EMAIL, new String[]{"logitech"});
-
+            intent.setType("*/email");
+            intent.putExtra(Intent.EXTRA_EMAIL, new String[]{"logitechidfdev@gmail.com"});
             intent.putExtra(Intent.EXTRA_SUBJECT, "דואר משתמש מהאפליקציה");
             intent.putExtra(Intent.EXTRA_TEXT,"תיאור התקלה:\n\n");
 
@@ -142,6 +153,7 @@ private boolean viewIsAtHome;
     }
 
 
+    @SuppressLint("ResourceAsColor")
     @Override
     public void onBackPressed() {
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -156,8 +168,13 @@ private boolean viewIsAtHome;
 
         }
 
+
+
+
         getSupportFragmentManager().popBackStack();
         getSupportActionBar().setTitle(title);
+
+
     }
 
     @SuppressWarnings("StatementWithEmptyBody")
@@ -179,6 +196,7 @@ private boolean viewIsAtHome;
 
 
 
+    @SuppressLint("ResourceAsColor")
     public void displayView(int viewId)
     {
         ViewGroup frame =(FrameLayout) findViewById(R.id.frame_layout);
@@ -219,6 +237,11 @@ private boolean viewIsAtHome;
                 break;
 
         }
+        getSupportActionBar().setBackgroundDrawable(getResources().getDrawable(R.drawable.rect_red_background));
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            getWindow().setStatusBarColor(R.color.colorPrimaryDark);
+        }
+
         if(fragment != null)
         {
             ActionBar bard = getSupportActionBar();

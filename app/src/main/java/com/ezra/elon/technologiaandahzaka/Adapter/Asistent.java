@@ -15,6 +15,7 @@ import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
+import java.util.List;
 
 public class Asistent {
 
@@ -54,6 +55,55 @@ public class Asistent {
         ConnectivityManager cm = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
 
         return cm.getActiveNetworkInfo() != null;
+    }
+
+    public List<itemHolder> RandomCoures(Context context)
+    {
+        ArrayList<itemHolder> temp = new ArrayList<>();
+        ArrayList<itemHolder> courseListArray = new ArrayList<>();
+        String megama = "";
+        JSONObject root = null;
+
+            try {
+                root = new JSONObject(Asistent.loadJSONFromAsset((context), "jsonFiles/shibutzim.json"));
+                JSONArray maslulim = root.getJSONArray(megama);
+                String name;
+                String url;
+
+                for (int i = 0; i < maslulim.length(); i++) {
+                    JSONObject maslul = maslulim.getJSONObject(i);//get single object
+                    courseListArray.add(new itemHolder(maslul.optString("videoUrl"),maslul.getString("name")));
+                    Log.i("JsonToArryList", maslul.getString("name"));
+                }
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+
+
+
+
+
+
+        return temp;
+    }
+
+  public static class itemHolder
+    {
+        String title;
+        String image;
+        public itemHolder(String image, String title)
+        {
+            this.image = image;
+            this.title = title;
+        }
+
+        public String getImage() {
+            return image;
+        }
+
+        public String getTitle() {
+            return title;
+        }
     }
 
 

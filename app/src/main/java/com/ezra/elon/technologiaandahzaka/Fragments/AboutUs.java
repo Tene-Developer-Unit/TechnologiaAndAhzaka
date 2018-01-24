@@ -1,7 +1,10 @@
 package com.ezra.elon.technologiaandahzaka.Fragments;
 
 import android.content.Context;
+import android.graphics.Color;
+import android.graphics.drawable.Drawable;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.text.Html;
@@ -10,6 +13,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.ezra.elon.technologiaandahzaka.Acivities.MainActivity;
 import com.ezra.elon.technologiaandahzaka.R;
 
 /**
@@ -65,6 +69,13 @@ public class AboutUs extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
        View rootview =inflater.inflate(R.layout.about_us_activity, container, false);
+
+        ((MainActivity) getActivity()).getSupportActionBar().setBackgroundDrawable(getResources().getDrawable(R.drawable.about_us_toolbar));
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            ((MainActivity) getActivity()).getWindow().setStatusBarColor(Color.parseColor("#36abf4"));
+        }
+
+
         String list [] = getResources().getStringArray(R.array.about_us_discription_text_vision_path);
 
 

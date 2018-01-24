@@ -42,16 +42,22 @@ public class GridViewAdapter  extends BaseAdapter {
         return i;
     }
 
-    class ViewHolder
+    public class ViewHolder
     {
         TextView textView;
         ImageView imageView;
 
         ViewHolder(View v)
         {
-            textView = (TextView) v.findViewById(R.id.menu_name);
-            imageView = (ImageView) v.findViewById(R.id.imageView_item_background);
+            textView = (TextView) v.findViewById(R.id.coures_view_item_main_screen_title);
+            imageView = (ImageView) v.findViewById(R.id.logo_item_imageview);
         }
+
+        void invisibleTitle()
+        {
+            textView.setVisibility(View.INVISIBLE);
+        }
+
     }
 
     @Override

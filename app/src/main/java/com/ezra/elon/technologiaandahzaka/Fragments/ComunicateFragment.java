@@ -38,7 +38,6 @@ public class ComunicateFragment extends Fragment {
      * @param param2 Parameter 2.
      * @return A new instance of fragment ComunicateFragment.
      */
-    // TODO: Rename and change types and number of parameters
     public static ComunicateFragment newInstance(String param1, String param2) {
         ComunicateFragment fragment = new ComunicateFragment();
 
@@ -87,7 +86,6 @@ public class ComunicateFragment extends Fragment {
         return rootview;
     }
 
-    // TODO: Rename method, update argument and hook method into UI event
     public void onButtonPressed(Uri uri) {
         if (mListener != null) {
             mListener.onFragmentInteraction(uri);
@@ -112,7 +110,6 @@ public class ComunicateFragment extends Fragment {
      * >Communicating with Other Fragments</a> for more information.
      */
     public interface OnFragmentInteractionListener {
-        // TODO: Update argument type and name
         void onFragmentInteraction(Uri uri);
     }
 }

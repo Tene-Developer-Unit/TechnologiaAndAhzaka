@@ -11,17 +11,21 @@
         android:id="@+id/coures_view_item_imageView"
         android:src="@drawable/sufa"
         tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="0dp" />
+        tools:layout_editor_absoluteY="0dp"
+        tools:ignore="MissingConstraints" />
 
     <TextView
-        android:id="@+id/textView4"
+        android:id="@+id/coures_view_item_main_screen_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="TextView"
+        android:text="מכונאי צמה"
         android:textAlignment="center"
         android:textColor="#fff"
-        tools:layout_editor_absoluteX="163dp"
-        tools:layout_editor_absoluteY="119dp" />
+        android:textSize="30sp"
+        android:visibility="visible"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="118dp"
+        tools:layout_editor_absoluteY="108dp" />
 
 
 </android.support.constraint.ConstraintLayout>

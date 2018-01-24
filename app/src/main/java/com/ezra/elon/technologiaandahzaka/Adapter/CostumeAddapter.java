@@ -30,13 +30,15 @@ public class CostumeAddapter extends ArrayAdapter<String> {
     @NonNull
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        LayoutInflater inflater = (LayoutInflater) context
-                .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+
         View rowView = inflater.inflate(R.layout.list_view_item, parent, false);
 
         TextView textView = (TextView) rowView.findViewById(R.id.list_view_item_text_view);
+
         textView.setText(objects[position]);
 
         return rowView;
+
     }
 }

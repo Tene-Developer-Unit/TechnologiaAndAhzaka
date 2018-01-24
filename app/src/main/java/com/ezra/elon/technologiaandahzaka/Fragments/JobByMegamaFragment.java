@@ -176,9 +176,21 @@ public class JobByMegamaFragment extends Fragment {
                     // whenever data at this location is updated.
                     GenericTypeIndicator<ArrayList<AJob>> t = new GenericTypeIndicator<ArrayList<AJob>>(){};
 
-                    ArrayList<AJob> value = dataSnapshot.getValue(t);
+                    if(dataSnapshot.getChildrenCount() > 0 )
+                    {
 
-                    if(value != null ) {
+                 //   ArrayList<AJob> value = dataSnapshot.getValue(t);
+
+                        ArrayList<AJob>value = new ArrayList<>();///list to contain the jobs
+
+                        for (DataSnapshot child: dataSnapshot.getChildren())//initialize the jobs
+                        {
+                            value.add(child.getValue(AJob.class));
+                        }
+
+
+                    if(value != null || value.size()> 0 )
+                    {
                         for (int i = 0; i < value.size(); i++) {//value.get(i).getJobDesc()
                             /////TODO: add the objects to the lists
                             holderTITArrayList.add(new HolderTIT(value.get(i).getJob_name(),"null", value.get(i).getJobDesc().toString()));
@@ -188,8 +200,7 @@ public class JobByMegamaFragment extends Fragment {
                         }
 
                         display();
-
-
+                    }
 
                     }
                     else
@@ -198,12 +209,12 @@ public class JobByMegamaFragment extends Fragment {
                         ad.setCancelable(true);
                         ad.setTitle("לא נמצאו משרות");
                         ad.setMessage("לצערנו לא נמצאו משרות במגמה המבוקשת.");
-                      ad.setButton("בסדר", new DialogInterface.OnClickListener() {
-                          @Override
-                          public void onClick(DialogInterface dialogInterface, int i) {
-                              getActivity().getSupportFragmentManager().popBackStack();
-                          }
-                      });
+                        ad.setButton("בסדר", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialogInterface, int i) {
+                                getActivity().getSupportFragmentManager().popBackStack();
+                            }
+                        });
 
                         ad.show();
 
