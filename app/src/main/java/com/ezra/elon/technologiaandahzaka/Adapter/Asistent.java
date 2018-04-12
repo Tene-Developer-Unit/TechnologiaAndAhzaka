@@ -12,15 +12,20 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 import java.util.List;
 
 public class Asistent {
 
     //"jsonFiles/maslulim.json"
-   public static String loadJSONFromAsset(Context context, String path) {
+   public static String loadJSONFromAsset(Context context, String path)
+   {
        String json = null;
      //  boolean fileExists =  new File(path).isFile();
 
@@ -46,12 +51,57 @@ public class Asistent {
        return json;
    }
 
+
+   public <T> T loadObjectFile(Context context, String fileName)
+   {
+
+       T simpleClass = null;
+       try {
+           FileInputStream fis = context.openFileInput(fileName);
+           ObjectInputStream is = new ObjectInputStream(fis);
+            simpleClass = (T) is.readObject();
+           is.close();
+           fis.close();
+       } catch (IOException e) {
+           e.printStackTrace();
+       } catch (ClassNotFoundException e) {
+           e.printStackTrace();
+       }
+
+
+       return  simpleClass;
+   }
+
+
+    public <T> T WriteToFile(Context context, String fileName, T object)
+    {
+
+
+
+        try {
+            FileOutputStream fos = context.openFileOutput(fileName, Context.MODE_APPEND);
+            ObjectOutputStream os = new ObjectOutputStream(fos);
+            os.writeObject(object);
+            os.close();
+            fos.close();
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return null;
+
+    }
+
+
+
+
    /*
    *
    * function that will check the internet connection
    *
    * */
-    public static boolean isNetworkConnected(Context context) {
+    public static boolean isNetworkConnected(Context context)
+    {
         ConnectivityManager cm = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
 
         return cm.getActiveNetworkInfo() != null;
@@ -78,16 +128,10 @@ public class Asistent {
             } catch (JSONException e) {
                 e.printStackTrace();
             }
-
-
-
-
-
-
         return temp;
     }
 
-  public static class itemHolder
+  public static class itemHolder///holde the text and the title of the main screen course menu
     {
         String title;
         String image;

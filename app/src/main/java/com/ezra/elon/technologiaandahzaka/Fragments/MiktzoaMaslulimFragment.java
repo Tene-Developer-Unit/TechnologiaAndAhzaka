@@ -41,11 +41,6 @@ FragmentTransaction ft;
                              Bundle savedInstanceState) {
         View rootview;
         rootview = inflater.inflate(R.layout.miktoa_maslulim, container, false);
-
-
-
-
-
         return  rootview;
 
 

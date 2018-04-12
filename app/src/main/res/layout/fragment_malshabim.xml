@@ -8,17 +8,16 @@
     tools:context="com.ezra.elon.technologiaandahzaka.Fragments.MalshabimFragment">
 
     <android.support.design.widget.TabLayout
-        android:layout_width="match_parent"
-        android:layout_gravity="center_horizontal"
-        android:layout_height="wrap_content"
         android:id="@+id/tab_layout_malshabim_fragment"
-        android:layoutDirection="ltr"
-        android:paddingBottom="1dp"
-        app:tabTextColor="@color/colorPrimary"
-        app:tabSelectedTextColor="@color/colorAccent"
-        android:background="#fff"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:background="#323234"
         android:elevation="3dp"
-       />
+        android:layoutDirection="rtl"
+        android:paddingBottom="1dp"
+        app:tabSelectedTextColor="#fff"
+        app:tabTextColor="#fff" />
     <android.support.v4.view.ViewPager
 
         android:layout_width="match_parent"

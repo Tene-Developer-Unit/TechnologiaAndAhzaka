@@ -1,6 +1,8 @@
 package com.ezra.elon.technologiaandahzaka.Fragments;
 
 
+import android.graphics.Color;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
@@ -10,6 +12,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.ezra.elon.technologiaandahzaka.Acivities.MainActivity;
 import com.ezra.elon.technologiaandahzaka.Adapter.MalshabimFragmentPageAddapter;
 import com.ezra.elon.technologiaandahzaka.Adapter.MiktzoaLaFragmentPageAddapter;
 import com.ezra.elon.technologiaandahzaka.R;

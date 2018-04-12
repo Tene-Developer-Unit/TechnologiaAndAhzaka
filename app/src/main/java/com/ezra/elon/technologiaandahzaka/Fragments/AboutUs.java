@@ -70,10 +70,10 @@ public class AboutUs extends Fragment {
                              Bundle savedInstanceState) {
        View rootview =inflater.inflate(R.layout.about_us_activity, container, false);
 
-        ((MainActivity) getActivity()).getSupportActionBar().setBackgroundDrawable(getResources().getDrawable(R.drawable.about_us_toolbar));
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            ((MainActivity) getActivity()).getWindow().setStatusBarColor(Color.parseColor("#36abf4"));
-        }
+//        ((MainActivity) getActivity()).getSupportActionBar().setBackgroundDrawable(getResources().getDrawable(R.drawable.about_us_toolbar));
+//        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+//            ((MainActivity) getActivity()).getWindow().setStatusBarColor(Color.parseColor("#36abf4"));
+//        }
 
 
         String list [] = getResources().getStringArray(R.array.about_us_discription_text_vision_path);

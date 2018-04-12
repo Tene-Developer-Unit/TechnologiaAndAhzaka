@@ -1,5 +1,6 @@
 {"maslulim":[
-  {"name":"הו\"ב (הנדסאי ובגרות)","videoUrl":"clas","textPath":"hov.html"},
+
+  {"name":"יעל","videoUrl":"clas","textPath":"null"},
   {"name":"רקיע","videoUrl":null,"textPath":"rakia.html"},
   {"name":"יעד","videoUrl":null,"textPath":"yaad.html"},
   {"name":"מרום","videoUrl":"marom","textPath":"marom.html"},
@@ -12,6 +13,5 @@
   {"name":"תעשייתי","videoUrl":null,"textPath":"tasyati.html"},
   {"name":"טו\"ב (טכנאי ובגרות)","videoUrl":null,"textPath":"tov.html"},
   {"name":"קק\"ץ לה\"ט","videoUrl":null,"textPath":"kakatzlahat.html"}
-
 
 ]}

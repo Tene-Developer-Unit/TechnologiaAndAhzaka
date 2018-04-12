@@ -8,18 +8,23 @@ import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
+import android.support.v4.view.ViewPager;
+import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.WindowManager;
 import android.webkit.WebView;
 import android.widget.AdapterView;
 import android.widget.GridView;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.ezra.elon.technologiaandahzaka.Acivities.MainActivity;
 import com.ezra.elon.technologiaandahzaka.Adapter.Asistent;
+import com.ezra.elon.technologiaandahzaka.Adapter.CarouselPagerAdapter;
 import com.ezra.elon.technologiaandahzaka.Adapter.GridViewAdapter;
 import com.ezra.elon.technologiaandahzaka.Adapter.HolderTIT;
 import com.ezra.elon.technologiaandahzaka.R;
@@ -44,6 +49,10 @@ public class JobsFragments extends Fragment {
 
     ArrayList<HolderTIT> holderTITArrayList = new ArrayList<>();
     int position;
+    public final static int LOOPS = 1000;
+    public CarouselPagerAdapter adapter;
+    public static ViewPager pager;
+    int[] image = new int[] {R.drawable.bareket, R.drawable.clas,R.drawable.kkatzyashir} ;
     FragmentTransaction ft;
     DatabaseReference mDatabase;
     public JobsFragments() {
@@ -54,39 +63,52 @@ public class JobsFragments extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View rootview;
-if(Asistent.isNetworkConnected(getContext()))//ther is an internet connection
-{
-    rootview = inflater.inflate(R.layout.grid_view_list, container, false);
+        Toast.makeText(getActivity(), "JobsFragment",Toast.LENGTH_SHORT).show();
+        if(Asistent.isNetworkConnected(getContext()))//ther is an internet connection
+        {
+            rootview = inflater.inflate(R.layout.simple_pageviewer, container, false);
 
-    ListView gridView = (ListView) rootview.findViewById(R.id.maingridview);
+            mDatabase = FirebaseDatabase.getInstance().getReference();//get the refference of the databse
 
-    mDatabase = FirebaseDatabase.getInstance().getReference();//get the refference of the databse
+            pager = (ViewPager) rootview.findViewById(R.id.myviewpager);
+            DisplayMetrics metrics = new DisplayMetrics();
+          getActivity().getWindowManager().getDefaultDisplay().getMetrics(metrics);
+            int pageMargin = ((metrics.widthPixels / 4) * 2);
+            pager.setPageMargin(-pageMargin);
+            //todo: display the maslulim ArrayList on the listView
+            String ShibutzimName[] = getActivity().getApplicationContext().getResources().getStringArray(R.array.megamot);// the list of the megamot
 
+            adapter = new CarouselPagerAdapter(getActivity(), getActivity().getSupportFragmentManager(), image);// include cutome image and text
+            pager.setAdapter(adapter);
+            adapter.notifyDataSetChanged();
 
-    //todo: display the maslulim ArrayList on the listView
-    String ShibutzimName[] = getActivity().getApplicationContext().getResources().getStringArray(R.array.megamot);// the list of the megamot
+            pager.addOnPageChangeListener(adapter);
 
-    gridView.setAdapter(new GridViewAdapter(getContext(), ShibutzimName));
+            // Set current item to the middle page so we can fling to both
+            // directions left and right
+            pager.setCurrentItem(image.length);
+            pager.setOffscreenPageLimit(2);
 
-
-    gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-        @Override
-        public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-
-
-            Fragment fragment = new JobByMegamaFragment();
-            ft = getActivity().getSupportFragmentManager().beginTransaction();
-            Bundle bundle = new Bundle();
-            bundle.putInt("position", i);// the choosen megama
-            fragment.setArguments(bundle);
-            ft.replace(R.id.frame_layout, fragment);
-            ft.addToBackStack(null);
-            ft.commit();
+            ////////////////////////// ON CLICK MEGAMAT LIMUD ///////////////
+//
+//            Fragment fragment = new JobByMegamaFragment();
+         // ft = getActivity().getSupportFragmentManager().beginTransaction();
+//            Bundle bundle = new Bundle();
+//            bundle.putInt("position", i);// the choosen megama
+//            fragment.setArguments(bundle);
+//            ft.replace(R.id.frame_layout, fragment);
+//            ft.addToBackStack(null);
+//            ft.commit();
 
             //  intent.putExtra("shibutId",i);
+
+            ////////////////////////// ON CLICK MEGAMAT LIMUD ///////////////
+
+
+
+
+
         }
-    });
-}
 
     else
         {

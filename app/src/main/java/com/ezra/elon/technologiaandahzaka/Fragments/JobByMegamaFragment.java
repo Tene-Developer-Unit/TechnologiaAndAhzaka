@@ -4,10 +4,13 @@ package com.ezra.elon.technologiaandahzaka.Fragments;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.app.DialogFragment;
+import android.app.FragmentManager;
 import android.app.ProgressDialog;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
@@ -20,9 +23,11 @@ import android.view.WindowManager;
 import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.ezra.elon.technologiaandahzaka.Acivities.MainActivity;
+import com.ezra.elon.technologiaandahzaka.Adapter.Asistent;
 import com.ezra.elon.technologiaandahzaka.Adapter.CostumeAddapter;
 import com.ezra.elon.technologiaandahzaka.Adapter.HolderTIT;
 import com.ezra.elon.technologiaandahzaka.R;
@@ -34,6 +39,7 @@ import com.google.firebase.database.GenericTypeIndicator;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
+import java.util.Collection;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -45,6 +51,7 @@ import java.util.ArrayList;
 
     String jobName;
     String jobDesc;
+    public Asistent asistent = new Asistent();
 
     private  AJob()
     {
@@ -68,11 +75,26 @@ import java.util.ArrayList;
 
 public class JobByMegamaFragment extends Fragment {
 
-    int position;
+    public static int position;
     FirebaseDatabase database = FirebaseDatabase.getInstance();
-    ArrayList<HolderTIT> holderTITArrayList = new ArrayList<>();
+    public static ArrayList<HolderTIT> holderTITArrayList = new ArrayList<>();
     String Jobs_Name[];
     FragmentTransaction ft;
+
+    /**
+     *              ABOUT THE flag_were_in_on_creat
+     *            ------------------------------------
+     *
+     *       whene i choose item  and press the back button i lost my list
+     *       because when you use the getbackstuck (or somthing like that) it take me to the oncreat view.
+     *       my megama indentifier is on onCreat so ....
+     *
+     *       i use the flage to check if i was in on create or didnt.
+     *
+     */
+
+    boolean flag_were_in_on_creat = false;
+
     String megama = null;
     DatabaseReference myRef;
     ListView listView;
@@ -106,6 +128,7 @@ public class JobByMegamaFragment extends Fragment {
             default:
                 break;
         }
+        flag_were_in_on_creat = true;//// i was in the onCreat
 
         /////////////////////       TEMPERARY        ////////////////////////////////
         Toast.makeText(getContext(),megama,Toast.LENGTH_SHORT).show();
@@ -123,12 +146,13 @@ public class JobByMegamaFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        if(!flag_were_in_on_creat)/// did you were in the OnCreat?
+             this.onCreate(getArguments());/// no, i will go now!
+        flag_were_in_on_creat = false;/// i were, and now i leave
         // Inflate the layout for this fragment
          rootview = inflater.inflate(R.layout.listview_fragment, container, false);
 
         listView = (ListView) rootview.findViewById(R.id.list_view_id);
-
-        ImageView imageView;
 
         Log.d("Lifetime","onCreatView");
 
@@ -159,6 +183,7 @@ public class JobByMegamaFragment extends Fragment {
     public void JsontoArrayList()
     {
 
+    ////////////// dialog alert while check jobs//////////
 
         final ProgressDialog Dialog = new ProgressDialog(getContext());
         Dialog.setMessage("מחפש משרות חדשות...");
@@ -166,8 +191,11 @@ public class JobByMegamaFragment extends Fragment {
         Dialog.setCancelable(false);
         Dialog.show();
 
+    /////////////////////////////////////////////////////
 
 
+
+    /////// Read From Firebase Databse////////////////////
         myRef.child("Jobs").child(megama).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot)
@@ -181,7 +209,7 @@ public class JobByMegamaFragment extends Fragment {
 
                  //   ArrayList<AJob> value = dataSnapshot.getValue(t);
 
-                        ArrayList<AJob>value = new ArrayList<>();///list to contain the jobs
+                        ArrayList<AJob>value = new ArrayList<>();///list to contain the jobs from the databse
 
                         for (DataSnapshot child: dataSnapshot.getChildren())//initialize the jobs
                         {
@@ -198,6 +226,8 @@ public class JobByMegamaFragment extends Fragment {
                             Log.d("DATABSE", "Value is:" + value.get(i).getJobDesc());
 
                         }
+
+
 
                         display();
                     }
@@ -248,7 +278,7 @@ public class JobByMegamaFragment extends Fragment {
         for (int i = 0; i< sizearray;i++)
         {
             arr[i] = holderTITArrayList.get(i).getMaslulName();
-            Log.d("holder", arr[i]);
+
         }
 
         return arr;
@@ -259,6 +289,12 @@ public class JobByMegamaFragment extends Fragment {
 
         listView.setAdapter(new CostumeAddapter(getActivity().getBaseContext(),JobsNameToStringArray()));
 
+
     }
+
+
+
+
+
 
 }

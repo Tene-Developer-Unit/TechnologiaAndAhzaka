@@ -28,6 +28,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.ViewGroup;
+import android.webkit.WebView;
 import android.widget.ArrayAdapter;
 import android.widget.BaseAdapter;
 import android.widget.FrameLayout;
@@ -46,6 +47,7 @@ import com.ezra.elon.technologiaandahzaka.Fragments.MalshabimFragment;
 import com.ezra.elon.technologiaandahzaka.Fragments.MaslulimListFragment;
 import com.ezra.elon.technologiaandahzaka.Fragments.MiktzoaLaFragment;
 import com.ezra.elon.technologiaandahzaka.Fragments.NewsFragment;
+import com.ezra.elon.technologiaandahzaka.Fragments.WebViewOnlyFragment;
 import com.ezra.elon.technologiaandahzaka.R;
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.firebase.database.DataSnapshot;
@@ -76,13 +78,20 @@ private boolean viewIsAtHome;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+
 
         setSupportActionBar(toolbar);
         ///you can put in the defult in the display view
 
 
-       //MainMenuFragment mainMenuFragment = (MainMenuFragment) getSupportFragmentManager().findFragmentById(R.id.mainfragment);
+        getSupportActionBar().setDisplayShowTitleEnabled(false);
+
+
+
+
+        //MainMenuFragment mainMenuFragment = (MainMenuFragment) getSupportFragmentManager().findFragmentById(R.id.mainfragment);
 
         if(!Asistent.isNetworkConnected(getBaseContext()))//ther is an internet connection
         {        Toast.makeText(getApplicationContext(),"האינטרנט כבוי חלק מהפונקציות לא יפעלו כהלכה",Toast.LENGTH_LONG).show();
@@ -127,6 +136,9 @@ private boolean viewIsAtHome;
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
+
+
+
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
@@ -211,9 +223,9 @@ private boolean viewIsAtHome;
                 break;
 
             case R.id.facebookpage:
-                fragment = new MainMenuFragment();
+                fragment = openWebPage("https://www.facebook.com/mitgaisim.tech/?fref=ts");
                 title = getResources().getString(R.string.app_name);
-                openWebPage("https://www.facebook.com/mitgaisim.tech/?fref=ts");
+
                 break;
 
             case R.id.about_us:
@@ -237,25 +249,21 @@ private boolean viewIsAtHome;
                 break;
 
         }
-        getSupportActionBar().setBackgroundDrawable(getResources().getDrawable(R.drawable.rect_red_background));
+     //   getSupportActionBar().setBackgroundDrawable(getResources().getDrawable(R.drawable.rect_red_background));
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            getWindow().setStatusBarColor(R.color.colorPrimaryDark);
+           // getWindow().setStatusBarColor(R.color.colorPrimaryDark);
         }
 
         if(fragment != null)
         {
-            ActionBar bard = getSupportActionBar();
             ft = fragmentManager.beginTransaction();
             ft.replace(R.id.frame_layout,fragment);
-
             ft.addToBackStack(null);
             ft.commit();
         }
         if(getSupportActionBar() != null)
         {
-            getSupportActionBar().setTitle(title);
-
-
+          //  getSupportActionBar().setTitle(title);
         }
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
@@ -267,12 +275,21 @@ private boolean viewIsAtHome;
     }
 
 
-    public void openWebPage(String url) {
-        Uri webpage = Uri.parse(url);
-        Intent intent = new Intent(Intent.ACTION_VIEW, webpage);
-        if (intent.resolveActivity(getPackageManager()) != null) {
-            startActivity(intent);
-        }
+    public Fragment openWebPage(String url) {
+//        Uri webpage = Uri.parse(url);
+//        Intent intent = new Intent(Intent.ACTION_VIEW, webpage);
+//        if (intent.resolveActivity(getPackageManager()) != null) {
+//            startActivity(intent);
+//        }
+
+        Fragment fragment = new WebViewOnlyFragment();
+
+        Bundle bundle = new Bundle();
+        bundle.putString("url",url);
+        fragment.setArguments(bundle);
+
+        WebView webView = WebViewOnlyFragment.newInstance(bundle).webView;
+    return fragment;
     }
 
 

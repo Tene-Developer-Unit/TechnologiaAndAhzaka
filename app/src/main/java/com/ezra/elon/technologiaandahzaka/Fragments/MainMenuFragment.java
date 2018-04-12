@@ -121,44 +121,45 @@ public class MainMenuFragment extends Fragment {
 
         courseGridView.setAdapter(arrayAdapter);
 
-        ViewGroup.LayoutParams size = weeklyImage.getLayoutParams();
-        size.height = 300;
-        size.width = 300;
-        weeklyImage.setLayoutParams(size);
+        weeklyImage.setImageResource(R.drawable.kkatzyashir);
+//        ViewGroup.LayoutParams size = weeklyImage.getLayoutParams();
+//        size.height = 300;
+//        size.width = 300;
+//        weeklyImage.setLayoutParams(size);
+//
+//        loading_anim = (AnimationDrawable) weeklyImage.getBackground();
+//        loading_anim.start();
+//
+//
+//        mDatabase.child("URLS").child("weeklyphoto").addListenerForSingleValueEvent(new ValueEventListener() {
+//            @Override
+//            public void onDataChange(DataSnapshot dataSnapshot) {
+//              weekphotourl = dataSnapshot.getValue(String.class);
+//                Picasso.with(context).load(weekphotourl).into(weeklyImage, new com.squareup.picasso.Callback() {
+//                    @Override
+//                    public void onSuccess() {
+//
+//                        weeklyImage.setBackgroundResource(android.R.color.transparent);
+//                        ViewGroup.LayoutParams size = weeklyImage.getLayoutParams();
+//                        size.height = ViewGroup.LayoutParams.MATCH_PARENT;
+//                        size.width = ViewGroup.LayoutParams.MATCH_PARENT;
+//                        weeklyImage.setLayoutParams(size);
+//                           loading_anim.stop();
+//                    }
+//
+//                    @Override
+//                    public void onError() {
+//
+//                        Log.i("pic stat", "Error");
+//
+//                    }
+//                });;// it used an outside librarry called Picaso
+//
+//            }
+//            @Override
+//            public void onCancelled(DatabaseError databaseError) {}});
 
-        loading_anim = (AnimationDrawable) weeklyImage.getBackground();
-        loading_anim.start();
 
-        mDatabase.child("URLS").child("weeklyphoto").addListenerForSingleValueEvent(new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-              weekphotourl = dataSnapshot.getValue(String.class);
-                Picasso.with(context).load(weekphotourl).into(weeklyImage, new com.squareup.picasso.Callback() {
-                    @Override
-                    public void onSuccess() {
-
-                        weeklyImage.setBackgroundResource(android.R.color.transparent);
-                        ViewGroup.LayoutParams size = weeklyImage.getLayoutParams();
-                        size.height = ViewGroup.LayoutParams.MATCH_PARENT;
-                        size.width = ViewGroup.LayoutParams.MATCH_PARENT;
-                        weeklyImage.setLayoutParams(size);
-                           loading_anim.stop();
-                    }
-
-                    @Override
-                    public void onError() {
-
-                        Log.i("pic stat", "Error");
-
-                    }
-                });;// it used an outside librarry called Picaso
-
-            }
-            @Override
-            public void onCancelled(DatabaseError databaseError) {}});
-
-
-        Toolbar toolbar = (Toolbar) rootview.findViewById(R.id.toolbar);
 
         //ft = getActivity().getSupportFragmentManager().beginTransaction();
         //ft.replace(R.id.webview_fragment,new NewsFragment());

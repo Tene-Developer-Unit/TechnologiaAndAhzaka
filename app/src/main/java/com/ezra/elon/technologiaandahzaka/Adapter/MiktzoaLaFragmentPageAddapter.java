@@ -70,7 +70,7 @@ Context context;
             case 3:
                 Fragment fragment2 = new WebViewOnlyFragment();
                 Bundle bundle2 = new Bundle();
-                bundle2.putString("url","https://goo.gl/forms/1zNiPs4CDEmlEdYr1");
+                bundle2.putString("url","https://goo.gl/forms/7oSmvhRWWDybn26Z2");
                 fragment2.setArguments(bundle2);
                 return fragment2;
         }

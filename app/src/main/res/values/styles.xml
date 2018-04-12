@@ -1,24 +1,46 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
 
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Customize your theme here. -->
-        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimary">@color/colorPrimaryDark</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
         <item name="android:layoutDirection" tools:targetApi="jelly_bean_mr1">rtl</item>
-        <item name="android:statusBarColor" tools:targetApi="lollipop">@color/colorPrimary</item>
+        <item name="windowNoTitle">true</item>
+        <item name="windowActionBar">false</item>
+        <item name="drawerArrowStyle">@style/DrawerArrowStyle</item>
+        <item name="android:actionOverflowButtonStyle">@style/MyActionButtonOverflow</item>
+
     </style>
 
+
+    <style name="MyActionButtonOverflow" parent="android:Widget.Holo.ActionButton.Overflow">
+
+        <item name="android:src">@drawable/ic_action_overflow</item>
+    </style>
 
     <style name="AppTheme.NoActionBar">
-        <item name="windowActionBar">false</item>
-        <item name="windowNoTitle">true</item>
+
+
+    </style>
+
+    <style name="SplashTheme" parent="Theme.AppCompat.NoActionBar">
+
+        <item name="android:windowBackground">@drawable/splash_draw</item>
+
+    </style>
+
+    <style name="DrawerArrowStyle" parent="@style/Widget.AppCompat.DrawerArrowToggle">
+        <item name="spinBars">true</item>
+        <item name="thickness">4dp</item>
+        <item name="barLength">25dp</item>
+        <item name="color">@color/colorAccent</item>
     </style>
 
 
 
-    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat" />
 
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
@@ -54,11 +76,7 @@
 
     </style>
 
-    <style name="myapp" parent="AppTheme" >
-        <item name="colorAccent">@color/colorAccent</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-        <item name="colorPrimary">@color/colorPrimary</item>
-    </style>
+
 
 
 </resources>

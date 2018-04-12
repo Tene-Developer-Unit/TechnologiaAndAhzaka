@@ -70,7 +70,7 @@
         <u> <h2>דרכי מימוש החזון</h2></u>
           ]]>
 </string>
-    <string name="weakly_photo" translatable="false"><u>תמונת השבוע</u></string>
+    <string name="weakly_photo" translatable="false">תמונת השבוע</string>
     <string-array name="about_us_discription_text_vision_path">
 
         <item>שימוש בפדגוגיה ומתודולוגיה חדשנית לחיבור רב תחומי וממדי לצמצום הפערים בין דרכים והיבטים אנושיים לטכנולוגיה</item>
