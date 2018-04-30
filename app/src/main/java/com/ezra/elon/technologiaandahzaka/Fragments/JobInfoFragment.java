@@ -34,6 +34,7 @@ import java.util.ArrayList;
 /**
  * A simple {@link Fragment} subclass.
  */
+
 public class JobInfoFragment extends Fragment {
 
     ArrayList<HolderTIT> holderTITArrayList = new ArrayList<>();

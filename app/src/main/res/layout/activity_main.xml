@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/drawer_layout"
     android:layout_width="match_parent"
-    android:background="@color/seconderyBackground"
+    android:background="@drawable/green_background"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
     tools:openDrawer="start">
@@ -22,7 +22,7 @@
         android:layout_height="match_parent"
         app:itemTextColor="#fff"
         android:layout_gravity="start"
-        android:background="@drawable/side_nav_bar"
+        android:background="#323234"
         android:fitsSystemWindows="true"
         app:headerLayout="@layout/nav_header_main"
         app:menu="@menu/activity_main_drawer"

@@ -49,7 +49,7 @@
                 android:layout_height="wrap_content"
                 android:text="@string/weakly_photo"
                 android:textColor="@color/colorAccent"
-                android:textSize="25sp"
+                android:textSize="27sp"
                 android:textStyle="bold"
                 />
 
@@ -60,14 +60,16 @@
                     android:layoutDirection="rtl"
                     android:layout_gravity="right">
                     <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                        android:layout_gravity="right"
-                        android:src="@android:drawable/ic_menu_info_details"/>
+                    android:layout_width="4dp"
+                    android:layout_height="20dp"
+
+                        android:layout_gravity="center"
+                        android:src="@color/colorAccent"/>
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="שלום"
+                        android:layout_marginRight="5dp"
                         android:textColor="#FFF"
                         android:textSize="20sp" />
                 </LinearLayout>
@@ -84,25 +86,12 @@
 
             >
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="10dp"
-                android:text="קורסים טכנולוגים"
-                android:textColor="@color/mainTextColor"
-                android:textSize="25sp" />
-
-
-            <Gallery
-                android:id="@+id/main_screen_fragment_coures_gridview"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:horizontalSpacing="20dp"
-                android:layoutMode="opticalBounds"
-
-                android:numColumns="2"
-                android:scrollbars="horizontal"
-                android:smoothScrollbar="true" />
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:src="@drawable/jobtitle"
+            android:adjustViewBounds="true"
+            />
 
 
         </LinearLayout>
@@ -111,28 +100,63 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
-            android:background="#fff"
+
+            android:elevation="2dp"
+            android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="חדשות טנא"
+            android:textColor="#fff"
+            android:textSize="30sp"
+            android:layout_gravity="center"
+            />
+            <ImageView
+                android:layout_width="90dp"
+                android:layout_gravity="center"
+                android:layout_height="7dp"
+                android:src="@color/colorAccent"/>
+
+
+        </LinearLayout>
+
+        <fragment
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/news_listview_fragment"
+            android:name="com.ezra.elon.technologiaandahzaka.Fragments.NewsListViewFragment"
+
+            ></fragment>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+
             android:elevation="2dp"
             android:orientation="vertical">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_margin="10dp"
-                android:text="@string/whatsneTitle"
-                android:textColor="@color/mainTextColor"
+                android:text="קורסים טכנולוגים"
+                android:textColor="#fff"
+                android:textSize="30sp"
+                android:layout_gravity="center"
+                />
+            <ImageView
+                android:layout_width="90dp"
+                android:layout_gravity="center"
+                android:layout_height="7dp"
+                android:src="@color/colorAccent"/>
 
-                android:textSize="25sp" />
 
-            <!--<fragment-->
-            <!--android:id="@+id/webview_fragment"-->
-            <!--android:name="com.ezra.elon.technologiaandahzaka.Fragments.NewsFragment"-->
-            <!--android:layout_width="match_parent"-->
-            <!--android:layout_height="match_parent"-->
-            <!--tools:layout="@layout/webview_news">-->
-
-            <!--</fragment>-->
         </LinearLayout>
+
+
+
     </LinearLayout>
 </ScrollView>
 

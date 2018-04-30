@@ -188,7 +188,15 @@ public class JobByMegamaFragment extends Fragment {
         final ProgressDialog Dialog = new ProgressDialog(getContext());
         Dialog.setMessage("מחפש משרות חדשות...");
         Dialog.setCanceledOnTouchOutside(true);
-        Dialog.setCancelable(false);
+
+        Dialog.setOnCancelListener(new DialogInterface.OnCancelListener() {
+            @Override
+            public void onCancel(DialogInterface dialogInterface) {
+                Dialog.hide();
+                getActivity().getSupportFragmentManager().popBackStack();
+            }
+        });
+        Dialog.setCancelable(true);
         Dialog.show();
 
     /////////////////////////////////////////////////////
@@ -196,6 +204,7 @@ public class JobByMegamaFragment extends Fragment {
 
 
     /////// Read From Firebase Databse////////////////////
+
         myRef.child("Jobs").child(megama).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot)
@@ -257,6 +266,7 @@ public class JobByMegamaFragment extends Fragment {
             @Override
             public void onCancelled(DatabaseError error) {
                 // Failed to read value
+                Dialog.hide();
                 Toast.makeText(getContext(),"Failed to read value",Toast.LENGTH_SHORT).show();
                 Log.w("DATABSE", "Failed to read value." + error.toException());
             }

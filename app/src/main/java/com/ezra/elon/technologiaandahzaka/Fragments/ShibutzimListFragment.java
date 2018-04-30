@@ -73,8 +73,8 @@ ArrayList<HolderTIT> holderTITArrayList = new ArrayList<>();
         maslulimName = MaslulimNameToStringArray();
 
         listView.setAdapter(new CostumeAddapter(getActivity().getBaseContext(),maslulimName));
-
-        ((MainActivity) getActivity()).getSupportActionBar().setTitle("קורסים ב" + title);//display new title
+//
+//        ((MainActivity) getActivity()).getSupportActionBar().setTitle("קורסים ב" + title);//display new title
 
 
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {

@@ -10,10 +10,12 @@ import android.os.Parcelable;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.app.FragmentStatePagerAdapter;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.content.res.ResourcesCompat;
+import android.view.View;
 import android.view.ViewGroup;
 import android.webkit.WebView;
 
@@ -25,11 +27,9 @@ import com.ezra.elon.technologiaandahzaka.Fragments.ShibutzimFragment;
 import com.ezra.elon.technologiaandahzaka.Fragments.WebViewOnlyFragment;
 import com.ezra.elon.technologiaandahzaka.R;
 
-/**
- * Created by elon on 17/09/2017.
- */
 
-public class MiktzoaLaFragmentPageAddapter extends FragmentStatePagerAdapter {
+
+public class MiktzoaLaFragmentPageAddapter extends FragmentStatePagerAdapter{
 
 Context context;
 
@@ -106,5 +106,7 @@ Context context;
     public Parcelable saveState() {
         return null;
     }
+
+
 
 }

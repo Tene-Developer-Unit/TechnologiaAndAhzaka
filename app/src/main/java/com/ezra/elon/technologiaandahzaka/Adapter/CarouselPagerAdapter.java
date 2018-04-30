@@ -1,11 +1,14 @@
 package com.ezra.elon.technologiaandahzaka.Adapter;
 
+import android.content.AsyncTaskLoader;
 import android.content.Context;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
+import android.support.v4.app.FragmentStatePagerAdapter;
 import android.support.v4.view.ViewPager;
+import android.util.Log;
 
 import com.ezra.elon.technologiaandahzaka.Acivities.MainActivity;
 import com.ezra.elon.technologiaandahzaka.Fragments.JobsFragments;
@@ -34,21 +37,27 @@ public class CarouselPagerAdapter extends FragmentPagerAdapter implements ViewPa
     private FragmentManager fragmentManager;
     private float scale;
 
+
     public CarouselPagerAdapter(Context context, FragmentManager fm) {
         super(fm);
         this.fragmentManager = fm;
         this.context = context;
+        getItem(this.getItemPosition(this));
     }
     public CarouselPagerAdapter(Context context, FragmentManager fm, int[] images) {
         super(fm);
         this.fragmentManager = fm;
         this.context = context;
         this.images = images;
+        getItem(this.getItemPosition(this));
+
+
     }
 
     @Override
     public Fragment getItem(int position) {
         // make the first pager bigger than others
+        position ++;
         try {
             if (position == images.length)
                 scale = BIG_SCALE;
@@ -60,6 +69,9 @@ public class CarouselPagerAdapter extends FragmentPagerAdapter implements ViewPa
         } catch (Exception e) {
             e.printStackTrace();
         }
+
+        Log.i("getItem","" + position);
+
         return ItemFragment.newInstance(context, position, scale);
     }
 
@@ -79,6 +91,7 @@ public class CarouselPagerAdapter extends FragmentPagerAdapter implements ViewPa
     public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
         try {
             if (positionOffset >= 0f && positionOffset <= 1f) {
+
                 CarouselLinearLayout cur = getRootView(position);
                 CarouselLinearLayout next = getRootView(position + 1);
 
@@ -100,13 +113,21 @@ public class CarouselPagerAdapter extends FragmentPagerAdapter implements ViewPa
 
     }
 
+//    @Override
+//    public int getItemPosition(Object object) {
+//        return POSITION_UNCHANGED;
+//    }
+
     @SuppressWarnings("ConstantConditions")
     private CarouselLinearLayout getRootView(int position) {
         return (CarouselLinearLayout) fragmentManager.findFragmentByTag(this.getFragmentTag(position))
                 .getView().findViewById(R.id.root_container);
     }
 
+
+
     private String getFragmentTag(int position) {
-        return "android:switcher:" + JobsFragments.pager.getId() + ":" + position;
+        return "android:switcher:" + JobsFragments.pager.getId() + ":" + (position);
     }
 }
+

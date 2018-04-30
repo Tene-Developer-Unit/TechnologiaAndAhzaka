@@ -2,6 +2,7 @@ package com.ezra.elon.technologiaandahzaka.Fragments;
 
 import android.app.FragmentManager;
 import android.content.Context;
+import android.support.v4.app.FragmentActivity;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.drawable.AnimationDrawable;
@@ -103,7 +104,6 @@ public class MainMenuFragment extends Fragment {
         rootview = inflater.inflate(R.layout.main_screen_fragment, container, false);
 
         final AnimationDrawable loading_anim;
-
         mDatabase = FirebaseDatabase.getInstance().getReference();
         context = getContext();
         weeklyImage = (ImageView) rootview.findViewById(R.id.weeklyphoto);
@@ -116,10 +116,8 @@ public class MainMenuFragment extends Fragment {
         templist.add(new Asistent.itemHolder("marom","foo"));
         templist.add(new Asistent.itemHolder("proyekt","foo"));
         templist.add(new Asistent.itemHolder("jobtitle","foo"));
-        Gallery courseGridView = (Gallery) rootview.findViewById(R.id.main_screen_fragment_coures_gridview);
         ArrayAdapter<Asistent.itemHolder> arrayAdapter = new MainSrcnCourseGridViewAdapter(getActivity().getBaseContext(),templist);
 
-        courseGridView.setAdapter(arrayAdapter);
 
         weeklyImage.setImageResource(R.drawable.kkatzyashir);
 //        ViewGroup.LayoutParams size = weeklyImage.getLayoutParams();
@@ -164,6 +162,16 @@ public class MainMenuFragment extends Fragment {
         //ft = getActivity().getSupportFragmentManager().beginTransaction();
         //ft.replace(R.id.webview_fragment,new NewsFragment());
         //ft.commit();
+
+
+        NewsListViewFragment newsListViewFragment = new NewsListViewFragment();
+
+        getChildFragmentManager().beginTransaction().add(R.id.news_listview_fragment,newsListViewFragment).commit();
+
+//        ft.add(R.id.news_listview_fragment,newsListViewFragment).commit();
+
+
+
 
         return rootview;
     }

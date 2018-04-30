@@ -1,12 +1,15 @@
 package com.ezra.elon.technologiaandahzaka.Adapter;
 
 import android.annotation.SuppressLint;
+import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.util.DisplayMetrics;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -46,6 +49,8 @@ public class ItemFragment extends Fragment {
     private int screenWidth;
     private int screenHeight;
 
+    Intent intent;
+
 //    private int[] imageArray = new int[]{R.drawable.image1, R.drawable.image2,
 //            R.drawable.image3, R.drawable.image4, R.drawable.image5,
 //            R.drawable.image6, R.drawable.image7, R.drawable.image8,
@@ -58,6 +63,7 @@ public class ItemFragment extends Fragment {
         b.putFloat(SCALE, scale);
 
 
+
         return Fragment.instantiate(context, ItemFragment.class.getName(), b);
     }
 
@@ -65,14 +71,14 @@ public class ItemFragment extends Fragment {
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         getWidthAndHeight();
+
     }
 
     @SuppressLint("SetTextI18n")
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        if (container == null) {
-            return null;
-        }
+    public View onCreateView(final LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+
+
 
         final int postion = this.getArguments().getInt(POSITON);
         float scale = this.getArguments().getFloat(SCALE);
@@ -99,6 +105,7 @@ public class ItemFragment extends Fragment {
                 break;
 
         }
+        Log.i("fragment item", title);
         textView.setText(title);
         imageView.setLayoutParams(layoutParams);
         imageView.setScaleType(ImageView.ScaleType.FIT_CENTER);
@@ -108,8 +115,6 @@ public class ItemFragment extends Fragment {
         imageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-
 
             Fragment fragment = new JobByMegamaFragment();
             ft = getActivity().getSupportFragmentManager().beginTransaction();
@@ -136,5 +141,12 @@ public class ItemFragment extends Fragment {
         getActivity().getWindowManager().getDefaultDisplay().getMetrics(displaymetrics);
         screenHeight = displaymetrics.heightPixels;
         screenWidth = displaymetrics.widthPixels;
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+
+
     }
 }

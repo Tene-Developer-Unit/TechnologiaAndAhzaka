@@ -4,15 +4,12 @@ package com.ezra.elon.technologiaandahzaka.Fragments;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
-import android.widget.GridView;
 import android.widget.ListView;
 
-import com.ezra.elon.technologiaandahzaka.Acivities.MainActivity;
 import com.ezra.elon.technologiaandahzaka.Adapter.GridViewAdapter;
 import com.ezra.elon.technologiaandahzaka.Adapter.HolderTIT;
 import com.ezra.elon.technologiaandahzaka.R;
@@ -35,7 +32,7 @@ FragmentTransaction ft;
 
         View rootview;
 
-        rootview = inflater.inflate(R.layout.grid_view_list, container, false);
+        rootview = inflater.inflate(R.layout.simple_view_list, container, false);
 
         ListView gridView = (ListView) rootview.findViewById(R.id.maingridview);
 

@@ -65,7 +65,6 @@ public class MainActivity extends AppCompatActivity
 
     FragmentManager fragmentManager = getSupportFragmentManager();
 private boolean viewIsAtHome;
-    String LOG_TAG = "Elon Test";
     private DatabaseReference mDatabase;
 
     /**
@@ -249,7 +248,7 @@ private boolean viewIsAtHome;
                 break;
 
         }
-     //   getSupportActionBar().setBackgroundDrawable(getResources().getDrawable(R.drawable.rect_red_background));
+     //   getSupportActionBar().setBackgroundDrawable(getResources().getDrawable(R.drawable.green_background));
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
            // getWindow().setStatusBarColor(R.color.colorPrimaryDark);
         }
@@ -295,20 +294,18 @@ private boolean viewIsAtHome;
 
     @Override
     public Loader onCreateLoader(int id, Bundle args) {
-        Log.i(LOG_TAG,"onCreatLoader() called...");
 
         return null;
     }
 
     @Override
     public void onLoadFinished(Loader loader, Object data) {
-        Log.i(LOG_TAG,"onLoadFinished() called...");
 
     }
 
     @Override
     public void onLoaderReset(Loader loader) {
-        Log.i(LOG_TAG,"onLoaderReset() called...");
+
     }
 
 

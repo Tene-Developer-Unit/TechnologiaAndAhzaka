@@ -37,7 +37,7 @@ public class MiktzoaLaFragment extends Fragment {
         MiktzoaLaFragmentPageAddapter addapter = new MiktzoaLaFragmentPageAddapter(getActivity().getSupportFragmentManager(),getActivity().getApplicationContext());
 
         PagerView.setAdapter(addapter);
-
+        addapter.notifyDataSetChanged();
         TabLayout tb = (TabLayout) rootview.findViewById(R.id.tab_layout_malshabim_fragment);
         tb.setupWithViewPager(PagerView);
 
