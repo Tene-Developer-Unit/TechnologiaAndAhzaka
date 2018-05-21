@@ -6,6 +6,7 @@ import android.util.Log;
 import android.widget.Toast;
 
 import com.ezra.elon.technologiaandahzaka.Acivities.MainActivity;
+import com.ezra.elon.technologiaandahzaka.R;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -20,6 +21,7 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 public class Asistent {
 
@@ -107,27 +109,93 @@ public class Asistent {
         return cm.getActiveNetworkInfo() != null;
     }
 
-    public List<itemHolder> RandomCoures(Context context)
+    public List<CourseButton> RandomCoures(Context context)
     {
-        ArrayList<itemHolder> temp = new ArrayList<>();
+        ArrayList<CourseButton> temp = new ArrayList<>();
         ArrayList<itemHolder> courseListArray = new ArrayList<>();
         String megama = "";
         JSONObject root = null;
 
+        temp.clear();
+        int megama_id;
+        int course_id;
+        int megama_image = 0;
+        Random random = new Random();
+
+        for(int d=0; d<4; d++)
+        {
+
+            megama_id = random.nextInt(4);
+            switch (megama_id) {
+
+                case 0://mechenic
+                    megama = "Mechanic";
+                    megama_image = R.drawable.sufa;
+                    break;
+                case 1://electronic
+                    megama = "Electronic";
+                    megama_image = R.drawable.background2;
+                    break;
+                case 2://electricity
+                    megama = "Electricity";
+                    megama_image = R.drawable.bareket;
+                    break;
+                case 3://toon
+                    megama = "toon";
+                    megama_image = R.drawable.toon;
+                    break;
+                case 4://cars
+                    megama = "Cars";
+                    megama_image = R.drawable.sufa;
+                    break;
+
+            }
+
+            //now i have a megama now i need to pick random course
+
+
             try {
                 root = new JSONObject(Asistent.loadJSONFromAsset((context), "jsonFiles/shibutzim.json"));
                 JSONArray maslulim = root.getJSONArray(megama);
+                int i;
+                if(megama == "toon")
+                {
+                    i = 0;
+                }
+               else
+                {
+                    i = random.nextInt(maslulim.length());
+                }
+
                 String name;
                 String url;
 
-                for (int i = 0; i < maslulim.length(); i++) {
-                    JSONObject maslul = maslulim.getJSONObject(i);//get single object
-                    courseListArray.add(new itemHolder(maslul.optString("videoUrl"),maslul.getString("name")));
-                    Log.i("JsonToArryList", maslul.getString("name"));
+                JSONObject maslul = maslulim.getJSONObject(i);//get single object
+
+                boolean isnotexsist = true;
+                for (int x = 0;temp.size() < x; x++)
+                {
+                    if(temp.get(i).getTitle() == maslul.getString("name") )
+                    {   isnotexsist = false;
+                        break;
+                    }
+
+
                 }
+
+                if(isnotexsist)
+                {
+                    temp.add(new CourseButton(megama_image, maslul.getString("name")));
+                }
+
+
+                Log.i("JsonToArryList", maslul.getString("name"));
+
             } catch (JSONException e) {
                 e.printStackTrace();
             }
+
+        }
         return temp;
     }
 

@@ -97,11 +97,10 @@ private boolean viewIsAtHome;
 
         }
 
+
         /////start the course menu//////
 
 
-
-        //TODO: get courses random, and display
 
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

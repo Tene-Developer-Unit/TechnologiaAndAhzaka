@@ -8,6 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
+import android.widget.GridView;
 import android.widget.ListView;
 
 import com.ezra.elon.technologiaandahzaka.Adapter.GridViewAdapter;
@@ -21,7 +22,7 @@ import java.util.ArrayList;
  */
 public class ShibutzimFragment extends Fragment {
     ArrayList<HolderTIT> Shuibutzim = new ArrayList<>();
-FragmentTransaction ft;
+    FragmentTransaction ft;
     public ShibutzimFragment() {
         // Required empty public constructor
     }
@@ -34,7 +35,7 @@ FragmentTransaction ft;
 
         rootview = inflater.inflate(R.layout.simple_view_list, container, false);
 
-        ListView gridView = (ListView) rootview.findViewById(R.id.maingridview);
+        ListView gridView = (ListView) rootview.findViewById(R.id.mainlistview);
 
         //todo: display the maslulim ArrayList on the listView
         final String  ShibutzimName [] = getActivity().getApplicationContext().getResources().getStringArray(R.array.megamot);

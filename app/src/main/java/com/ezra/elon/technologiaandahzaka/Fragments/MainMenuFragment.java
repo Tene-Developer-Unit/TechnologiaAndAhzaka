@@ -109,59 +109,72 @@ public class MainMenuFragment extends Fragment {
         weeklyImage = (ImageView) rootview.findViewById(R.id.weeklyphoto);
         weeklyImage.setBackgroundResource(R.drawable.animation_loading);
 
-        ArrayList<Asistent.itemHolder> templist = new ArrayList<Asistent.itemHolder>();
 
-        //random function - get a listArray of 5 random items
-        templist.add(new Asistent.itemHolder("bareket","foo"));
-        templist.add(new Asistent.itemHolder("marom","foo"));
-        templist.add(new Asistent.itemHolder("proyekt","foo"));
-        templist.add(new Asistent.itemHolder("jobtitle","foo"));
-        ArrayAdapter<Asistent.itemHolder> arrayAdapter = new MainSrcnCourseGridViewAdapter(getActivity().getBaseContext(),templist);
+ ////////// TEMPERRERY LIST FOR THE COURSE RANDOM LIST //////////
+//        ArrayList<Asistent.itemHolder> templist = new ArrayList<Asistent.itemHolder>();
+//        templist.add(new Asistent.itemHolder("bareket","foo"));
+//        templist.add(new Asistent.itemHolder("marom","foo"));
+//        templist.add(new Asistent.itemHolder("proyekt","foo"));
+//        templist.add(new Asistent.itemHolder("jobtitle","foo"));
+//        ArrayAdapter<Asistent.itemHolder> arrayAdapter = new MainSrcnCourseGridViewAdapter(getActivity().getBaseContext(),templist);
 
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+
+///////////////////////////////////// THE COMENDS THAT CONNECT ME TO THE WEEKLY PHOTO //////////////////////////////////////////
 
         weeklyImage.setImageResource(R.drawable.kkatzyashir);
-//        ViewGroup.LayoutParams size = weeklyImage.getLayoutParams();
-//        size.height = 300;
-//        size.width = 300;
-//        weeklyImage.setLayoutParams(size);
-//
-//        loading_anim = (AnimationDrawable) weeklyImage.getBackground();
-//        loading_anim.start();
-//
-//
-//        mDatabase.child("URLS").child("weeklyphoto").addListenerForSingleValueEvent(new ValueEventListener() {
-//            @Override
-//            public void onDataChange(DataSnapshot dataSnapshot) {
-//              weekphotourl = dataSnapshot.getValue(String.class);
-//                Picasso.with(context).load(weekphotourl).into(weeklyImage, new com.squareup.picasso.Callback() {
-//                    @Override
-//                    public void onSuccess() {
-//
-//                        weeklyImage.setBackgroundResource(android.R.color.transparent);
-//                        ViewGroup.LayoutParams size = weeklyImage.getLayoutParams();
-//                        size.height = ViewGroup.LayoutParams.MATCH_PARENT;
-//                        size.width = ViewGroup.LayoutParams.MATCH_PARENT;
-//                        weeklyImage.setLayoutParams(size);
-//                           loading_anim.stop();
-//                    }
-//
-//                    @Override
-//                    public void onError() {
-//
-//                        Log.i("pic stat", "Error");
-//
-//                    }
-//                });;// it used an outside librarry called Picaso
-//
-//            }
-//            @Override
-//            public void onCancelled(DatabaseError databaseError) {}});
+        ViewGroup.LayoutParams size = weeklyImage.getLayoutParams();
+        size.height = 300;
+        size.width = 300;
+        weeklyImage.setLayoutParams(size);
+
+        loading_anim = (AnimationDrawable) weeklyImage.getBackground();
+        loading_anim.start();
+
+
+        mDatabase.child("URLS").child("weeklyphoto").addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+              weekphotourl = dataSnapshot.getValue(String.class);
+                Picasso.with(context).load(weekphotourl).into(weeklyImage, new com.squareup.picasso.Callback() {
+                    @Override
+                    public void onSuccess() {
+
+                        weeklyImage.setBackgroundResource(android.R.color.transparent);
+                        ViewGroup.LayoutParams size = weeklyImage.getLayoutParams();
+                        size.height = ViewGroup.LayoutParams.MATCH_PARENT;
+                        size.width = ViewGroup.LayoutParams.MATCH_PARENT;
+                        weeklyImage.setLayoutParams(size);
+                           loading_anim.stop();
+                    }
+
+                    @Override
+                    public void onError() {
+
+                        Log.i("pic stat", "Error");
+
+                    }
+                });;// it used an outside librarry called Picaso
+
+            }
+            @Override
+            public void onCancelled(DatabaseError databaseError) {}});
 
 
 
-        //ft = getActivity().getSupportFragmentManager().beginTransaction();
-        //ft.replace(R.id.webview_fragment,new NewsFragment());
-        //ft.commit();
+//        ft = getActivity().getSupportFragmentManager().beginTransaction();
+//        ft.replace(R.id.webview_fragment,new NewsFragment());
+//        ft.commit();
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+
 
 
         NewsListViewFragment newsListViewFragment = new NewsListViewFragment();

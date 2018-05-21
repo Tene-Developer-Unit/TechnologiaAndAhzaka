@@ -65,7 +65,7 @@ public class MalshabimFragmentPageAddapter extends FragmentStatePagerAdapter {
             case 1:
             return "מסלולים";
             case 2:
-            return "אפשרויות שיבוץ";
+            return "קורסים";
             case 0:
             return "רקע";
         }

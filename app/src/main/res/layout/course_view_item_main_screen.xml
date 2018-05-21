@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:orientation="vertical" android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center">
 
     <ImageView
         android:layout_width="wrap_content"
@@ -10,18 +11,21 @@
         android:adjustViewBounds="true"
         android:id="@+id/coures_view_item_imageView"
         android:src="@drawable/sufa"
+        android:scaleType="centerInside"
         tools:layout_editor_absoluteX="0dp"
         tools:layout_editor_absoluteY="0dp"
         tools:ignore="MissingConstraints" />
 
     <TextView
         android:id="@+id/coures_view_item_main_screen_title"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:text="מכונאי צמה"
         android:textAlignment="center"
+        android:foregroundGravity="center"
+        android:gravity="center"
         android:textColor="#fff"
-        android:textSize="30sp"
+        android:textSize="20sp"
         android:visibility="visible"
         tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="118dp"

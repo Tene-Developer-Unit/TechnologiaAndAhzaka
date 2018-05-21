@@ -103,6 +103,9 @@ public class ItemFragment extends Fragment {
             case 3:
                 title = "חשמל";
                 break;
+            case 4:
+                title = "תעשיה וניהול";
+                break;
 
         }
         Log.i("fragment item", title);

@@ -54,7 +54,7 @@ public class JobsFragments extends Fragment {
     public final static int LOOPS = 1000;
     public CarouselPagerAdapter adapter;
     public static ViewPager pager;
-    int[] image = new int[] {R.drawable.bareket, R.drawable.clas,R.drawable.kkatzyashir} ;
+    int[] image = new int[] {R.drawable.bareket, R.drawable.clas,R.drawable.kkatzyashir,R.drawable.blank,R.drawable.blank} ;
     FragmentTransaction ft;
     DatabaseReference mDatabase;
     View rootview;

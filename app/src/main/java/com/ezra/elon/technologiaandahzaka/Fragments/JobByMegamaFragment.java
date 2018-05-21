@@ -2,31 +2,20 @@ package com.ezra.elon.technologiaandahzaka.Fragments;
 
 
 import android.app.AlertDialog;
-import android.app.Dialog;
-import android.app.DialogFragment;
-import android.app.FragmentManager;
 import android.app.ProgressDialog;
-import android.content.Context;
 import android.content.DialogInterface;
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.util.Log;
 import android.view.LayoutInflater;
-import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.WindowManager;
 import android.widget.AdapterView;
-import android.widget.ImageView;
 import android.widget.ListView;
-import android.widget.TextView;
 import android.widget.Toast;
 
-import com.ezra.elon.technologiaandahzaka.Acivities.MainActivity;
 import com.ezra.elon.technologiaandahzaka.Adapter.Asistent;
 import com.ezra.elon.technologiaandahzaka.Adapter.CostumeAddapter;
 import com.ezra.elon.technologiaandahzaka.Adapter.HolderTIT;
@@ -39,7 +28,6 @@ import com.google.firebase.database.GenericTypeIndicator;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
-import java.util.Collection;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -51,8 +39,6 @@ import java.util.Collection;
 
     String jobName;
     String jobDesc;
-    public Asistent asistent = new Asistent();
-
     private  AJob()
     {
 
@@ -68,13 +54,15 @@ import java.util.Collection;
         return jobDesc;
     }
 
-    public String getJob_name() {
+    public String getjobName() {
         return jobName;
     }
 }
 
 public class JobByMegamaFragment extends Fragment {
 
+
+    public Asistent asistent = new Asistent();
     public static int position;
     FirebaseDatabase database = FirebaseDatabase.getInstance();
     public static ArrayList<HolderTIT> holderTITArrayList = new ArrayList<>();
@@ -131,11 +119,12 @@ public class JobByMegamaFragment extends Fragment {
         flag_were_in_on_creat = true;//// i was in the onCreat
 
         /////////////////////       TEMPERARY        ////////////////////////////////
+
         Toast.makeText(getContext(),megama,Toast.LENGTH_SHORT).show();
 
-        myRef = FirebaseDatabase.getInstance().getReference();
+        myRef = FirebaseDatabase.getInstance().getReference();///CREAT THE REFERENCE TO MY DATA BASE
 
-        holderTITArrayList.clear();
+        holderTITArrayList.clear();// Clean the arry so it wont duplicate
 
         JsontoArrayList();// initialize the databse in the list
 
@@ -149,14 +138,17 @@ public class JobByMegamaFragment extends Fragment {
         if(!flag_were_in_on_creat)/// did you were in the OnCreat?
              this.onCreate(getArguments());/// no, i will go now!
         flag_were_in_on_creat = false;/// i were, and now i leave
+
         // Inflate the layout for this fragment
+
          rootview = inflater.inflate(R.layout.listview_fragment, container, false);
 
-        listView = (ListView) rootview.findViewById(R.id.list_view_id);
+         listView = (ListView) rootview.findViewById(R.id.list_view_id);
+
 
         Log.d("Lifetime","onCreatView");
 
-          //  display();
+            display();
 
 
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -218,7 +210,7 @@ public class JobByMegamaFragment extends Fragment {
 
                  //   ArrayList<AJob> value = dataSnapshot.getValue(t);
 
-                        ArrayList<AJob>value = new ArrayList<>();///list to contain the jobs from the databse
+                        ArrayList<AJob> value = new ArrayList<>();///list to contain the jobs from the databse
 
                         for (DataSnapshot child: dataSnapshot.getChildren())//initialize the jobs
                         {
@@ -229,10 +221,10 @@ public class JobByMegamaFragment extends Fragment {
                     if(value != null || value.size()> 0 )
                     {
                         for (int i = 0; i < value.size(); i++) {//value.get(i).getJobDesc()
-                            /////TODO: add the objects to the lists
-                            holderTITArrayList.add(new HolderTIT(value.get(i).getJob_name(),"null", value.get(i).getJobDesc().toString()));
 
-                            Log.d("DATABSE", "Value is:" + value.get(i).getJobDesc());
+                            holderTITArrayList.add(new HolderTIT(value.get(i).getjobName(),"null", value.get(i).getJobDesc().toString()));
+
+                            Log.d("DATABSE", "Value is:" + value.get(i).getjobName());
 
                         }
 
@@ -297,7 +289,7 @@ public class JobByMegamaFragment extends Fragment {
     void display()
     {
 
-        listView.setAdapter(new CostumeAddapter(getActivity().getBaseContext(),JobsNameToStringArray()));
+        listView.setAdapter(new CostumeAddapter(getActivity(),JobsNameToStringArray()));
 
 
     }
