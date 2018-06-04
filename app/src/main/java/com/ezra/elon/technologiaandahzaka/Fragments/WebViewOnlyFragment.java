@@ -62,7 +62,6 @@ public class WebViewOnlyFragment extends Fragment {
           rootview =inflater.inflate(R.layout.webview_news, container, false);
         webView = (WebView) rootview.findViewById(R.id.webview_fragment);
 
-        Log.i("path", Environment.getExternalStorageDirectory().getAbsolutePath().toString());
 
         webView.setBackgroundResource(R.drawable.animation_loading);
 
@@ -71,8 +70,7 @@ public class WebViewOnlyFragment extends Fragment {
             webView.getSettings().setAllowUniversalAccessFromFileURLs(true);
         }
 
-        loading_anim = (AnimationDrawable) webView.getBackground();
-        loading_anim.start();
+
 
 
             URL = getArguments().getString("url");
@@ -94,7 +92,6 @@ public class WebViewOnlyFragment extends Fragment {
             public void onProgressChanged(WebView view, int progress) {
                 // Log.d(TAG + " 185", "Load Status: " + progress);
                 if (progress == 100) {
-                    loading_anim.stop();
                     ViewGroup.LayoutParams size = webView.getLayoutParams();
 
                     size.height = ViewGroup.LayoutParams.MATCH_PARENT;

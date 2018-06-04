@@ -3,12 +3,14 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     xmlns:tools="http://schemas.android.com/tools"
+
     android:layout_width="match_parent"
     android:layout_height="match_parent"
    >
 <ScrollView
 
     android:layout_width="match_parent"
+    tools:background="#000"
     android:layout_height="match_parent">
     <LinearLayout
         android:layout_width="match_parent"
@@ -27,13 +29,13 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
 
-
+                android:layout_gravity="center"
 
                 android:adjustViewBounds="true"
                 android:cropToPadding="false"
                 android:scaleType="fitCenter"
 
-                tools:src="@drawable/sufa" />
+                android:src="@android:drawable/stat_notify_sync" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -67,7 +69,7 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="שלום"
+                        android:text="חיל הטכנולוגיה והאחזקה"
                         android:layout_marginRight="5dp"
                         android:textColor="#FFF"
                         android:textSize="20sp" />
@@ -106,7 +108,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="חדשות טנא"
+            android:text="תפריט"
             android:textColor="#fff"
             android:textSize="30sp"
             android:layout_gravity="center"
@@ -119,15 +121,37 @@
 
 
         </LinearLayout>
-
-        <fragment
+        <!--android:layout_height="450dp"-->
+        <FrameLayout
             android:layout_width="match_parent"
-            android:layout_height="450dp"
+            android:layout_height="0dp"
             android:id="@+id/news_listview_fragment"
-            android:name="com.ezra.elon.technologiaandahzaka.Fragments.NewsListViewFragment"
+            >
+        </FrameLayout>
 
-            ></fragment>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
+            <ImageButton
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:src="@drawable/logitech"
+                android:id="@+id/logitech_button"/>
+            <ImageButton
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:src="@drawable/mitgaisim"
+                android:id="@+id/mitgaisim_button"/>
+            <ImageButton
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:src="@drawable/miktzoa"
+                android:id="@+id/miktzoa_button"
+                />
+
+        </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -155,13 +179,13 @@
         </LinearLayout>
 
 
-        <fragment
+        <FrameLayout
             android:layout_width="match_parent"
-            android:layout_height="230dp"
-            android:id="@+id/random_course_fragment"
-            android:name="com.ezra.elon.technologiaandahzaka.Fragments.RandomCourseFragment"
+            android:layout_height="250dp"
+            android:id="@+id/random_course_fragment">
+        </FrameLayout>
 
-            ></fragment>
+
 
     </LinearLayout>
 </ScrollView>

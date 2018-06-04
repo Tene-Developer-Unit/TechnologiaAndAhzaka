@@ -3,6 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@drawable/green_background"
     >
 
 <LinearLayout
@@ -15,6 +16,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:elevation="9dp"
+        android:background="#00ffffff"
         android:paddingBottom="2dp"
         android:layout_gravity="center"
         android:gravity="center"
@@ -50,7 +52,7 @@ android:textSize="35sp"
     android:elevation="15dp"
     android:fadingEdgeLength="2dp"
     android:paddingTop="0.1dp"
-    android:background="#fff"
+    android:background="#00ffffff"
     >
    <include
 

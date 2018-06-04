@@ -30,8 +30,12 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 
 /**
+ *
+ *
  * A simple {@link Fragment} subclass.
  * the list of the courses from the chousen megama
+ *
+ *
  */
 
  class AJob

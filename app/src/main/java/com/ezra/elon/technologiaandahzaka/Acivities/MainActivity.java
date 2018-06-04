@@ -33,6 +33,7 @@ import android.widget.ArrayAdapter;
 import android.widget.BaseAdapter;
 import android.widget.FrameLayout;
 import android.widget.GridView;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.Toast;
 
@@ -62,6 +63,7 @@ public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener , LoaderManager.LoaderCallbacks {
     FragmentTransaction ft;
     String title;
+    Fragment fragment = null;
 
     FragmentManager fragmentManager = getSupportFragmentManager();
 private boolean viewIsAtHome;
@@ -79,7 +81,6 @@ private boolean viewIsAtHome;
         setContentView(R.layout.activity_main);
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-
 
         setSupportActionBar(toolbar);
         ///you can put in the defult in the display view
@@ -154,7 +155,7 @@ private boolean viewIsAtHome;
                 startActivity(intent);
             }
 
-            Toast.makeText(this,"צור קשר",Toast.LENGTH_SHORT).show();
+            Toast.makeText(this,"אנא המתן...",Toast.LENGTH_SHORT).show();
 
                 return true;
         }
@@ -177,12 +178,9 @@ private boolean viewIsAtHome;
             finish();
 
         }
-
-
-
-
+        ft.remove(fragment);
         getSupportFragmentManager().popBackStack();
-        getSupportActionBar().setTitle(title);
+      //  getSupportActionBar().setTitle(title);
 
 
     }
@@ -210,7 +208,7 @@ private boolean viewIsAtHome;
     public void displayView(int viewId)
     {
         ViewGroup frame =(FrameLayout) findViewById(R.id.frame_layout);
-        Fragment fragment = null;
+
          title = "";
 
         switch (viewId)
@@ -227,7 +225,10 @@ private boolean viewIsAtHome;
                 break;
 
             case R.id.about_us:
-                fragment = new AboutUs();
+                fragment = new WebViewOnlyFragment();
+                Bundle bundle = new Bundle();
+                bundle.putString("url","file:///android_asset/logitechWeb/landingpage/index.html");
+                fragment.setArguments(bundle);
                 title = getResources().getString(R.string.about_us);
             break;
 
@@ -247,22 +248,18 @@ private boolean viewIsAtHome;
                 break;
 
         }
-     //   getSupportActionBar().setBackgroundDrawable(getResources().getDrawable(R.drawable.green_background));
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-           // getWindow().setStatusBarColor(R.color.colorPrimaryDark);
-        }
+
+
 
         if(fragment != null)
         {
             ft = fragmentManager.beginTransaction();
+            ft.setAllowOptimization(true);
             ft.replace(R.id.frame_layout,fragment);
             ft.addToBackStack(null);
             ft.commit();
         }
-        if(getSupportActionBar() != null)
-        {
-          //  getSupportActionBar().setTitle(title);
-        }
+
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
             TransitionManager.beginDelayedTransition(frame);
@@ -274,20 +271,12 @@ private boolean viewIsAtHome;
 
 
     public Fragment openWebPage(String url) {
-//        Uri webpage = Uri.parse(url);
-//        Intent intent = new Intent(Intent.ACTION_VIEW, webpage);
-//        if (intent.resolveActivity(getPackageManager()) != null) {
-//            startActivity(intent);
-//        }
 
         Fragment fragment = new WebViewOnlyFragment();
-
         Bundle bundle = new Bundle();
         bundle.putString("url",url);
         fragment.setArguments(bundle);
-
-        WebView webView = WebViewOnlyFragment.newInstance(bundle).webView;
-    return fragment;
+        return fragment;
     }
 
 

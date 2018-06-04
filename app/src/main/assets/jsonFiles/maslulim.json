@@ -1,17 +1,17 @@
 {"maslulim":[
 
-  {"name":"יעל","videoUrl":"clas","textPath":"yael.html"},
-  {"name":"רקיע","videoUrl":null,"textPath":"rakia.html"},
-  {"name":"יעד","videoUrl":null,"textPath":"yaad.html"},
+  {"name":"יעל","videoUrl":"yael","textPath":"yael.html"},
+  {"name":"רקיע","videoUrl":"rakia","textPath":"rakia.html"},
+  {"name":"יעד","videoUrl":"yaad","textPath":"yaad.html"},
   {"name":"מרום","videoUrl":"marom","textPath":"marom.html"},
   {"name":"פרויקטנטים","videoUrl":"proyekt","textPath":"proyektantim.html"},
   {"name":"קק\"ץ ישיר","videoUrl":"kkatzyashir","textPath":"kakatzyashir.html"},
-  {"name":"יהל\"ם","videoUrl":null,"textPath":"yahalom.html"},
-  {"name":"שוה\"ם","videoUrl":null,"textPath":"shoham.html"},
+  {"name":"יהל\"ם","videoUrl":"yahalom","textPath":"yahalom.html"},
+  {"name":"שוה\"ם","videoUrl":"shoham","textPath":"shoham.html"},
   {"name":"ברקת","videoUrl":"bareket","textPath":"bareket.html"},
   {"name":"שוחרות","videoUrl":"shoharut","textPath":"shoharut.html"},
-  {"name":"תעשייתי","videoUrl":null,"textPath":"tasyati.html"},
-  {"name":"טו\"ב (טכנאי ובגרות)","videoUrl":null,"textPath":"tov.html"},
-  {"name":"קק\"ץ לה\"ט","videoUrl":null,"textPath":"kakatzlahat.html"}
+  {"name":"תעשייתי","videoUrl":"tasiati","textPath":"tasyati.html"},
+  {"name":"טו\"ב (טכנאי ובגרות)","videoUrl":"clas","textPath":"tov.html"},
+  {"name":"קק\"ץ לה\"ט","videoUrl":"kkatzyashir","textPath":"kakatzlahat.html"}
 
 ]}

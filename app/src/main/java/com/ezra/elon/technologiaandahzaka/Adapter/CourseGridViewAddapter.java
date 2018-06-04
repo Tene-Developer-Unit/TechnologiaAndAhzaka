@@ -16,6 +16,9 @@ import java.util.ArrayList;
 
 /**
  * Created by elon on 17/05/2018.
+ *
+ * in charge on the gridview on the main screen
+ *
  */
 
 public class CourseGridViewAddapter extends BaseAdapter {
@@ -84,7 +87,7 @@ public class CourseGridViewAddapter extends BaseAdapter {
 
 
         CourseButton temp = randomCourseArrayList.get(position);
-        holder.imageImageView.setImageResource(temp.getImage());
+        holder.imageImageView.setImageURI(Uri.parse("android.resource://"+ context.getPackageName() + "/drawable/" + temp.getImage()));
         holder.TitleTextView.setText(temp.getTitle());
         //setImageURI(Uri.parse("android.resource://"+ context.getApplicationContext().getPackageName() + "/drawable/" + temp.getImage()));
 
@@ -99,8 +102,7 @@ public class CourseGridViewAddapter extends BaseAdapter {
               for(int i = 0; i<4; i++)
         {
 
-            courseButton = new CourseButton(
-                    randomCourseArrayList.get(i).getImage(),randomCourseArrayList.get(i).getTitle());
+            courseButton = new CourseButton(randomCourseArrayList.get(i).getImage(),randomCourseArrayList.get(i).getTitle(),randomCourseArrayList.get(i).getPath());
             randomCourseArrayList.add(courseButton);
         }
 

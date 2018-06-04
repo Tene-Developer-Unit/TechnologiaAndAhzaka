@@ -86,7 +86,7 @@ public class ItemFragment extends Fragment {
         LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(screenWidth / 2, screenHeight / 2);
         LinearLayout linearLayout = (LinearLayout) inflater.inflate(R.layout.fragment_carousel_view, container, false);
 
-        TextView textView = (TextView) linearLayout.findViewById(R.id.text);
+      //  TextView textView = (TextView) linearLayout.findViewById(R.id.text);
         CarouselLinearLayout root = (CarouselLinearLayout) linearLayout.findViewById(R.id.root_container);
         ImageView imageView = (ImageView) linearLayout.findViewById(R.id.pagerImg);
         switch (postion)
@@ -109,7 +109,7 @@ public class ItemFragment extends Fragment {
 
         }
         Log.i("fragment item", title);
-        textView.setText(title);
+       // textView.setText(title);
         imageView.setLayoutParams(layoutParams);
         imageView.setScaleType(ImageView.ScaleType.FIT_CENTER);
         imageView.setImageResource(CarouselPagerAdapter.images[postion]);

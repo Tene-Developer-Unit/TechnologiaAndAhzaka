@@ -55,7 +55,8 @@ public class DisplayInfoFragment extends Fragment {
 
     HolderTIT arrayList ;
     ViewGroup.LayoutParams size;
-
+    String starthtml = "<html dir=\"rtl\">\n" + "<body style=\"color: #0060C6\">";
+    String endhtml = "</body>\n" + "</html>";
     ProgressDialog dialog;
 
     public DisplayInfoFragment() {
@@ -74,10 +75,14 @@ public class DisplayInfoFragment extends Fragment {
         View rootview;
         String videoUrl;
         final ProgressBar progressBar = null;
+
         rootview = inflater.inflate(R.layout.display_info_title_video_text, container, false);
+
         MediaController mediacontroller = new MediaController(getActivity());
+
         ImageView titleFrame = (ImageView) rootview.findViewById(R.id.titleimageRelativelayout);
         arrayList = getArguments().getParcelable("holderer");
+
         final VideoView videoView = (VideoView) rootview.findViewById(R.id.display_info_video_view);
 
         TextView title = (TextView) rootview.findViewById(R.id.display_info_text_title);
@@ -150,7 +155,10 @@ public class DisplayInfoFragment extends Fragment {
 
 
             //infoText.setText(Html.fromHtml(Asistent.loadJSONFromAsset(getActivity(), "textFiles/" + arrayList.getTextPath())));
-            infoText.loadUrl("file:///android_asset/textFiles/" + arrayList.getTextPath());
+
+     //infoText.loadDataWithBaseURL(null,starthtml + "file:///android_asset/textFiles/" + arrayList.getTextPath() + endhtml,null,"utf-8",null);
+
+        infoText.loadUrl("file:///android_asset/textFiles/" + arrayList.getTextPath());
 
         return rootview;
 

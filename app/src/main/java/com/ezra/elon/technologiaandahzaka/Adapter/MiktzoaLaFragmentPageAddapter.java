@@ -89,7 +89,7 @@ Context context;
             case 1:
                 return "מסלולים";
             case 2:
-                return "השמה";
+                return "מעברים";
             case 3:
                 return "שאלון";
         }

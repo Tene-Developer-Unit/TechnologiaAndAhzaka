@@ -11,6 +11,7 @@ import android.widget.AdapterView;
 import android.widget.GridView;
 import android.widget.ListAdapter;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.ezra.elon.technologiaandahzaka.Adapter.Asistent;
 import com.ezra.elon.technologiaandahzaka.Adapter.CourseButton;
@@ -19,6 +20,7 @@ import com.ezra.elon.technologiaandahzaka.Adapter.HolderTIT;
 import com.ezra.elon.technologiaandahzaka.Adapter.NewsListViewAdapter;
 import com.ezra.elon.technologiaandahzaka.R;
 
+import java.net.URI;
 import java.util.ArrayList;
 
 /**
@@ -56,12 +58,13 @@ public class RandomCourseFragment extends Fragment {
 
         randomCourseArrayList.clear();
 
-       randomCourseArrayList = (ArrayList<CourseButton>) asistent.RandomCoures(getActivity().getBaseContext());
+       randomCourseArrayList = (ArrayList<CourseButton>) asistent.RandomCoures(getActivity());
 
 
 
-        ListAdapter adapter = new CourseGridViewAddapter(getActivity().getBaseContext(),randomCourseArrayList);
+        ListAdapter adapter = new CourseGridViewAddapter(getActivity(),randomCourseArrayList);
         listView.setAdapter(adapter);
+
 
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -69,14 +72,18 @@ public class RandomCourseFragment extends Fragment {
 
                 for(int d = 0; d < randomCourseArrayList.size(); d++)
                 {/////////todo: need to proceed the develop
-                    holderTITArrayList.add(new HolderTIT(randomCourseArrayList.get(i).getTitle(),randomCourseArrayList.get(i).getTitle()));
+                    holderTITArrayList.add(new HolderTIT(randomCourseArrayList.get(i).getTitle(),randomCourseArrayList.get(i).getImage(),randomCourseArrayList.get(i).getPath()));
                 }
 
                 Fragment fragment = new DisplayInfoFragment();
-                ft = getActivity().getSupportFragmentManager().beginTransaction();
+
+            //    ft = getActivity().getSupportFragmentManager().beginTransaction();
                 Bundle bundle = new Bundle();
                 bundle.putParcelable("holderer", holderTITArrayList.get(i));
-                fragment.setArguments(bundle);                fragment.setArguments(bundle);
+                fragment.setArguments(bundle);
+               // ft.add(R.id.frame_layout, fragment);
+               // ft.disallowAddToBackStack();
+                ft = getActivity().getSupportFragmentManager().beginTransaction();
                 ft.replace(R.id.frame_layout, fragment);
                 ft.addToBackStack(null);
                 ft.commit();

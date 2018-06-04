@@ -24,84 +24,51 @@
         android:layout_height="wrap_content" />
 
 
-    <ScrollView
+    <TextView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
->
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:textSize="17sp"
+        android:textStyle="bold"
+        android:textColor="#fff"
+        android:text="דרכי התקשורת עם מוקד חיל הטכנולוגיה והאחזקה"/>
+
         <LinearLayout
-            android:orientation="vertical"
+            android:orientation="horizontal"
 
-
+            android:layout_gravity="center"
+            android:gravity="center"
 
             android:layout_width="match_parent"
             android:layout_height="match_parent"
            >
 
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="360dp"
-                android:padding="5dp"
-                android:paddingTop="7dp">
+
 
                 <ImageButton
                     android:id="@+id/phone_number_button"
                     style="@style/comunicate_button"
-                    android:layout_alignParentLeft="true"
-                    android:layout_alignParentTop="true"
-                    android:layout_marginLeft="13dp"
-                    android:layout_marginTop="4dp"
+                    android:layout_margin="30dp"
                     android:padding="10dp"
                     android:src="@android:drawable/ic_menu_call"
                     android:text="@string/phone_number" />
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentLeft="true"
-                    android:layout_alignParentRight="true"
 
-                    android:layout_alignParentStart="true"
-                    android:layout_marginRight="15dp"
-                    android:text="@string/telephon_number"
-                    android:textColor="#fff"
-                    android:textSize="20sp" />
 
-                <Button
-                    android:id="@+id/button3"
-                    style="@style/comunicate_button"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentEnd="true"
-                    android:layout_alignParentLeft="true"
-                    android:layout_below="@+id/phone_number_button"
-                    android:layout_marginLeft="13dp"
-                    android:layout_marginTop="52dp"
-                    android:elevation="2dp"
-                    android:text="03-7377262" />
+            <ImageButton
 
-                <TextView
-                    android:id="@+id/textView2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignBaseline="@+id/button3"
-                    android:layout_alignBottom="@+id/button3"
-                    android:layout_alignParentRight="true"
-                    android:layout_alignParentStart="true"
-                    android:layout_marginRight="15dp"
-                    android:text="@string/fax"
-                    android:textColor="#fff"
-                    android:textSize="20sp" />
+                android:id="@+id/facebookpage"
+                style="@style/comunicate_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="30dp"
+                android:layout_below="@+id/button3"
+                android:src="@drawable/face"
 
-                <TextView
-                    android:id="@+id/textView3"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignBottom="@+id/email_button"
-                    android:layout_alignEnd="@+id/textView2"
+                android:text="@string/mail_address"
+                android:textAllCaps="false" />
 
-                    android:text="@string/email"
-                    android:textColor="#fff"
-                    android:textSize="20sp" />
+
 
 
                 <ImageButton
@@ -109,21 +76,18 @@
                     style="@style/comunicate_button"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-
-
+                    android:layout_margin="30dp"
                     android:layout_below="@+id/button3"
-
-                    android:layout_marginTop="60dp"
                     android:layout_alignEnd="@+id/phone_number_button"
                     android:padding="10dp"
                     android:src="@android:drawable/ic_dialog_email"
                     android:text="@string/mail_address"
                     android:textAllCaps="false" />
-            </RelativeLayout>
+
 
 
 
         </LinearLayout>
 
-    </ScrollView>
+
 </LinearLayout>

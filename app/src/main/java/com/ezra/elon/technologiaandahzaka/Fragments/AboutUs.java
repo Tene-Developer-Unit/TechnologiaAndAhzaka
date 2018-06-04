@@ -81,18 +81,6 @@ public class AboutUs extends Fragment {
 
         TextView textView = (TextView) rootview.findViewById(R.id.about_us_discripation);
         textView.setText(Html.fromHtml(getString(R.string.about_us_discription_text)));
-        TextView list0 =   (TextView) rootview.findViewById(R.id.about_us_discripation_list_0);
-        TextView list1 =   (TextView) rootview.findViewById(R.id.about_us_discripation_list_1);
-        TextView list2 =   (TextView) rootview.findViewById(R.id.about_us_discripation_list_2);
-        TextView list3 =   (TextView) rootview.findViewById(R.id.about_us_discripation_list_3);
-        TextView list4 =   (TextView) rootview.findViewById(R.id.about_us_discripation_list_4);
-
-        list0.setText(list[0]);
-        list1.setText(list[1]);
-        list2.setText(list[2]);
-        list3.setText(list[3]);
-        list4.setText(list[4]);
-
 
         return rootview;
     }

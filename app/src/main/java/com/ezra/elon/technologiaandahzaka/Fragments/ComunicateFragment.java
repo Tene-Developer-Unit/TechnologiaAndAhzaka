@@ -56,6 +56,7 @@ public class ComunicateFragment extends Fragment {
         View  rootview =inflater.inflate(R.layout.communication, container, false);
         ImageButton phonenumber = (ImageButton) rootview.findViewById(R.id.phone_number_button);
         ImageButton email = (ImageButton) rootview.findViewById(R.id.email_button);
+        ImageButton facebook = (ImageButton) rootview.findViewById(R.id.facebookpage);
 
         phonenumber.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -68,6 +69,7 @@ public class ComunicateFragment extends Fragment {
 
             }
         });
+
         email.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -81,6 +83,14 @@ public class ComunicateFragment extends Fragment {
                 if (intent.resolveActivity(getActivity().getPackageManager()) != null) {
                     startActivity(intent);
                 }
+            }
+        });
+
+        facebook.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent myIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.facebook.com/Technology.IDF/"));
+                startActivity(myIntent);
             }
         });
         return rootview;

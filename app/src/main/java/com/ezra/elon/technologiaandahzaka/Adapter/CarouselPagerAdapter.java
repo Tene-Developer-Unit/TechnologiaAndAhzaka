@@ -28,8 +28,8 @@ import com.ezra.elon.technologiaandahzaka.R;
 
 public class CarouselPagerAdapter extends FragmentPagerAdapter implements ViewPager.OnPageChangeListener {
 
-    public final static float BIG_SCALE = 1.0f;
-    public final static float SMALL_SCALE = 0.7f;
+    public final static float BIG_SCALE = 1.5f;
+    public final static float SMALL_SCALE = 1.0f;
     public final static float DIFF_SCALE = BIG_SCALE - SMALL_SCALE;
     public static int[] images;
     public static String[] title;

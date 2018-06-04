@@ -2,10 +2,15 @@ package com.ezra.elon.technologiaandahzaka.Adapter;
 
 public class CourseButton
 {
-    private int image;
+    private String image;
     private String title;
+    private String path;
 
-    public int getImage() {
+    public String getPath() {
+        return path;
+    }
+
+    public String getImage() {
         return image;
     }
 
@@ -13,9 +18,10 @@ public class CourseButton
         return title;
     }
 
-    CourseButton(int image, String title)
+    CourseButton(String image, String title,String path)
     {
         this.image = image;
+        this.path = path;
         this.title = title;
     }
 }

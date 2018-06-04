@@ -19,6 +19,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Gallery;
 import android.widget.GridView;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.Spinner;
@@ -55,14 +56,22 @@ public class MainMenuFragment extends Fragment {
     private static final String ARG_PARAM2 = "param2";
 
     FragmentTransaction ft;
-    View rootview;
+    FragmentManager fragmentManager;
 
+    Fragment fragment = null;
     private String mParam1;
     private String mParam2;
     String weekphotourl;
     ImageView weeklyImage;
     private Context context;
     DatabaseReference mDatabase;
+
+    ImageButton logitechBtn;
+
+    ImageButton mitgaisimBtn;
+
+    ImageButton miktzoaBtn;
+
 
     private OnFragmentInteractionListener mListener;
 
@@ -81,10 +90,7 @@ public class MainMenuFragment extends Fragment {
     //
     public static MainMenuFragment newInstance(String param1, String param2) {
         MainMenuFragment fragment = new MainMenuFragment();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
+
         return fragment;
     }
 
@@ -101,40 +107,79 @@ public class MainMenuFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        rootview = inflater.inflate(R.layout.main_screen_fragment, container, false);
+
+        View rootview = inflater.inflate(R.layout.main_screen_fragment, container, false);
 
         final AnimationDrawable loading_anim;
         mDatabase = FirebaseDatabase.getInstance().getReference();
         context = getContext();
         weeklyImage = (ImageView) rootview.findViewById(R.id.weeklyphoto);
-        weeklyImage.setBackgroundResource(R.drawable.animation_loading);
+        //weeklyImage.setBackgroundResource(R.drawable.common_google_signin_btn_icon_disabled);
 
-
- ////////// TEMPERRERY LIST FOR THE COURSE RANDOM LIST //////////
-//        ArrayList<Asistent.itemHolder> templist = new ArrayList<Asistent.itemHolder>();
-//        templist.add(new Asistent.itemHolder("bareket","foo"));
-//        templist.add(new Asistent.itemHolder("marom","foo"));
-//        templist.add(new Asistent.itemHolder("proyekt","foo"));
-//        templist.add(new Asistent.itemHolder("jobtitle","foo"));
-//        ArrayAdapter<Asistent.itemHolder> arrayAdapter = new MainSrcnCourseGridViewAdapter(getActivity().getBaseContext(),templist);
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
+        logitechBtn = (ImageButton) rootview.findViewById(R.id.logitech_button);
+
+        mitgaisimBtn = (ImageButton) rootview.findViewById(R.id.mitgaisim_button);
+
+        miktzoaBtn = (ImageButton) rootview.findViewById(R.id.miktzoa_button);
 
 
+
+        logitechBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                fragment = new WebViewOnlyFragment();
+                Bundle bundle = new Bundle();
+                bundle.putString("url","file:///android_asset/logitechWeb/landingpage/index.html");
+                fragment.setArguments(bundle);
+
+                ft = getFragmentManager().beginTransaction();
+                ft.setAllowOptimization(true);
+                ft.replace(R.id.frame_layout,fragment);
+                ft.addToBackStack(null);
+                ft.commit();
+            }
+        });
+
+        mitgaisimBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                fragment = new MalshabimFragment();
+
+                ft = getFragmentManager().beginTransaction();
+                ft.setAllowOptimization(true);
+                ft.replace(R.id.frame_layout,fragment);
+                ft.addToBackStack(null);
+                ft.commit();
+            }
+        });
+        miktzoaBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                fragment = new MiktzoaLaFragment();
+
+                ft = getFragmentManager().beginTransaction();
+                ft.setAllowOptimization(true);
+                ft.replace(R.id.frame_layout,fragment);
+                ft.addToBackStack(null);
+                ft.commit();
+            }
+        });
 
 
 ///////////////////////////////////// THE COMENDS THAT CONNECT ME TO THE WEEKLY PHOTO //////////////////////////////////////////
 
-        weeklyImage.setImageResource(R.drawable.kkatzyashir);
+        //weeklyImage.setImageResource();
         ViewGroup.LayoutParams size = weeklyImage.getLayoutParams();
+
         size.height = 300;
         size.width = 300;
         weeklyImage.setLayoutParams(size);
 
-        loading_anim = (AnimationDrawable) weeklyImage.getBackground();
-        loading_anim.start();
+
 
 
         mDatabase.child("URLS").child("weeklyphoto").addListenerForSingleValueEvent(new ValueEventListener() {
@@ -150,8 +195,9 @@ public class MainMenuFragment extends Fragment {
                         size.height = ViewGroup.LayoutParams.MATCH_PARENT;
                         size.width = ViewGroup.LayoutParams.MATCH_PARENT;
                         weeklyImage.setLayoutParams(size);
-                           loading_anim.stop();
+
                     }
+
 
                     @Override
                     public void onError() {
@@ -181,7 +227,9 @@ public class MainMenuFragment extends Fragment {
 
         getChildFragmentManager().beginTransaction().add(R.id.news_listview_fragment,newsListViewFragment).commit();
 
-//        ft.add(R.id.news_listview_fragment,newsListViewFragment).commit();
+        RandomCourseFragment randomCourseFragment = new RandomCourseFragment();
+        getChildFragmentManager().beginTransaction().add(R.id.random_course_fragment,randomCourseFragment).commit();
+
 
 
 

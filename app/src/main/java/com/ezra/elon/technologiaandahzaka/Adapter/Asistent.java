@@ -2,17 +2,14 @@ package com.ezra.elon.technologiaandahzaka.Adapter;
 
 import android.content.Context;
 import android.net.ConnectivityManager;
-import android.util.Log;
 import android.widget.Toast;
 
-import com.ezra.elon.technologiaandahzaka.Acivities.MainActivity;
 import com.ezra.elon.technologiaandahzaka.R;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -115,17 +112,22 @@ public class Asistent {
         ArrayList<itemHolder> courseListArray = new ArrayList<>();
         String megama = "";
         JSONObject root = null;
+        int [][] ids = {{-1,-1},{-1,-1},{-1,-1},{-1,-1}};
 
         temp.clear();
+
         int megama_id;
         int course_id;
         int megama_image = 0;
         Random random = new Random();
+        int d=0;
 
-        for(int d=0; d<4; d++)
+        while (d < 4)
         {
 
+
             megama_id = random.nextInt(4);
+            ids[d][0]= megama_id;
             switch (megama_id) {
 
                 case 0://mechenic
@@ -134,7 +136,7 @@ public class Asistent {
                     break;
                 case 1://electronic
                     megama = "Electronic";
-                    megama_image = R.drawable.background2;
+                    megama_image = R.drawable.electronic_course;
                     break;
                 case 2://electricity
                     megama = "Electricity";
@@ -160,12 +162,13 @@ public class Asistent {
                 int i;
                 if(megama == "toon")
                 {
-                    i = 0;
+                     i = 0;
                 }
                else
                 {
                     i = random.nextInt(maslulim.length());
                 }
+                ids[d][1] = i;
 
                 String name;
                 String url;
@@ -173,23 +176,25 @@ public class Asistent {
                 JSONObject maslul = maslulim.getJSONObject(i);//get single object
 
                 boolean isnotexsist = true;
-                for (int x = 0;temp.size() < x; x++)
+                for (int x = 0;x < temp.size(); x++)
                 {
-                    if(temp.get(i).getTitle() == maslul.getString("name") )
-                    {   isnotexsist = false;
+
+                    if(ids[x][0] == megama_id && ids[x][1] == i)
+                    {
+                        isnotexsist = false;
+
                         break;
                     }
-
-
                 }
 
                 if(isnotexsist)
                 {
-                    temp.add(new CourseButton(megama_image, maslul.getString("name")));
+                    temp.add(new CourseButton(maslul.getString("videoUrl"), maslul.getString("name"),maslul.getString("textPath")));
+                    d++;
                 }
 
 
-                Log.i("JsonToArryList", maslul.getString("name"));
+
 
             } catch (JSONException e) {
                 e.printStackTrace();

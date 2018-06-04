@@ -1,19 +1,119 @@
-<html dir="rtl">
+<html dir="rtl" xmlns="http://www.w3.org/1999/html">
 <head>
     <style type="text/css">
         html{background:url("../background/mikbg.gif");
 
         no-repeat center center fixed; -webkit-background-size: cover; -moz-background-size:cover;-o-background-size:cover; background-size:cover;
         }
-    </style>
 
+
+
+        #slideshow {
+    margin: 30px 0;
+    position: relative;
+    width: 300;
+    height: 100;
+    padding: 1px;
+    box-shadow: 0 0 0 rgba(0,0,0,0.4);
+}
+
+#slideshow > div {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    right: 10px;
+    bottom: 10px;
+}
+
+    </style>
+    <script src="jquery-3.3.1.min.js">
+</script>
+    <script>
+
+$("#slideshow > div:gt(0)").hide();
+
+setInterval(function() {
+  $('#slideshow > div:first')
+    .fadeOut(1000)
+    .next()
+    .fadeIn(1000)
+    .end()
+    .appendTo('#slideshow');
+},  4000);
+</script>
 </head>
 <body >
-<h1 style="text-align: center;color: #3d777f;">לא יוצאים לחיים, בלי מקצוע לחיים!</h1>
-<p style="text-align: center; color: #2f6067;">הכירו את תכנית "מקצוע לחיים" המציעה לכם ליהנות משירות משמעותי<br>ומעניין שבסופו תשתחררו לאזרחות עם ניסיון תעסוקתי ומקצוע מבוקש.לימודי המקצוע ורכישת הניסיון יתבצעו במהלך השירות הצבאי.<br>"מקצוע לחיים" הינה תכנית חדשה באגף הטכנולוגיה והלוגיסטיקה בשיתוף הקרן והיחידה<br>להכוונת חיילים משוחררים, משרד הכלכלה, התאחדות התעשיינים וחברות אזרחיות.</p>
-<center>
 
-<iframe style="text-align: center" height="250" src="https://www.youtube.com/embed/4ZTXapx6N6s" frameborder="0" gesture="media" ></iframe>
+<img width="100%" src="../background/miktzoa_logo.png">
+
+<!--<h1 style="text-align: center;color: #3d777f;">לא יוצאים לחיים, בלי מקצוע לחיים!</h1>-->
+<br>
+<br>
+<video id="video01" controls>
+    <source src="https://dovermediastorage.blob.core.windows.net/asset-c1f2d309-3e05-4758-b478-35cc76fcb718/miktsoala_320x180_AACAudio_100.mp4?autoplay=1&sv=2015-07-08&sr=c&si=5ee1968f-2d83-4a7e-ad10-d26c7607fec3&sig=DuzOQJ3GEO1nDk4V92auV3ASOly3XrpEOYNnt5JdMjM%3D&se=2028-02-19T15%3A29%3A56Z" type="video/mp4" />
+    <p>no support text</p>
+</video>
+
+<br>
+
+
+<p style="text-align: center; color: #2f6067;">
+    <b>מתגייסים לחילות אט"ל, מצטיינים בשירות ומשתחררים עם "מקצוע לחיים".</b>
+    <br>
+    <br>
+    תכנית "מקצוע לחיים" - תכנית צה"לית בהובלת אגף הטכנולוגיה והלוגיסטיקה. התכנית שמה לה ליעד לחזק את המשק והתעשייה בישראל באמצעות שילוב כוח אדם טכנולוגי, איכותי, משכיל ומיומן בעבודה בתעשייה.
+    <br>
+</p>
+<center>
+<div>
+
+    <video id="video02" width="300"  controls>
+        <source src="https://firebasestorage.googleapis.com/v0/b/teneapp-fe33d.appspot.com/o/miktzoa.mp4?alt=media&token=80c66baa-79f0-4481-9193-8ca812d31159" type="video/mp4" />
+        <p>no support text</p>
+    </video>
+
+
+<br><br>
+
+</div>
+<div>
+    <p style="text-align: center; color: #2f6067;">
+
+        התכנית מתקיימת בשיתוף עם האגף והקרן להכוונת חיילים משוחררים, משרד הכלכלה והתעשייה האזרחית המאפשרת שילוב חיילים ממקצועות טכנולוגיים מובילים בתעשייה האזרחית במגוון ערוצים.
+        המסלולים השונים מאפשרים לך להתגייס לשירות משמעותי במגוון תפקידים ולהשתחרר מהצבא עם מקצוע ביד.
+        התכנית עוזרת לך לבנות את עתידך המקצועי ומאפשרת לך לרכוש מקצוע מבוקש בנוסף לתפקיד.
+    </p>
+</div>
+
+    <br>
+
+
 </center>
+
+<!--slide gallery of halfe men-->
+
+<div>
+
+
+    <div id="slideshow">
+        <div>
+            <img width="300" height="auto" src="../images_mitzoa/mikhalfe1.jpeg">
+        </div>
+        <div>
+            <img width="300" height="150" src="../images_mitzoa/mikhalfe2.jpeg">
+        </div>
+        <div>
+            <img width="300" height="auto" src="../images_mitzoa/mikhalfe3.jpeg">
+        </div>
+        <div>
+            <img width="300" height="auto" src="../images_mitzoa/mikhalfe4.jpeg">
+        </div>
+
+    </div>
+
+</div>
+<br><br><br>
+
+
 </body>
 </html>

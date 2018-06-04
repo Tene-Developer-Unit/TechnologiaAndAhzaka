@@ -1,6 +1,7 @@
 package com.ezra.elon.technologiaandahzaka.Fragments;
 
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
@@ -15,7 +16,15 @@ import android.widget.TextView;
 import com.ezra.elon.technologiaandahzaka.Adapter.CostumeAddapter;
 import com.ezra.elon.technologiaandahzaka.Adapter.CourseGridViewAddapter;
 import com.ezra.elon.technologiaandahzaka.Adapter.NewsListViewAdapter;
+import com.ezra.elon.technologiaandahzaka.Adapter.Report;
 import com.ezra.elon.technologiaandahzaka.R;
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
+
+import java.lang.reflect.Type;
+import java.util.ArrayList;
+
+import static android.content.Context.MODE_PRIVATE;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -32,7 +41,8 @@ public class NewsListViewFragment extends Fragment {
     private String mParam1;
     private String mParam2;
 
-
+    SharedPreferences mPrefs;
+    ArrayList<Report> reportArrayList = new ArrayList<>();
     public NewsListViewFragment() {
         // Required empty public constructor
     }
@@ -67,10 +77,16 @@ public class NewsListViewFragment extends Fragment {
                              Bundle savedInstanceState) {
         View  rootview =inflater.inflate(R.layout.listview_fragment, container, false);
 
+       mPrefs  = getActivity().getPreferences(MODE_PRIVATE);
 
+        Gson gson = new Gson();
+        String json = mPrefs.getString("MyObject", "");
+        Type type = new TypeToken<ArrayList<Report>>(){}.getType();
+        ArrayList<Report> reports= gson.fromJson(json, type);
         ListView listView = (ListView) rootview.findViewById(R.id.list_view_id);
-        ListAdapter adapter = new NewsListViewAdapter(getActivity().getBaseContext());
-        listView.setAdapter(adapter);
+
+//        ListAdapter adapter = new NewsListViewAdapter(getContext(),reports);
+//        listView.setAdapter(adapter);
         return rootview;
     }
 

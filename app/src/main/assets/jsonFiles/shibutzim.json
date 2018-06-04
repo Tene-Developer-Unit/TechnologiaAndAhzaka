@@ -1,43 +1,43 @@
 {
   "Mechanic":[
-    {"name":"טכנאי נשק וצריח מרכבה 4","videoUrl":null,"textPath":"MechenicTextFiles/nesheksiman4.html"},
-    {"name":"טכנאי נשק וצריח מרכבה 2,3","videoUrl":null,"textPath":"MechenicTextFiles/nesheksiman23.html"},
-    {"name":"טכנאי נשק וצריח תומ\"ת","videoUrl":null,"textPath":"MechenicTextFiles/neshektomat.html"},
-    {"name":"טכנאי מערכות הנעה מרכבה 4","videoUrl":null,"textPath":"MechenicTextFiles/hanaasiman4.html"},
-    {"name":"טכנאי מערכות הנעה מרכבה 2,3","videoUrl":null,"textPath":"MechenicTextFiles/hanaasiman23.html"},
-    {"name":"טכנאי מערכות הנעה נמר","videoUrl":null,"textPath":"MechenicTextFiles/namer.html"},
-    {"name":"טכנאי מערכות הנעה פומ\"ה","videoUrl":null,"textPath":"MechenicTextFiles/puma.html"},
-    {"name":"טכנאי מערכות הנעה וחשמל נגמ\"ש","videoUrl":null,"textPath":"MechenicTextFiles/nagmash.html"},
-    {"name":"טכנאי מערכות הנעה צמ\"ה","videoUrl":null,"textPath":"MechenicTextFiles/tzama.html"},
-    {"name":"טכנאי מערכות הנעה תומ\"ת","videoUrl":null,"textPath":"MechenicTextFiles/tomat.html"},
-    {"name":"טכנאי מערכות הנעה אכזרית","videoUrl":null,"textPath":"MechenicTextFiles/achzarit.html"},
-    {"name":"טכנאי תובה מנת\"ץ","videoUrl":null,"textPath":"MechenicTextFiles/menatez.html"}
+    {"name":"טכנאי נשק וצריח מרכבה 4","videoUrl":"mechenic_course","textPath":"MechenicTextFiles/nesheksiman4.html"},
+    {"name":"טכנאי נשק וצריח מרכבה 2 ו-3","videoUrl":"mechenic_course","textPath":"MechenicTextFiles/nesheksiman23.html"},
+    {"name":"טכנאי נשק וצריח תומ\"ת","videoUrl":"mechenic_course","textPath":"MechenicTextFiles/neshektomat.html"},
+    {"name":"טכנאי מערכות הנעה מרכבה 4","videoUrl":"mechenic_course","textPath":"MechenicTextFiles/hanaasiman4.html"},
+    {"name":"טכנאי מערכות הנעה מרכבה 2 ו-3","videoUrl":"mechenic_course","textPath":"MechenicTextFiles/hanaasiman23.html"},
+    {"name":"טכנאי מערכות הנעה נמר","videoUrl":"mechenic_course","textPath":"MechenicTextFiles/namer.html"},
+    {"name":"טכנאי מערכות הנעה פומ\"ה","videoUrl":"mechenic_course","textPath":"MechenicTextFiles/puma.html"},
+    {"name":"טכנאי מערכות הנעה וחשמל נגמ\"ש","videoUrl":"mechenic_course","textPath":"MechenicTextFiles/nagmash.html"},
+    {"name":"טכנאי מערכות הנעה צמ\"ה","videoUrl":"mechenic_course","textPath":"MechenicTextFiles/tzama.html"},
+    {"name":"טכנאי מערכות הנעה תומ\"ת","videoUrl":"mechenic_course","textPath":"MechenicTextFiles/tomat.html"},
+    {"name":"טכנאי מערכות הנעה אכזרית","videoUrl":"mechenic_course","textPath":"MechenicTextFiles/achzarit.html"},
+    {"name":"טכנאי תובה מנת\"ץ","videoUrl":"mechenic_course","textPath":"MechenicTextFiles/menatez.html"}
   ],
   "Electronic":[
-    {"name":"טכנאי בקרה ותצפית מרכבה 4","videoUrl":"background2","textPath":"ElectronicTextFiles/bakaravetazpit.html"},
-    {"name":"טכנאי בקרת אש מרכבה 2,3","videoUrl":"background2","textPath":"ElectronicTextFiles/bakash23.html"},
-    {"name":"טכנאי מערכות (ב\"ז)","videoUrl":"background2","textPath":"ElectronicTextFiles/baz.html"},
-    {"name":"טכנאי מערכות אלקטרוניות נמר","videoUrl":"background2","textPath":"ElectronicTextFiles/namer.html"},
-    {"name":"מערכות יעודית מנת\"ץ","videoUrl":"background2","textPath":"ElectronicTextFiles/menatetz.html"},
-    {"name":"טכאי מערכות טכנולוגיות מתקדמות","videoUrl":"background2","textPath":"ElectronicTextFiles/maham.html"},
-    {"name":"טכנאי בקרת אש תומ\"ת","videoUrl":"background2","textPath":"ElectronicTextFiles/tomat.html"},
-    {"name":"טכנאי מוד\"ש","videoUrl":"background2","textPath":"ElectronicTextFiles/modash.html"},
-    {"name":"אלקטרונאי טכנולוגיה ואחזקה","videoUrl":"background2","textPath":"ElectronicTextFiles/electronictene.html"}
+    {"name":"טכנאי בקרה ותצפית מרכבה 4","videoUrl":"electronic_course","textPath":"ElectronicTextFiles/bakaravetazpit.html"},
+    {"name":"טכנאי בקרת אש מרכבה 2,3","videoUrl":"electronic_course","textPath":"ElectronicTextFiles/bakash23.html"},
+    {"name":"טכנאי מערכות (ב\"ז)","videoUrl":"electronic_course","textPath":"ElectronicTextFiles/baz.html"},
+    {"name":"טכנאי מערכות אלקטרוניות נמר","videoUrl":"electronic_course","textPath":"ElectronicTextFiles/namer.html"},
+    {"name":"מערכות יעודית מנת\"ץ","videoUrl":"electronic_course","textPath":"ElectronicTextFiles/menatetz.html"},
+    {"name":"טכאי מערכות טכנולוגיות מתקדמות","videoUrl":"electronic_course","textPath":"ElectronicTextFiles/maham.html"},
+    {"name":"טכנאי בקרת אש תומ\"ת","videoUrl":"electronic_course","textPath":"ElectronicTextFiles/tomat.html"},
+    {"name":"טכנאי מוד\"ש","videoUrl":"electronic_course","textPath":"ElectronicTextFiles/modash.html"},
+    {"name":"אלקטרונאי טכנולוגיה ואחזקה","videoUrl":"electronic_course","textPath":"ElectronicTextFiles/electronictene.html"}
   ],
   "Cars":[
     {"name":"טכנאי רכב\nאוטוטק","videoUrl":"sufa","textPath":"CarsTextFiles/autotech.html"},
     {"name":"מאבחן מערכות רכב (מאמ\"ר)","videoUrl":"sufa","textPath":"CarsTextFiles/mamar.html"}
   ],
   "Electricity":[
-    {"name":"טכנאי מערכות חשמל סימן 4","videoUrl":null,"textPath":"ElectricityTextFiles/siman4.html"},
-    {"name":"טכנאי מערכות הנעה וחשמל גנרטורים","videoUrl":null,"textPath":"ElectricityTextFiles/generators.html"},
-    {"name":"מאחזק חט\"כ (חטיבות כוח)","videoUrl":null,"textPath":"ElectricityTextFiles/hatak.html"},
-    {"name":"טכנאי מערכות חשמל מרכבה 2,3","videoUrl":null,"textPath":"ElectricityTextFiles/siman23.html"},
-    {"name":"טכנאי מערכות חשמל נמר","videoUrl":null,"textPath":"ElectricityTextFiles/namer.html"},
-    {"name":"טכנאי מערכות חשמל פומ\"ה (פורץ מכשולים הנדסי)","videoUrl":null,"textPath":"ElectricityTextFiles/puma.html"},
-    {"name":"טכנאי מערכות חשמל צמ\"ה (ציוד מכני הנדסי)","videoUrl":null,"textPath":"ElectricityTextFiles/tzama.html"},
-    {"name":"טכנאי מערכות חשמל תומ\"ת (תותח מתנייע)","videoUrl":null,"textPath":"ElectricityTextFiles/tomat.html"},
-    {"name":"טכנאי מערכות חשמל אכזרית","videoUrl":null,"textPath":"ElectricityTextFiles/achzarit.html"}
+    {"name":"טכנאי מערכות חשמל סימן 4","videoUrl":"electricity_course","textPath":"ElectricityTextFiles/siman4.html"},
+    {"name":"טכנאי מערכות הנעה וחשמל גנרטורים","videoUrl":"electricity_course","textPath":"ElectricityTextFiles/generators.html"},
+    {"name":"מאחזק חט\"כ (חטיבות כוח)","videoUrl":"electricity_course","textPath":"ElectricityTextFiles/hatak.html"},
+    {"name":"טכנאי מערכות חשמל מרכבה 2,3","videoUrl":"electricity_course","textPath":"ElectricityTextFiles/siman23.html"},
+    {"name":"טכנאי מערכות חשמל נמר","videoUrl":"electricity_course","textPath":"ElectricityTextFiles/namer.html"},
+    {"name":"טכנאי מערכות חשמל פומ\"ה (פורץ מכשולים הנדסי)","videoUrl":"electricity_course","textPath":"ElectricityTextFiles/puma.html"},
+    {"name":"טכנאי מערכות חשמל צמ\"ה (ציוד מכני הנדסי)","videoUrl":"electricity_course","textPath":"ElectricityTextFiles/tzama.html"},
+    {"name":"טכנאי מערכות חשמל תומ\"ת (תותח מתנייע)","videoUrl":"electricity_course","textPath":"ElectricityTextFiles/tomat.html"},
+    {"name":"טכנאי מערכות חשמל אכזרית","videoUrl":"electricity_course","textPath":"ElectricityTextFiles/achzarit.html"}
   ],
   "toon":[
     {"name":"טכנאי תכנון, פיתוח וייצור (תפ\"י)","videoUrl":"toon","textPath":"ToonTextFiles/toon.html"},

@@ -54,7 +54,7 @@ public class JobsFragments extends Fragment {
     public final static int LOOPS = 1000;
     public CarouselPagerAdapter adapter;
     public static ViewPager pager;
-    int[] image = new int[] {R.drawable.bareket, R.drawable.clas,R.drawable.kkatzyashir,R.drawable.blank,R.drawable.blank} ;
+    int[] image = new int[] {R.drawable.mechenic_item, R.drawable.car_item,R.drawable.electronic_item,R.drawable.electricity_item,R.drawable.toon_item} ;
     FragmentTransaction ft;
     DatabaseReference mDatabase;
     View rootview;
@@ -70,7 +70,7 @@ public class JobsFragments extends Fragment {
 
 
 
-        if(Asistent.isNetworkConnected(getContext()))//ther is an internet connection
+        if(true)//Asistent.isNetworkConnected(getContext()))//ther is an internet connection
         {
             rootview = inflater.inflate(R.layout.simple_pageviewer, container, false);
 
@@ -81,6 +81,7 @@ public class JobsFragments extends Fragment {
             getActivity().getWindowManager().getDefaultDisplay().getMetrics(metrics);
             int pageMargin = ((metrics.widthPixels / 4) * 2);
             pager.setPageMargin(-pageMargin);
+
             //todo: display the maslulim ArrayList on the listView
             String ShibutzimName[] = getActivity().getApplicationContext().getResources().getStringArray(R.array.megamot);// the list of the megamot
 
