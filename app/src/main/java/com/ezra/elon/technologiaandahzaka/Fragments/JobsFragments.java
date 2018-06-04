@@ -19,6 +19,7 @@ import android.view.WindowManager;
 import android.webkit.WebView;
 import android.widget.AdapterView;
 import android.widget.GridView;
+import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -27,6 +28,7 @@ import com.ezra.elon.technologiaandahzaka.Acivities.MainActivity;
 import com.ezra.elon.technologiaandahzaka.Adapter.Asistent;
 import com.ezra.elon.technologiaandahzaka.Adapter.CarouselPagerAdapter;
 import com.ezra.elon.technologiaandahzaka.Adapter.GridViewAdapter;
+import com.ezra.elon.technologiaandahzaka.Adapter.GridViewAdapterForJobs;
 import com.ezra.elon.technologiaandahzaka.Adapter.HolderTIT;
 import com.ezra.elon.technologiaandahzaka.Adapter.ItemFragment;
 import com.ezra.elon.technologiaandahzaka.R;
@@ -56,7 +58,15 @@ public class JobsFragments extends Fragment {
     public static ViewPager pager;
     int[] image = new int[] {R.drawable.mechenic_item, R.drawable.car_item,R.drawable.electronic_item,R.drawable.electricity_item,R.drawable.toon_item} ;
     FragmentTransaction ft;
+    GridView gridView;
+
+    ArrayList<String> companies_name = new ArrayList<>();
+    public ArrayList<HolderTIT> compnieAndimage;
+String compney_name;
     DatabaseReference mDatabase;
+    FirebaseDatabase database = FirebaseDatabase.getInstance();
+
+
     View rootview;
     public JobsFragments() {
         // Required empty public constructor
@@ -72,10 +82,154 @@ public class JobsFragments extends Fragment {
 
         if(true)//Asistent.isNetworkConnected(getContext()))//ther is an internet connection
         {
-            rootview = inflater.inflate(R.layout.simple_pageviewer, container, false);
+            rootview = inflater.inflate(R.layout.simple_gridview, container, false);
 
             mDatabase = FirebaseDatabase.getInstance().getReference();//get the refference of the databse
+            DatabaseReference companyLogo = mDatabase.child("CompaniesList");
+            DatabaseReference JobsCompanyList = mDatabase.child("Jobs");
 
+         companyLogo.addValueEventListener(new ValueEventListener() {
+             @Override
+             public void onDataChange(DataSnapshot dataSnapshot) {
+                 compnieAndimage.clear();
+                 gridView = (GridView) rootview.findViewById(R.id.maingridview);
+
+                 for(DataSnapshot child: dataSnapshot.getChildren())
+                 {
+                    compnieAndimage.add(new HolderTIT(child.getKey(),child.child("logo").getValue().toString()));
+                 }
+
+
+                 ListAdapter gv = new GridViewAdapterForJobs(getActivity(), compnieAndimage);
+                 gridView.setAdapter(gv);
+
+
+                 gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                     @Override
+                     public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+
+                        Fragment fragment = new JobByMegamaFragment();
+                         Bundle bundle = new Bundle();
+                         bundle.putString("position",compnieAndimage.get(i).getMaslulName());
+                         fragment.setArguments(bundle);
+                         ft = getFragmentManager().beginTransaction();
+                         ft.setAllowOptimization(true);
+                         ft.replace(R.id.frame_layout,fragment);
+                         ft.addToBackStack(null);
+                         ft.commit();
+
+                     }
+                 });
+
+
+
+             }
+
+             @Override
+             public void onCancelled(DatabaseError databaseError) {
+
+             }
+         });
+
+
+
+
+
+            compnieAndimage = new ArrayList<>();
+            companies_name.clear();
+            compnieAndimage.clear();
+            JSONObject root = null;
+
+
+
+
+
+
+
+                        //compnieAndimage.add(new HolderTIT(compney_name,child.child("CompaniesList").child(compney_name).child("logo").getValue().toString()));
+
+
+
+
+
+
+            Log.i("compnieAnd Size", compnieAndimage.size() + " f");
+
+
+            ////////////////////////// ON CLICK MEGAMAT LIMUD ///////////////
+//
+//            Fragment fragment = new JobByMegamaFragment();
+         // ft = getActivity().getSupportFragmentManager().beginTransaction();
+//            Bundle bundle = new Bundle();
+//            bundle.putInt("position", i);// the choosen megama
+//            fragment.setArguments(bundle);
+//            ft.replace(R.id.frame_layout, fragment);
+//            ft.addToBackStack(null);
+//            ft.commit();
+
+            //  intent.putExtra("shibutId",i);
+
+            ////////////////////////// ON CLICK MEGAMAT LIMUD ///////////////
+
+
+
+        }
+
+    else
+        {
+
+            rootview = inflater.inflate(R.layout.webview_news, container, false);
+            WebView webView = (WebView) rootview.findViewById(R.id.webview_fragment);
+            webView.loadDataWithBaseURL("","אין חיבור לאינטרנט\n בדוק את חיבורי הרשת","","","");
+
+        }
+
+
+        return rootview;
+
+    }
+
+
+        void readFromDatabase2()
+        {
+            mDatabase.child("CompaniesList").addListenerForSingleValueEvent(new ValueEventListener() {
+                @Override
+                public void onDataChange(DataSnapshot dataSnapshot) {
+
+
+                    for (DataSnapshot child : dataSnapshot.getChildren())
+                    {
+
+                        for(int i = 0; i < compnieAndimage.size();i++)
+                        {
+
+                            if(compnieAndimage.get(i).getMaslulName() == child.getKey())
+                            {
+                                compnieAndimage.get(i).setTextPath(child.child("logo").getValue().toString());
+                            }
+
+                        }
+
+                        Log.i("second load",child.child("logo").getValue().toString());
+                    }
+                }
+
+                @Override
+                public void onCancelled(DatabaseError databaseError) {
+
+                }
+            });
+
+        }
+
+
+}
+
+
+
+
+
+            /*
             pager = (ViewPager) rootview.findViewById(R.id.myviewpager);
             DisplayMetrics metrics = new DisplayMetrics();
             getActivity().getWindowManager().getDefaultDisplay().getMetrics(metrics);
@@ -97,46 +251,5 @@ public class JobsFragments extends Fragment {
             pager.setOffscreenPageLimit(3);
             pager.setCurrentItem(1);
 
-pager.setCurrentItem(pager.getCurrentItem() + 10);
-
-
-
-            ////////////////////////// ON CLICK MEGAMAT LIMUD ///////////////
-//
-//            Fragment fragment = new JobByMegamaFragment();
-         // ft = getActivity().getSupportFragmentManager().beginTransaction();
-//            Bundle bundle = new Bundle();
-//            bundle.putInt("position", i);// the choosen megama
-//            fragment.setArguments(bundle);
-//            ft.replace(R.id.frame_layout, fragment);
-//            ft.addToBackStack(null);
-//            ft.commit();
-
-            //  intent.putExtra("shibutId",i);
-
-            ////////////////////////// ON CLICK MEGAMAT LIMUD ///////////////
-
-
-
-
-
-        }
-
-    else
-        {
-
-            rootview = inflater.inflate(R.layout.webview_news, container, false);
-            WebView webView = (WebView) rootview.findViewById(R.id.webview_fragment);
-            webView.loadDataWithBaseURL("","אין חיבור לאינטרנט\n בדוק את חיבורי הרשת","","","");
-
-        }
-
-
-        return rootview;
-
-    }
-
-
-
-
-}
+            pager.setCurrentItem(pager.getCurrentItem() + 10);
+*/

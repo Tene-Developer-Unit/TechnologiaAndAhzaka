@@ -64,9 +64,9 @@ public class JobInfoFragment extends Fragment {
             Intent intent = new Intent(Intent.ACTION_SEND);
             intent.setType("text/email");
 
-            intent.putExtra(Intent.EXTRA_EMAIL, new String[] {"technologia@jobs.co.il"});
+            intent.putExtra(Intent.EXTRA_EMAIL, new String[] {"kshiran32@gmail.com"});
             intent.putExtra(Intent.EXTRA_SUBJECT,  "בקשה למשרת "+arrayList.getMaslulName());
-            intent.putExtra(Intent.EXTRA_TEXT,  "פורמט שליחת קורות חיים");
+            intent.putExtra(Intent.EXTRA_TEXT,  "שם:  מספר תז:");
 
 
 

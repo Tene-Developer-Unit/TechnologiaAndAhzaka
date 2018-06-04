@@ -10,7 +10,8 @@
 
     <ImageView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="130dp"
+        android:scaleType="centerCrop"
         android:adjustViewBounds="true"
         android:layout_margin="10dp"
         android:elevation="5dp"
@@ -26,7 +27,6 @@
         android:id="@+id/jobname_textView"
         android:textSize="28sp"
         android:fadingEdgeLength="10dp"
-        android:background="#50ffffff"
         android:textStyle="bold"
         android:paddingLeft="5dp"
         android:paddingRight="5dp"
@@ -34,7 +34,7 @@
         android:layout_alignLeft="@+id/imageView4"
         android:layout_alignStart="@+id/imageView4"
         android:text="helpp"
-        android:textColor="#0074da"
+        android:textColor="#6799c6"
         android:translationZ="50dp" />
 </RelativeLayout>
 
@@ -56,8 +56,9 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
 
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="5dp"
         android:layout_marginRight="30dp"
+        android:layout_marginBottom="45dp"
         android:layout_marginLeft="30dp"
         android:layout_alignRight="@+id/imageView3"
         android:layout_below="@+id/textView5"

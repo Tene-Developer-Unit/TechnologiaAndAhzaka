@@ -67,7 +67,7 @@ public class JobByMegamaFragment extends Fragment {
 
 
     public Asistent asistent = new Asistent();
-    public static int position;
+    public static String position;
     FirebaseDatabase database = FirebaseDatabase.getInstance();
     public static ArrayList<HolderTIT> holderTITArrayList = new ArrayList<>();
     String Jobs_Name[];
@@ -99,32 +99,17 @@ public class JobByMegamaFragment extends Fragment {
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         Bundle bundle = new Bundle();
-        position  =   getArguments().getInt("position");
+        position  =   getArguments().getString("position");
 
-        switch (position) {
-            case 0:
-                megama = "Mechanic";
-                break;
-            case 1:
-                megama = "Cars";
-                break;
-            case 2:
-                megama = "Electronic";
-                break;
-            case 3:
-                megama = "Electricity";
-                break;
-            case 4:
-                megama = "toon";
-                break;
-            default:
-                break;
-        }
+
+
+
+
         flag_were_in_on_creat = true;//// i was in the onCreat
 
         /////////////////////       TEMPERARY        ////////////////////////////////
 
-        Toast.makeText(getContext(),megama,Toast.LENGTH_SHORT).show();
+        Toast.makeText(getContext(),position,Toast.LENGTH_SHORT).show();
 
         myRef = FirebaseDatabase.getInstance().getReference();///CREAT THE REFERENCE TO MY DATA BASE
 
@@ -201,7 +186,7 @@ public class JobByMegamaFragment extends Fragment {
 
     /////// Read From Firebase Databse////////////////////
 
-        myRef.child("Jobs").child(megama).addListenerForSingleValueEvent(new ValueEventListener() {
+        myRef.child("Jobs").child(position).addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot)
                 {
