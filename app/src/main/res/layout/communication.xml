@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical" android:layout_width="match_parent"
+   android:layout_width="match_parent"
     android:layout_height="match_parent"
-
-    android:gravity="center_horizontal"
+android:layout_gravity="center"
+android:orientation="vertical"
     android:baselineAligned="false"
     >
 
@@ -19,8 +20,7 @@
         android:adjustViewBounds="true"
         android:background="@drawable/shadow"
         android:id="@+id/imageView2"
-        android:padding="1dp"
-        android:layout_marginBottom="20dp"
+
         android:layout_height="wrap_content" />
 
 
@@ -28,66 +28,69 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
+        android:text="דרכי התקשורת עם מוקד חיל הטכנולוגיה והאחזקה"
+        android:textColor="#fff"
         android:textSize="17sp"
         android:textStyle="bold"
-        android:textColor="#fff"
-        android:text="דרכי התקשורת עם מוקד חיל הטכנולוגיה והאחזקה"/>
+        tools:layout_editor_absoluteX="35dp"
+        tools:layout_editor_absoluteY="178dp" />
 
-        <LinearLayout
-            android:orientation="horizontal"
-
-            android:layout_gravity="center"
-            android:gravity="center"
-
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-           >
+<android.support.constraint.ConstraintLayout
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent"
+    android:layout_gravity="center"
+    >
 
 
+    <ImageButton
+        android:id="@+id/phone_number_button"
+        style="@style/comunicate_button"
+        android:layout_width="61dp"
+        android:layout_height="60dp"
+        android:layout_margin="30dp"
+        android:layout_marginEnd="156dp"
+        android:layout_marginStart="16dp"
+        android:padding="10dp"
+        android:src="@android:drawable/ic_menu_call"
+        android:text="@string/phone_number"
+        app:layout_constraintEnd_toStartOf="@+id/facebookpage"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="16dp" />
 
-                <ImageButton
-                    android:id="@+id/phone_number_button"
-                    style="@style/comunicate_button"
-                    android:layout_margin="30dp"
-                    android:padding="10dp"
-                    android:src="@android:drawable/ic_menu_call"
-                    android:text="@string/phone_number" />
+    <ImageButton
+        android:id="@+id/email_button"
+        style="@style/comunicate_button"
+        android:layout_width="61dp"
+        android:layout_height="61dp"
+        android:layout_margin="30dp"
+        android:layout_marginStart="17dp"
+        android:padding="10dp"
+        android:src="@android:drawable/ic_dialog_email"
+        android:text="@string/mail_address"
+        android:textAllCaps="false"
+        app:layout_constraintEnd_toStartOf="@+id/facebookpage"
+        app:layout_constraintHorizontal_bias="0.306"
+        app:layout_constraintStart_toEndOf="@+id/phone_number_button"
+        tools:layout_editor_absoluteY="16dp" />
+
+    <ImageButton
+
+        android:id="@+id/facebookpage"
+        style="@style/comunicate_button"
+        android:layout_width="68dp"
+        android:layout_height="62dp"
+        android:layout_margin="30dp"
+
+        android:layout_marginEnd="32dp"
+        android:src="@drawable/face"
+        android:text="@string/mail_address"
+        android:textAllCaps="false"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/email_button"
+        tools:layout_editor_absoluteY="16dp" />
 
 
-
-            <ImageButton
-
-                android:id="@+id/facebookpage"
-                style="@style/comunicate_button"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="30dp"
-                android:layout_below="@+id/button3"
-                android:src="@drawable/face"
-
-                android:text="@string/mail_address"
-                android:textAllCaps="false" />
-
-
-
-
-                <ImageButton
-                    android:id="@+id/email_button"
-                    style="@style/comunicate_button"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="30dp"
-                    android:layout_below="@+id/button3"
-                    android:layout_alignEnd="@+id/phone_number_button"
-                    android:padding="10dp"
-                    android:src="@android:drawable/ic_dialog_email"
-                    android:text="@string/mail_address"
-                    android:textAllCaps="false" />
-
-
-
-
-        </LinearLayout>
-
+</android.support.constraint.ConstraintLayout>
 
 </LinearLayout>

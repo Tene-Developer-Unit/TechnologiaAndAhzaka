@@ -101,8 +101,18 @@ public class WebViewOnlyFragment extends Fragment {
                    // webView.setBackgroundResource(R.drawable.mikbg);
 
                 }
-            }});
+            }
 
+        });
+
+
+
+        webView.setWebViewClient(new WebViewClient() {
+            public void onReceivedError(WebView view, int errorCode, String description, String failingUrl) {
+                webView.loadUrl("file:///android_asset/httpFiles/erorr.html");
+
+            }
+        });
             return rootview;
 
         }

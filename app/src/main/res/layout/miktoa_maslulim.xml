@@ -14,81 +14,34 @@
             android:orientation="vertical"
             android:layout_margin="5dp"
             >
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/hacsharot_title_info"
-        android:layout_marginRight="16dp"
-        android:layout_marginTop="15dp"
-        style="@style/about_us_text_style"
-        android:textColor="#0075bc"
-        />
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        android:elevation="8dp"
-        android:background="#d0ffffff"
-        android:layout_marginBottom="30dp"
-        >
-
-        <TextView
-
-            android:text="@string/hachshara_info"
-            style="@style/miktzoa_text_style" />
-
-    </LinearLayout>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/haasaka_title_info"
-        android:layout_marginRight="16dp"
-        style="@style/about_us_text_style"
-        android:textColor="#0075bc"
-        />
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        android:elevation="8dp"
-        android:background="#d0ffffff"
-        android:layout_marginBottom="20dp"
-        >
-
-        <TextView
-
-            android:text="@string/haasaka_info"
-            style="@style/miktzoa_text_style" />
-
-    </LinearLayout>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="תכנית מעברים"
-                android:layout_marginRight="16dp"
-                style="@style/about_us_text_style"
-                android:textColor="#0075bc"
-                />
-
-            <LinearLayout
+            <ImageButton
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="10dp"
-                android:layout_marginBottom="20dp"
-                android:elevation="8dp"
-                android:background="#d0ffffff"
-                >
+                android:layout_height="match_parent"
+                android:scaleType="fitCenter"
+                android:adjustViewBounds="true"
+                android:id="@+id/hachsharot"
+                android:src="@drawable/hachsharot"/>
 
-                <TextView
 
-                    android:text="@string/maavarim_info"
-                    style="@style/miktzoa_text_style" />
 
-            </LinearLayout>
+            <ImageButton
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="fitCenter"
+                android:adjustViewBounds="true"
+                android:id="@+id/hasaka"
+                android:src="@drawable/hasaka"/>
+
+            <ImageButton
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="fitCenter"
+                android:adjustViewBounds="true"
+                android:id="@+id/mavarim"
+                android:src="@drawable/mavarim"/>
+
+
         </LinearLayout>
     </ScrollView>
 </LinearLayout>

@@ -9,10 +9,17 @@
             android:title="@string/main_screen"
             android:icon="@drawable/ic_menu_home"
             ></item>
+  <item
+            android:id="@+id/meet_technologia"
+            android:icon="@drawable/ic_menu_hail"
+            android:title="חיל הטכנולוגיה והאחזקה" />
+
+
         <item
             android:id="@+id/about_us"
             android:icon="@drawable/ic_menu_flag"
             android:title="@string/about_us" />
+
         <item
             android:id="@+id/malshabim"
             android:icon="@drawable/ic_menu_people"
@@ -26,10 +33,6 @@
             android:title="@string/comunication"
             android:icon="@drawable/ic__menu_phone"
             />
-        <item
-            android:id="@+id/facebookpage"
-            android:icon="@drawable/ic_menu_facebook"
-            android:title="@string/facebookpage" />
 
 
 

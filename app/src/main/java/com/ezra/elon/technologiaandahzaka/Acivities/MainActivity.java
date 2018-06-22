@@ -46,6 +46,7 @@ import com.ezra.elon.technologiaandahzaka.Fragments.JobInfoFragment;
 import com.ezra.elon.technologiaandahzaka.Fragments.MainMenuFragment;
 import com.ezra.elon.technologiaandahzaka.Fragments.MalshabimFragment;
 import com.ezra.elon.technologiaandahzaka.Fragments.MaslulimListFragment;
+import com.ezra.elon.technologiaandahzaka.Fragments.MeetHailFragment;
 import com.ezra.elon.technologiaandahzaka.Fragments.MiktzoaLaFragment;
 import com.ezra.elon.technologiaandahzaka.Fragments.NewsFragment;
 import com.ezra.elon.technologiaandahzaka.Fragments.WebViewOnlyFragment;
@@ -66,7 +67,7 @@ public class MainActivity extends AppCompatActivity
     Fragment fragment = null;
 
     FragmentManager fragmentManager = getSupportFragmentManager();
-private boolean viewIsAtHome;
+public boolean viewIsAtHome = true;
     private DatabaseReference mDatabase;
 
     /**
@@ -171,16 +172,11 @@ private boolean viewIsAtHome;
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
         }
-
-
         if(getSupportFragmentManager().getBackStackEntryCount() < 2 )
         {
             finish();
-
-        }
-        ft.remove(fragment);
+        }else
         getSupportFragmentManager().popBackStack();
-      //  getSupportActionBar().setTitle(title);
 
 
     }
@@ -209,42 +205,54 @@ private boolean viewIsAtHome;
     {
         ViewGroup frame =(FrameLayout) findViewById(R.id.frame_layout);
 
-         title = "";
 
         switch (viewId)
         {
             case R.id.comunication:
                 fragment = new ComunicateFragment();
-                title = getResources().getString(R.string.comunication);
+                viewIsAtHome =false;
                 break;
+            case R.id.meet_technologia:
 
-            case R.id.facebookpage:
-                fragment = openWebPage("https://www.facebook.com/mitgaisim.tech/?fref=ts");
-                title = getResources().getString(R.string.app_name);
-
+                ///temperery
+                fragment = new MeetHailFragment();
+                viewIsAtHome =false;
                 break;
-
             case R.id.about_us:
                 fragment = new WebViewOnlyFragment();
                 Bundle bundle = new Bundle();
                 bundle.putString("url","file:///android_asset/logitechWeb/landingpage/index.html");
                 fragment.setArguments(bundle);
+                viewIsAtHome =false;
                 title = getResources().getString(R.string.about_us);
             break;
 
             case R.id.malshabim:
                 fragment = new MalshabimFragment();
                 title = getResources().getString(R.string.malshabim);
+                viewIsAtHome =false;
                 break;
 
             case R.id.miktzoa_lahaim:
                 fragment = new MiktzoaLaFragment();
                 title = getResources().getString(R.string.mktzoalhaim);
+
+                viewIsAtHome =false;
+                break;
+
+            case R.id.nav_share:
+                final String appPackageName = getPackageName(); // getPackageName() from Context or Activity object
+                try {
+                    startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=" + appPackageName)));
+                } catch (android.content.ActivityNotFoundException anfe) {
+                    startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://play.google.com/store/apps/details?id=" + appPackageName)));
+                }
                 break;
 
             default:
                fragment = new MainMenuFragment();
                 title = getResources().getString(R.string.app_name);
+                viewIsAtHome = true;
                 break;
 
         }

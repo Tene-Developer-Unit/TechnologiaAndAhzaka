@@ -1,12 +1,12 @@
 <resources>
-    <string name="app_name">המכללה הטכנולוגיסטית</string>
+    <string name="app_name">חיל הטכנולוגיה והאחזקה</string>
 
     <string name="navigation_drawer_open" translatable="false">Open navigation drawer</string>
     <string name="navigation_drawer_close" translatable="false">Close navigation drawer</string>
 
     <string name="action_settings">הגדרות</string>
-    <string name="tna">המכללה הטכנולוגיסטית</string>
-    <string name="slogen">זורעים היום את הפתרון של מחר</string>
+    <string name="tna">חיל הטכנולוגיה והאחזקה</string>
+    <string name="slogen">קידמה בחזית</string>
     <string name="courses_info">מידע קורסים</string>
     <string name="share">שתף</string>
     <string name="about_us">לוגיטק - המכללה הטכנולוגיסטית</string>

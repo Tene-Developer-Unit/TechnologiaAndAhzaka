@@ -20,6 +20,7 @@ import android.widget.TextView;
 import com.ezra.elon.technologiaandahzaka.Acivities.MainActivity;
 import com.ezra.elon.technologiaandahzaka.Fragments.JobByMegamaFragment;
 import com.ezra.elon.technologiaandahzaka.Fragments.JobsFragments;
+import com.ezra.elon.technologiaandahzaka.Fragments.ShibutzimListFragment;
 import com.ezra.elon.technologiaandahzaka.R;
 
 /*
@@ -119,7 +120,7 @@ public class ItemFragment extends Fragment {
             @Override
             public void onClick(View v) {
 
-            Fragment fragment = new JobByMegamaFragment();
+            Fragment fragment = new ShibutzimListFragment();
             ft = getActivity().getSupportFragmentManager().beginTransaction();
             Bundle bundle = new Bundle();
             bundle.putInt("position", postion);// the choosen megama

@@ -26,6 +26,24 @@
 }
 
     </style>
+
+<script>
+
+    $('#iframe').load(function (e) {
+    var iframe = $("#iframe")[0];
+
+    if ( iframe.innerHTML() ) {
+        // get and check the Title (and H tags if you want)
+        var ifTitle = iframe.contentDocument.title;
+        if ( ifTitle.indexOf("404")>=0 ) {
+        $("#iframe").attr("src", "file:///android_asset/httpFiles/erorr.html");        }
+    } else {
+        // didn't load
+    }
+});
+
+</script>
+
     <script src="jquery-3.3.1.min.js">
 </script>
     <script>
@@ -39,7 +57,7 @@ setInterval(function() {
     .fadeIn(1000)
     .end()
     .appendTo('#slideshow');
-},  4000);
+},  3000);
 </script>
 </head>
 <body >
@@ -49,7 +67,7 @@ setInterval(function() {
 <!--<h1 style="text-align: center;color: #3d777f;">לא יוצאים לחיים, בלי מקצוע לחיים!</h1>-->
 <br>
 <br>
-<video id="video01" controls>
+<video id="video01" width="300"  controls>
     <source src="https://dovermediastorage.blob.core.windows.net/asset-c1f2d309-3e05-4758-b478-35cc76fcb718/miktsoala_320x180_AACAudio_100.mp4?autoplay=1&sv=2015-07-08&sr=c&si=5ee1968f-2d83-4a7e-ad10-d26c7607fec3&sig=DuzOQJ3GEO1nDk4V92auV3ASOly3XrpEOYNnt5JdMjM%3D&se=2028-02-19T15%3A29%3A56Z" type="video/mp4" />
     <p>no support text</p>
 </video>
@@ -67,11 +85,8 @@ setInterval(function() {
 <center>
 <div>
 
-    <video id="video02" width="300"  controls>
-        <source src="https://firebasestorage.googleapis.com/v0/b/teneapp-fe33d.appspot.com/o/miktzoa.mp4?alt=media&token=80c66baa-79f0-4481-9193-8ca812d31159" type="video/mp4" />
-        <p>no support text</p>
-    </video>
 
+    <iframe id="iframe" width="300" src="https://www.youtube.com/embed/zC13uEn9SRY?rel=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
 <br><br>
 
@@ -83,6 +98,9 @@ setInterval(function() {
         המסלולים השונים מאפשרים לך להתגייס לשירות משמעותי במגוון תפקידים ולהשתחרר מהצבא עם מקצוע ביד.
         התכנית עוזרת לך לבנות את עתידך המקצועי ומאפשרת לך לרכוש מקצוע מבוקש בנוסף לתפקיד.
     </p>
+
+
+    <iframe width="300" src="https://www.youtube-nocookie.com/embed/Ky900ktXf2k?rel=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 </div>
 
     <br>

@@ -56,7 +56,6 @@ public class JobsFragments extends Fragment {
     public final static int LOOPS = 1000;
     public CarouselPagerAdapter adapter;
     public static ViewPager pager;
-    int[] image = new int[] {R.drawable.mechenic_item, R.drawable.car_item,R.drawable.electronic_item,R.drawable.electricity_item,R.drawable.toon_item} ;
     FragmentTransaction ft;
     GridView gridView;
 
@@ -228,28 +227,3 @@ String compney_name;
 
 
 
-
-            /*
-            pager = (ViewPager) rootview.findViewById(R.id.myviewpager);
-            DisplayMetrics metrics = new DisplayMetrics();
-            getActivity().getWindowManager().getDefaultDisplay().getMetrics(metrics);
-            int pageMargin = ((metrics.widthPixels / 4) * 2);
-            pager.setPageMargin(-pageMargin);
-
-            //todo: display the maslulim ArrayList on the listView
-            String ShibutzimName[] = getActivity().getApplicationContext().getResources().getStringArray(R.array.megamot);// the list of the megamot
-
-            adapter = new CarouselPagerAdapter(getActivity(), getChildFragmentManager(), image);// include cutome image and text
-            pager.setAdapter(adapter);
-            adapter.notifyDataSetChanged();
-
-            pager.addOnPageChangeListener(adapter);
-
-            // Set current item to the middle page so we can fling to both
-            // directions left and right
-
-            pager.setOffscreenPageLimit(3);
-            pager.setCurrentItem(1);
-
-            pager.setCurrentItem(pager.getCurrentItem() + 10);
-*/

@@ -3,6 +3,7 @@ package com.ezra.elon.technologiaandahzaka.Fragments;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -10,6 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -30,7 +32,14 @@ import java.util.ArrayList;
 public class MiktzoaMaslulimFragment extends Fragment {
 
     ArrayList<HolderTIT> holderTITArrayList = new ArrayList<>();
-FragmentTransaction ft;
+    ImageButton hasaka;
+    ImageButton hachsharot;
+    ImageButton mavarim;
+    Fragment fragment;
+
+    FragmentTransaction ft;
+
+
     public MiktzoaMaslulimFragment() {
         // Required empty public constructor
     }
@@ -41,6 +50,66 @@ FragmentTransaction ft;
                              Bundle savedInstanceState) {
         View rootview;
         rootview = inflater.inflate(R.layout.miktoa_maslulim, container, false);
+        hasaka = (ImageButton) rootview.findViewById(R.id.hasaka);
+        hachsharot = (ImageButton) rootview.findViewById(R.id.hachsharot);
+        mavarim = (ImageButton) rootview.findViewById(R.id.mavarim);
+
+        hasaka.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                fragment = new WebViewOnlyFragment();
+                Bundle bundle = new Bundle();
+                bundle.putString("url","file:///android_asset/logitechWeb/landingpage/hasaka-info.html");
+                fragment.setArguments(bundle);
+
+                ft = getFragmentManager().beginTransaction();
+                ft.setAllowOptimization(true);
+                ft.replace(R.id.frame_layout,fragment);
+                ft.addToBackStack(null);
+                ft.commit();
+
+            }
+        });
+
+        hachsharot.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                fragment = new WebViewOnlyFragment();
+                Bundle bundle = new Bundle();
+                bundle.putString("url","file:///android_asset/logitechWeb/landingpage/hachsharot-info.html");
+                fragment.setArguments(bundle);
+
+                ft = getFragmentManager().beginTransaction();
+                ft.setAllowOptimization(true);
+                ft.replace(R.id.frame_layout,fragment);
+                ft.addToBackStack(null);
+                ft.commit();
+
+            }
+        });
+
+        mavarim.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                fragment = new WebViewOnlyFragment();
+                Bundle bundle = new Bundle();
+                bundle.putString("url","file:///android_asset/logitechWeb/landingpage/mavarim-info.html");
+                fragment.setArguments(bundle);
+
+                ft = getFragmentManager().beginTransaction();
+                ft.setAllowOptimization(true);
+                ft.replace(R.id.frame_layout,fragment);
+                ft.addToBackStack(null);
+                ft.commit();
+
+
+            }
+        });
+
+
         return  rootview;
 
 
