@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../textFiles/w3.css">
+
+    <style>
+.container {
+  position: relative;
+  width: 100%;
+}
+
+.image {
+
+  width: 100%;
+}
+
+.overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #008CBA;
+  overflow: hidden;
+  width: 100%;
+  height: 0;
+  transition: .5s ease;
+}
+
+.container:hover .overlay {
+  height: 100%;
+}
+
+.text {
+  color: white;
+  font-size: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  text-align: center;
+}
+</style>
+</head>
+<body>
+<center style="color:#fff">
+    <div class="main" id="main" ><!-- Main Section-->
+        <div class="hero-section app-hero" style='background-image:url("../../background/comander_main.jpg"); background-repeat:no-repeat;width:auto; background-size: 100% 100%'/>
+        <div class="container" >
+            <div class="hero-content app-hero-content text-center" style="width: 100%;">
+                <div class="col-md-10 col-md-offset-1 nopadding" dir="rtl">
+
+                    <h2 class="wow fadeInUp" data-wow-delay="0s" 	style="color:#fff;text-align: right; width: 70%; line-height: .96; border-bottom: 3px solid #fde85e;">הטבות תעודת לוחם</h2>
+
+                    <p class="wow fadeInUp" data-wow-delay="0.2s" style="color:#fff; ">
+לחץ על התמונה לראות יותר מידע                    </p>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</center>
+<div class="container">
+    <img src="../background/lohem_1.jpg" alt="Avatar" class="image">
+    <div class="overlay">
+        <div >  <img src="../background/lohem_2.jpg" alt="Avatar" class="image">
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

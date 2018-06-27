@@ -47,6 +47,14 @@ public class MeetHailFragmentPageAddapter extends FragmentStatePagerAdapter {
                 bundle.putString("url","file:///android_asset/logitechWeb/landingpage/comander_info.html");
                 fragment.setArguments(bundle);
                 return fragment;
+
+            case 2:
+                fragment = new WebViewOnlyFragment();
+
+                bundle = new Bundle();
+                bundle.putString("url","file:///android_asset/httpFiles/teudatlohem.html");
+                fragment.setArguments(bundle);
+                return fragment;
         }
         return null;
     }
@@ -59,13 +67,15 @@ public class MeetHailFragmentPageAddapter extends FragmentStatePagerAdapter {
                 return "הכר את החיל";
            case 1:
                 return "דבר הקטנא\"ר";
+            case 2:
+                return "תעודת לוחם";
         }
         return null;
     }
 
     @Override
     public int getCount() {
-        return 2;
+        return 3;
     }
 
     @Override
