@@ -25,6 +25,7 @@ import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.StackView;
+import android.widget.TextView;
 
 import com.ezra.elon.technologiaandahzaka.Acivities.MainActivity;
 import com.ezra.elon.technologiaandahzaka.Adapter.Asistent;
@@ -60,8 +61,11 @@ public class MainMenuFragment extends Fragment {
 
     Fragment fragment = null;
 
-    String weekphotourl;
+    String weekphotourl,weekphototitel;
     ImageView weeklyImage;
+    TextView weeklyImageTitle;
+
+
     private Context context;
     DatabaseReference mDatabase;
 
@@ -116,7 +120,7 @@ public class MainMenuFragment extends Fragment {
         context = getContext();
         weeklyImage = (ImageView) rootview.findViewById(R.id.weeklyphoto);
         //weeklyImage.setBackgroundResource(R.drawable.common_google_signin_btn_icon_disabled);
-
+        weeklyImageTitle = (TextView) rootview.findViewById(R.id.main_screen_weekphoto_title);
 
 
 
@@ -181,6 +185,18 @@ public class MainMenuFragment extends Fragment {
 
 
 
+        mDatabase.child("URLS").child("weeklyphototitle").addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                weekphototitel = dataSnapshot.getValue(String.class);
+                weeklyImageTitle.setText(weekphototitel);
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
 
         mDatabase.child("URLS").child("weeklyphoto").addListenerForSingleValueEvent(new ValueEventListener() {
             @Override

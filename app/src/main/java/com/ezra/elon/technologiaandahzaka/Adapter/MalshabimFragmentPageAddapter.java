@@ -12,6 +12,7 @@ import android.support.v4.app.FragmentTransaction;
 import com.ezra.elon.technologiaandahzaka.Fragments.ComunicateFragment;
 import com.ezra.elon.technologiaandahzaka.Fragments.MainMenuFragment;
 import com.ezra.elon.technologiaandahzaka.Fragments.MaslulimListFragment;
+import com.ezra.elon.technologiaandahzaka.Fragments.MaslulimMainFragment;
 import com.ezra.elon.technologiaandahzaka.Fragments.ShibutzimFragment;
 import com.ezra.elon.technologiaandahzaka.Fragments.WebViewOnlyFragment;
 import com.ezra.elon.technologiaandahzaka.R;
@@ -49,7 +50,7 @@ public class MalshabimFragmentPageAddapter extends FragmentStatePagerAdapter {
               return fragment;
 
           case 1:
-              return new MaslulimListFragment();
+              return new MaslulimMainFragment();
           case 2:
               return new ShibutzimFragment();
       }

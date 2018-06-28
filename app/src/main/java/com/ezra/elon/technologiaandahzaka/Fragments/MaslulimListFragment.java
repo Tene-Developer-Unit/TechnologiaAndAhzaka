@@ -36,6 +36,7 @@ public class MaslulimListFragment extends Fragment {
     private String mParam1;
     private String mParam2;
     String filename;
+    String category;
     ArrayList<HolderTIT> holderTITArrayList = new ArrayList<HolderTIT>();
     FragmentTransaction ft;
 
@@ -64,6 +65,11 @@ public class MaslulimListFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         Log.i("funk stat","im in onCreat");
+
+        Bundle bundle = new Bundle();
+
+        category = getArguments().getString("category");
+        Log.i("the data!!!!!",category + "");
         JsontoArrayList();
 
         if (getArguments() != null) {
@@ -78,9 +84,8 @@ public class MaslulimListFragment extends Fragment {
         View rootview;
         rootview = inflater.inflate(R.layout.listview_fragment, container, false);
 
-        Bundle bundle = new Bundle();
 
-       filename = bundle.getString("fileName");
+        //////////////////////////////////
 
         ListView listView = (ListView) rootview.findViewById(R.id.list_view_id);
 
@@ -145,7 +150,7 @@ public class MaslulimListFragment extends Fragment {
 
         try {
             JSONObject root  = new JSONObject(Asistent.loadJSONFromAsset((getActivity()),"jsonFiles/" + "maslulim"+".json"));
-            JSONArray maslulim = root.getJSONArray("maslulim");
+            JSONArray maslulim = root.getJSONArray(category + "");
             String name;
             String url;
             for(int i = 0; i< maslulim.length(); i++)
