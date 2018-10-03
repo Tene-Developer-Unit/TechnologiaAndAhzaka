@@ -66,7 +66,7 @@ public class MeetHailFragmentPageAddapter extends FragmentStatePagerAdapter {
             case 0:
                 return "הכר את החיל";
            case 1:
-                return "דבר הקטנא\"ר";
+                return "דבר קטנא\"ר";
             case 2:
                 return "תעודת לוחם";
         }

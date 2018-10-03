@@ -31,11 +31,11 @@ import java.util.ArrayList;
  */
 public class RandomCourseFragment extends Fragment {
 
-    ArrayList<CourseButton> randomCourseArrayList;
+    ArrayList<CourseButton> randomCourseArrayList; // will contain the random course list
 
     FragmentTransaction ft;
 
-   ArrayList<HolderTIT> holderTITArrayList;
+   ArrayList<HolderTIT> holderTITArrayList; // object of single course
 
     public RandomCourseFragment() {
         // Required empty public constructor
@@ -48,22 +48,24 @@ public class RandomCourseFragment extends Fragment {
         // Inflate the layout for this fragment
         View  rootview =inflater.inflate(R.layout.simple_gridview, container, false);
 
-        holderTITArrayList = new ArrayList<>();
+        holderTITArrayList = new ArrayList<>();//initialise
+        randomCourseArrayList = new ArrayList<>();
+
 
         GridView listView = (GridView) rootview.findViewById(R.id.maingridview);
 
-        Asistent asistent = new Asistent();
+        Asistent asistent = new Asistent();//call the asistent
 
-        randomCourseArrayList = new ArrayList<>();
 
         randomCourseArrayList.clear();
 
-       randomCourseArrayList = (ArrayList<CourseButton>) asistent.RandomCoures(getActivity());
+
+       randomCourseArrayList = (ArrayList<CourseButton>) asistent.RandomCoures(getActivity());//get a random list of course
 
 
 
-        ListAdapter adapter = new CourseGridViewAddapter(getActivity(),randomCourseArrayList);
-        listView.setAdapter(adapter);
+        ListAdapter adapter = new CourseGridViewAddapter(getActivity(),randomCourseArrayList);//write the courses with the adapter
+        listView.setAdapter(adapter);// apply the adapter
 
 
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {

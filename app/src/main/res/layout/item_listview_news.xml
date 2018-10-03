@@ -1,39 +1,83 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="150dp"
-    android:background="#000">
+    android:background="#000"
+    android:layoutDirection="rtl"
+    android:textDirection="rtl">
 
     <ImageView
+        android:id="@+id/item_listview_news_image"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:src="@drawable/jobtitle"
-        android:adjustViewBounds="true"
-       android:id="@+id/item_listview_news_image"
-        android:alpha="0.7"
+        android:layout_height="match_parent"
         android:layout_gravity="top"
-        />
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Title"
-        android:layout_margin="5dp"
-        android:id="@+id/item_listview_news_title"
-        android:textColor="#fff"
-        android:layout_alignParentTop="true"
-        android:textSize="40sp"
-        />
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/item_listview_news_subtitle"
-        android:layout_margin="5dp"
-        android:text="all the stuff you should know about tecnology...."
-        android:layout_alignBottom="@+id/item_listview_news_image"
+        android:adjustViewBounds="true"
 
+        android:alpha="0.3"
+        android:background="#000"
+        android:cropToPadding="false"
+        android:scaleType="centerCrop"
+        android:src="@drawable/jobtitle" />
+
+    <TextView
+        android:id="@+id/item_listview_news_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="8dp"
+        android:gravity="center_vertical"
+        android:padding="3dp"
+        android:text="המדריך לחיל האחזקה בחיל הטכנולוגיה והאחזקה"
         android:textColor="#fff"
         android:textSize="20sp"
-        />
+        android:textStyle="bold"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/item_listview_news_subtitle"
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/item_listview_news_image"
+        android:layout_margin="5dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginTop="16dp"
+        android:padding="3dp"
+        android:text="כל מה שרצית לדעת על חיל הטכנולוגיה והאחזקה ולא הייה לך את הזכות לשאול"
+        android:textAllCaps="false"
+        android:textColor="#fff"
+        android:textSize="15sp"
+        android:typeface="normal"
+        app:layout_constraintBottom_toTopOf="@+id/textView3"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/item_listview_news_title"
+        app:layout_constraintVertical_bias="0.0"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginRight="16dp"
+        android:background="@color/colorAccent"
+        android:paddingBottom="1dp"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"
+        android:paddingTop="1dp"
+        android:text="לכתבה המלאה"
+        android:textColor="#000"
+        android:textSize="15sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        tools:ignore="MissingConstraints" />
 
 
-</RelativeLayout>
+</android.support.constraint.ConstraintLayout>

@@ -41,6 +41,7 @@ public class JobInfoFragment extends Fragment {
     int position;
     FragmentTransaction ft;
     HolderTIT arrayList;
+    String company;
     String starthtml = "<html dir=\"rtl\">\n" + "<body style=\"color: #0060C6\">";
     String endhtml = "</body>\n" + "</html>";
 
@@ -65,7 +66,7 @@ public class JobInfoFragment extends Fragment {
             intent.setType("text/email");
 
             intent.putExtra(Intent.EXTRA_EMAIL, new String[] {"kshiran32@gmail.com"});
-            intent.putExtra(Intent.EXTRA_SUBJECT,  "בקשה למשרת "+arrayList.getMaslulName());
+            intent.putExtra(Intent.EXTRA_SUBJECT,  "בקשה למשרת " + arrayList.getMaslulName() +" בחברת " + company);
             intent.putExtra(Intent.EXTRA_TEXT,  "שם:  מספר תז:");
 
 
@@ -81,7 +82,7 @@ public class JobInfoFragment extends Fragment {
 
 
         arrayList = getArguments().getParcelable("jobholder");//the object with the data of the job we chouse
-
+        company = getArguments().getString("company");
         WebView textViewDiscription = (WebView) rootview.findViewById(R.id.jobDicrip_textview);
         textViewJobName.setText(arrayList.getMaslulName());
         textViewDiscription.loadDataWithBaseURL(null,starthtml + arrayList.getTextPath() + endhtml,null,"utf-8",null);

@@ -23,6 +23,10 @@ import java.net.URL;
 
 /**
  * A simple {@link Fragment} subclass.
+ * @author elon
+ *
+ * show an article!
+ *
  */
 public class NewsFragment extends Fragment {
 
@@ -47,7 +51,7 @@ public class NewsFragment extends Fragment {
                 webView.getSettings().setJavaScriptEnabled(true);
                 webView.getSettings().setPluginState(WebSettings.PluginState.ON);
                 webView.getSettings().setAllowFileAccess(false);
-
+                webView.getSettings().setJavaScriptEnabled(true);
                 webView.loadUrl(URL);
 
             }

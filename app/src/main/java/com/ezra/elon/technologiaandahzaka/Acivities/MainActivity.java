@@ -3,6 +3,7 @@ package com.ezra.elon.technologiaandahzaka.Acivities;
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.net.ConnectivityManager;
 import android.net.Uri;
@@ -48,7 +49,6 @@ import com.ezra.elon.technologiaandahzaka.Fragments.MalshabimFragment;
 import com.ezra.elon.technologiaandahzaka.Fragments.MaslulimListFragment;
 import com.ezra.elon.technologiaandahzaka.Fragments.MeetHailFragment;
 import com.ezra.elon.technologiaandahzaka.Fragments.MiktzoaLaFragment;
-import com.ezra.elon.technologiaandahzaka.Fragments.NewsFragment;
 import com.ezra.elon.technologiaandahzaka.Fragments.WebViewOnlyFragment;
 import com.ezra.elon.technologiaandahzaka.R;
 import com.google.android.gms.common.api.GoogleApiClient;
@@ -57,6 +57,7 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.google.gson.Gson;
 
 import java.util.ArrayList;
 
@@ -65,6 +66,9 @@ public class MainActivity extends AppCompatActivity
     FragmentTransaction ft;
     String title;
     Fragment fragment = null;
+
+    SharedPreferences mPrefs;
+
 
     FragmentManager fragmentManager = getSupportFragmentManager();
 public boolean viewIsAtHome = true;
@@ -88,7 +92,6 @@ public boolean viewIsAtHome = true;
 
 
         getSupportActionBar().setDisplayShowTitleEnabled(false);
-
 
 
 

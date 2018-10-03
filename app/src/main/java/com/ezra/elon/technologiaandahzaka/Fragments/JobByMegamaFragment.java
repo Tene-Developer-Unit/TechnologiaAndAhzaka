@@ -134,9 +134,6 @@ public class JobByMegamaFragment extends Fragment {
 
          listView = (ListView) rootview.findViewById(R.id.list_view_id);
 
-
-        Log.d("Lifetime","onCreatView");
-
             display();
 
 
@@ -147,6 +144,7 @@ public class JobByMegamaFragment extends Fragment {
                 Fragment fragment = new JobInfoFragment();//.setArrayList_holder(holderTITArrayList.get(i));
                 Bundle bundle = new Bundle();
                 bundle.putParcelable("jobholder",holderTITArrayList.get(i));
+                bundle.putString("company",position);
                 fragment.setArguments(bundle);
                 ft = getActivity().getSupportFragmentManager().beginTransaction();
                 ft.replace(R.id.frame_layout,fragment);
@@ -213,7 +211,7 @@ public class JobByMegamaFragment extends Fragment {
 
                             holderTITArrayList.add(new HolderTIT(value.get(i).getjobName(),"null", value.get(i).getJobDesc().toString()));
 
-                            Log.d("DATABSE", "Value is:" + value.get(i).getjobName());
+//                            Log.d("DATABSE", "Value is:" + value.get(i).getjobName());
 
                         }
 

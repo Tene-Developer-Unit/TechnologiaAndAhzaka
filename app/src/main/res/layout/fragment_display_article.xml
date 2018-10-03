@@ -1,0 +1,94 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:textDirection="rtl"
+    android:layoutDirection="rtl"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#fff"
+
+    >
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+       <LinearLayout
+       android:layout_width="match_parent"
+       android:layout_height="match_parent"
+       android:orientation="vertical"
+           android:weightSum="3">
+
+           <android.support.constraint.ConstraintLayout
+               android:id="@+id/imageView3"
+               android:layout_width="match_parent"
+
+               android:layout_height="wrap_content"
+               android:background="#000">
+
+               <ImageView
+                   android:id="@+id/display_article_image"
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:adjustViewBounds="true"
+                   android:background="#000"
+                   android:alpha="0.6"
+                   android:elevation="3dp"
+                   android:src="@drawable/jobtitle" />
+
+               <TextView
+                   android:id="@+id/display_article_title"
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:layout_alignLeft="@+id/imageView4"
+                   android:layout_alignStart="@+id/imageView4"
+                   android:layout_alignTop="@+id/imageView4"
+                   android:background="#57000000"
+                   android:gravity="center_vertical"
+                   android:paddingRight="5dp"
+                   android:text="כותרת הכתבה"
+                   android:textColor="#ffffff"
+
+                   android:textSize="20sp"
+                   android:textStyle="bold"
+                   android:translationZ="50dp"
+                   app:layout_constraintBottom_toTopOf="@+id/display_article_subtitle"
+                   app:layout_constraintEnd_toEndOf="parent" />
+
+               <TextView
+                   android:id="@+id/display_article_subtitle"
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+                   android:background="#57000000"
+                   android:gravity="center"
+                   android:padding="10dp"
+                   android:text="חלךר כן חלךלכג ןןןר חחכ ל ; חלךגן ווורן המכ חכידל ; כחחכםק חח כידל "
+                   android:textAlignment="viewStart"
+                   android:textColor="#fff"
+                   android:textSize="13sp"
+                   android:translationZ="10dp"
+                   app:layout_constraintBottom_toBottomOf="parent"
+                   app:layout_constraintHorizontal_bias="0.0"
+                   app:layout_constraintLeft_toLeftOf="parent"
+                   app:layout_constraintRight_toRightOf="parent" />
+           </android.support.constraint.ConstraintLayout>
+
+           <WebView
+               android:id="@+id/display_article_text"
+
+               android:layout_width="match_parent"
+               android:layout_height="match_parent"
+               android:layout_gravity="center_vertical"
+               android:layout_weight="2"
+               android:background="#fff"
+               android:elevation="2dp"
+               android:text="jdkdjf djalkdfp kdkjfjjw oeri"
+
+               app:layout_constraintLeft_toLeftOf="parent"
+               app:layout_constraintRight_toRightOf="parent" />
+
+
+       </LinearLayout>
+
+</ScrollView>
+</RelativeLayout>
